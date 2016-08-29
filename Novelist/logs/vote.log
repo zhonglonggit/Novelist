@@ -1,0 +1,14 @@
+信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==>  Preparing: select * from bookinfo where bookName=? 
+信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==> Parameters: 动物世界(String)
+信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==>  Preparing: select * from bookinfo where bookName=? 
+信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==> Parameters: 动物世界(String)
+信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - <==      Total: 1
+信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==>  Preparing: select * from bookinfo where bookName=? 
+信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==> Parameters: 动物世界(String)
+信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - <==      Total: 1
+信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==>  Preparing: select * from bookinfo where bookName=? 
+信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==> Parameters: 动物世界(String)
+信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - <==      Total: 1
+信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==>  Preparing: select * from bookinfo where bookName=? 
+信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==> Parameters: 动物世界(String)
+信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - <==      Total: 1
