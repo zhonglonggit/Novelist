@@ -10,7 +10,7 @@ create table userinfo(
        userAddress varchar2(50) 
 	
 );
-
+g
 create sequence seq_userinfo  start with 1002;
 insert into  userinfo values (1001,'xqq','a','男',null,null,null);
 
@@ -33,13 +33,16 @@ create table bookinfo(
        bookId int primary key,
        bookName varchar2(50) not null,
        bookAuthor  varchar2(50) not null,
-       bookDate Date,
+       bookDate date,
        salePrice number(10,2),
        bookPress varchar2(20),
-       bookDescription text, --图书描述
+       bookDescription varchar2(500), --图书描述
        saleCount int default '0' --售出数量
 );
+create sequence seq_bookinfo  start with 10001;
+insert into bookinfo values(seq_bookinfo.nextval,'动物世界','黎茜茜',null,100,'兰州大学出版社',null,0);
 
+select * from  bookinfo;
 --订单表
 create table order(
 	orderId int primary key; --订单号
