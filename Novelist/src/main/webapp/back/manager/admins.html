@@ -1,0 +1,160 @@
+<table id="admins_data"></table>
+
+<script>
+	var obj;
+	var editRow=undefined;//记录当前正在被编辑的行
+	
+	var currentOp;
+	var flag;
+
+	obj=$('#admins_data').datagrid({    
+	    url:'../../adminsServlet',
+	    queryParams: {op:'findAllAdmins'},
+	    fitColumns:true,
+	    striped:true,
+	    loadMsg:"数据加载中...",
+	    pagination:true,
+	    fit:true,
+	    pageNumber:1,
+	    pageSize:5,
+	    pageList:[5,10,15,20,30,3],
+	    sortName:'aid',
+	    remoteSort:false,
+	    columns:[[    
+			{field:'aids',title:'',width:100,align:'center',checkbox:true},
+	        {field:'aid',title:'管理员编号',width:100,align:'center',sortable:true},  
+	        {field:'aname',title:'管理员名字',width:100,align:'center',editor:{type:"text",options:{requires:true}}},
+	        {field:'pwd',title:'管理员密码',width:100,align:'center',editor:{type:"text",options:{requires:true}}},    
+	    ]],
+	    toolbar:[{
+	    	text:"添加",
+	    	iconCls:"icon-add",
+	    	handler:function(){
+	    		currentOp="addAdmins";
+	    		flag="添加";
+	    		if(editRow!=undefined){
+	    			obj.datagrid("rejectChanges");//回滚所有的数据
+	    			obj.datagrid("endEidit",editRow);//关闭正在被编辑的行
+	    			editRow=undefined;
+	    		}else{
+	    			obj.datagrid("insertRow",{index:0,row:{}});
+	    			obj.datagrid("beginEdit",0);
+	    			editRow=0;//记录当前被编辑行的索引
+	    		}
+	    	}
+	    },{
+	    	text:"修改",
+	    	iconCls:"icon-edit",
+	    	handler:function(){
+	    		currentOp="updateAdmins";
+	    		flag="修改";
+	    		var rows=obj.datagrid("getChecked")[0];
+	    		if(rows!=undefined){
+	    			if(editRow!=undefined){//说明有行正在被编辑
+	    				obj.datagrid("rejectChanges");//回滚所有的数据
+		    			obj.datagrid("endEidit",editRow);//关闭正在被编辑的行
+		    			editRow=undefined;
+	    			}else{
+	    				//获取用户选中的行的索引
+	    				var index=obj.datagrid("getRowIndex",rows);
+	    				alert(rows);
+	    				obj.datagrid("updateRow",{index:index,row:rows});
+	    				obj.datagrid("beginEdit",index);
+	    				editRow=index;//记录当前被编辑的索引行
+	    			 	}
+	    			}else{
+	    				$.messager.show({title:'温馨提示',
+	    					msg:'请选中你要修改的数据...',
+	    					timeout:2000,
+	    					showType:'slide'
+	    			});
+	    		}
+	    	}
+	    },{
+	    	text:"删除",
+	    	iconCls:"icon-remove",
+	    	handler:function(){
+	    		//获取选中的行
+	    		var rows=obj.datagrid("getChecked");
+	    		if(rows!=undefined){
+	    			$.messager.confirm('信息确认','你确定要删除选中的数据吗',function(rs){
+	    				if(rs){
+	    					var aids="";
+	    					for(var i=0;i<rows.length-1;i++){
+	    						aids+=rows[i].aid+",";
+	    					}
+	    					aids+=rows[i].aid;
+	    					//发送请求到数据库请求删除
+	    					$.post("../../adminsServlet",{op:"delAdmins",aid:aids},function(data){
+	    						if(data>0){
+	    							$.messager.show({title:'成功提示',
+	    								msg:'新闻类型删除成功...',
+	    								timeout:2000,
+	    								showType:'slide'
+	    								});
+	    							rows=null;
+	    							obj.datagrid("reload");//刷新表格
+	    							
+	    						}else{
+	    							$.messager.alert('失败提示','删除失败...','error');
+	    						}
+	    					});
+	    				}else{
+	    					return;
+	    					}
+	    			});
+	    		}else{
+	    			$.messager.show({title:'温馨提示',
+	    				msg:'请选中你要删除的数据...',
+	    				timeout:2000,
+	    				showType:'slide'
+	    				});
+	    		}
+	    	}
+	    },{
+	    	text:"保存",
+	    	iconCls:"icon-save",
+	    	handler:function(){
+	    		obj.datagrid("endEdit",editRow);
+	    		
+	    		//获取正在被编辑的数据
+	    		var rows=obj.datagrid("getChanges")[0];
+	    		
+	    		if(rows==undefined){
+	    			obj.datagrid("rejectChanges");//回滚所有的数据
+	    			obj.datagrid("endEidit",editRow);//关闭正在被编辑的行
+	    			editRow=undefined;
+	    		}else{
+	    			//保存到数据库
+	    			rows["op"]="addAdmins";
+	    			
+	    			$.post("../../adminsServlet",rows,function(data){
+	    				if(data>0){
+	    					$.messager.show({
+	    						title:'成功提示',
+	    						msg:'新闻类型'+flag+'成功',
+	    						timeout:2000,
+	    						showType:'slide'
+	    					});
+	    					rows=null;
+	    					obj.datagrid("reload");//刷新表格
+	    					editRow=undefined;
+	    					obj.datagrid("rejectChanges");//回滚所有的数据
+			    			obj.datagrid("endEidit",editRow);//关闭正在被编辑的行
+	    				}else{
+	    					$.messager.alert('失败提示','新闻'+flag+'失败...','error');
+	    				}
+	    			});
+	    		}
+	    	}
+	    },{
+	    	text:"撤销",
+	    	iconCls:"icon-redo",
+	    	handler:function(){
+	    		obj.datagrid("rejectChanges");//回滚所有的数据
+    			obj.datagrid("endEidit",editRow);//关闭正在被编辑的行
+    			editRow=undefined;
+	    	}
+	    }]
+	});
+</script>
