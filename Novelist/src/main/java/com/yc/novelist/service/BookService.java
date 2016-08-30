@@ -7,5 +7,5 @@ import com.yc.novelist.eneity.Book;
 public interface BookService {
 	List<Book> findBookName(String bookName);
 
-	// List<Book> findBookById(int bookId);
+	 List<Book> findBookByAuthor(String bookAuthor);
 }

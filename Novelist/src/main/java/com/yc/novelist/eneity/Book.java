@@ -1,10 +1,12 @@
 package com.yc.novelist.eneity;
 
+import java.util.Date;
+
 public class Book {
 	private int bookId;
 	private String bookName;
 	private String bookAuthor;
-	private Integer bookDate;
+	private Date bookDate;
 	private Integer salePrice;
 	private String bookPress;
 	private String bookDescription;
@@ -38,10 +40,10 @@ public class Book {
 	public void setBookAuthor(String bookAuthor) {
 		this.bookAuthor = bookAuthor;
 	}
-	public Integer getBookDate() {
+	public Date getBookDate() {
 		return bookDate;
 	}
-	public void setBookDate(Integer bookDate) {
+	public void setBookDate(Date bookDate) {
 		this.bookDate = bookDate;
 	}
 	public Integer getSalePrice() {
