@@ -22,7 +22,7 @@ create table userinfo(
        userAddress varchar2(50) 
 	
 );
-g
+
 create sequence seq_userinfo  start with 1002;
 insert into  userinfo values (1001,'xqq','a','男',null,null,null);
 
