@@ -1,7 +1,7 @@
 @charest "utf-8";
 /* CSS Document */
 *{
-	margin:0px;
+	margin:0px auto;
 	padding:0px;
 	font-family:"微软雅黑";
 	list-style-type: none;
@@ -209,3 +209,35 @@ body{/*border:1px solid #f00*/
 .tscxb ul li:hover img{
 	display:block;
 }
+.footer{
+	height:220px;
+	width:1200px; 
+	float:left;  
+	background-color:#ccc;
+}
+
+.footer_pic_new{
+	width:970px;
+	 height:80px;
+}
+
+.footer_pic_new a{
+	width:138px;
+	 height:52px;
+}
+.footer_pic01 span{ background:url(../images/index.png) no-repeat;width:138px; height:52px;}
+.footer_pic02 span{ background:url(../images/index.png) no-repeat;width:138px; height:52px;}
+.footer_pic03 span{ background:url(../images/index.png) no-repeat;width:138px; height:52px;}
+.footer_pic04 span{ background:url(../images/index.png) no-repeat;width:138px; height:52px;}
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
