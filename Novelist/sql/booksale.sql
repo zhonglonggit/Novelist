@@ -1,3 +1,15 @@
+
+drop table admin;
+create table admin(
+	aid int primary key,
+	aname varchar2(20),
+	pwd varchar2(20)
+);
+drop sequence seq_aid;
+create sequence seq_aid start with 1101;
+insert into admin values(seq_aid.nextval,'mm','a');
+select * from admin;
+
 drop table userinfo;
 --用户信息表
 create table userinfo(
