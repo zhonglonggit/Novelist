@@ -26,10 +26,5 @@ public class BookServiceImplTest {
 		assertNotNull(book);
 	}
 	
-	@Test
-	public void testFindBook02() {
-		List<Book> book = bookService.findBookByAuthor("霍顿");
-		System.out.println(book);
-		assertNotNull(book);
-	}
+	
 }
