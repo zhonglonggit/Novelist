@@ -21,4 +21,10 @@ public class BookServiceImpl implements  BookService{
 		return bookMapper.getBookName(bookName);
 	}
 
+
+	@Override
+	public List<Book> findBookByAuthor(String bookAuthor) {
+		return bookMapper.getBookAuthor(bookAuthor);
+	}
+
 }

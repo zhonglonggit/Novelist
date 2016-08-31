@@ -17,14 +17,14 @@
 	type="text/css" media="all" />
 </head>
 
-<body class="main">
+<body class="main" style="background-image:url(ad/back2.jpg)">
 
 	<div id="divhead">
 		<table cellspacing="0" class="headtable">
 			<tr>
 				<td><img src="images/logo.gif" width="95" height="30" /></td>
 				<td style="text-align: right"><img src="images/cart.gif"
-					width="26" height="23" style="margin-bottom: -4px" />&nbsp; <a
+					width="26" height="23" style="margin-bottom: -4px" />&nbsp;<a
 					href="page/cart.jsp">购物车</a> | <a href="#">帮助中心</a> | <a
 					href="page/my.jsp">我的帐户</a> | <a href="page/register.jsp">新用户注册</a></td>
 			</tr>
@@ -32,14 +32,14 @@
 	</div>
 
 	<div id="divmenu">
-		<a href="page/product_list.jsp">文学</a> <a href="page/product_list.jsp">生活</a>
-		<a href="page/product_list.jsp">计算机</a> <a
-			href="page/product_list.jsp">外语</a> <a href="page/product_list.jsp">经管</a>
-		<a href="page/product_list.jsp">励志</a> <a href="page/product_list.jsp">社科</a>
-		<a href="page/product_list.jsp">学术</a> <a href="page/product_list.jsp">少儿</a>
-		<a href="page/product_list.jsp">艺术</a> <a href="page/product_list.jsp">原版</a>
-		<a href="page/product_list.jsp">科技</a> <a href="page/product_list.jsp">考试</a>
-		<a href="page/product_list.jsp">生活百科</a> <a
+		<a href="page/product_list.jsp">文学</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="page/product_list.jsp">生活</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="page/product_list.jsp">计算机</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+			href="page/product_list.jsp">外语</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="page/product_list.jsp">经管</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="page/product_list.jsp">励志</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="page/product_list.jsp">社科</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="page/product_list.jsp">学术</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="page/product_list.jsp">少儿</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="page/product_list.jsp">艺术</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="page/product_list.jsp">原版</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="page/product_list.jsp">科技</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="page/product_list.jsp">考试</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="page/product_list.jsp">生活百科</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
 			href="page/product_list.jsp" style="color: #FFFF00">全部商品目录</a>
 	</div>
 	<div id="divsearch">
@@ -56,22 +56,31 @@
 	<div id="divcontent">
 		<table width="850px" border="0" cellspacing="0">
 			<tr>
-				<td style="padding: 30px"><h1>新会员注册</h1>
-					<table width="70%" border="0" cellspacing="2" class="upline">
+				<td style="font-size: 16px;">
+					<table style="color:#999999;" width="700px" border="0" cellspacing="2" class="upline">
 						<tr>
-							<td style="text-align: right; width: 20%">会员邮箱：</td>
-							<td style="width: 40%"><input type="text" class="textinput" /></td>
-							<td><img src="images/check_use.gif" width="111" height="24" /></td>
+							<h1 style="margin: 40%; letter-spacing: 8px; font-size: 24px;">新会员注册</h1>
+						</tr>
+						<tr>
+							<td style="text-align: right;">会员邮箱：</td>
+							<td style="width: 330px;"><input type="text"
+								class="textinput" /></td>
 						</tr>
 						<tr>
 							<td style="text-align: right">会员名：</td>
 							<td><input type="text" class="textinput" /></td>
-							<td><img src="images/check_use.gif" width="111" height="24" /></td>
 						</tr>
 						<tr>
 							<td style="text-align: right">密码：</td>
 							<td><input type="password" class="textinput" /></td>
-							<td><font color="#999999">密码设置至少6位，请区分大小写</font></td>
+						</tr>
+						<tr>
+							<td style="text-align: right"></td>
+							<td class="nopad">
+								<ul class="ucr-stronger clearfix">
+									<li>弱</li><li>中</li><li>强</li>
+								</ul>
+							</td>
 						</tr>
 						<tr>
 							<td style="text-align: right">重复密码：</td>
@@ -88,56 +97,20 @@
 						</tr>
 						<tr>
 							<td style="text-align: right">联系方式：</td>
+
+
 							<td colspan="2"><input name="text2" type="text"
 								class="textinput" /></td>
 						</tr>
-						<tr>
-							<td style="text-align: right">发货地址：</td>
-							<td colspan="2"><input name="text" type="text"
-								class="textinput" style="width: 350px" /></td>
-						</tr>
+
 						<tr>
 							<td style="text-align: right">&nbsp;</td>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
+							<td align="center"><input type="submit" class="input-button"
+								name="submit" value="立即注册" />
 						</tr>
 					</table>
-
-
-					<h1>注册校验</h1>
-					<table width="80%" border="0" cellspacing="2" class="upline">
-						<tr>
-							<td style="text-align: right; width: 20%">输入校验码：</td>
-							<td style="width: 50%"><input type="text" class="textinput" /></td>
-							<td>&nbsp;</td>
-						</tr>
-						<tr>
-							<td style="text-align: right">&nbsp;</td>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-						</tr>
-					</table>
-
-					<h1>服务条款</h1>
-					<table width="70%" border="0" cellspacing="0">
-						<tr>
-							<td><textarea name="textarea" class="textarea"></textarea></td>
-						</tr>
-					</table>
-
-					<table width="70%" border="0" cellspacing="0">
-						<tr>
-							<td style="padding-top: 20px; text-align: center"><a
-								href="page/registersuccess.jsp"><img src="images/signup.gif"
-									border="0" /></a></td>
-						</tr>
-					</table></td>
-			</tr>
 		</table>
 	</div>
-
-
-
 	<div id="divfoot">
 		<table width="100%" border="0" cellspacing="0">
 			<tr>
@@ -153,7 +126,5 @@
 			</tr>
 		</table>
 	</div>
-
-
 </body>
 </html>

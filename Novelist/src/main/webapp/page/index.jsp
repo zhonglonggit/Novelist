@@ -34,14 +34,14 @@
 	<!-- Logo end -->
 	<!-- menu -->
 	<div id="divmenu">
-		<a href="page/product_list.jsp">文学</a> <a href="page/product_list.jsp">生活</a>
-		<a href="page/product_list.jsp">计算机</a> <a
-			href="page/product_list.jsp">外语</a> <a href="page/product_list.jsp">经管</a>
-		<a href="page/product_list.jsp">励志</a> <a href="page/product_list.jsp">社科</a>
-		<a href="page/product_list.jsp">学术</a> <a href="page/product_list.jsp">少儿</a>
-		<a href="page/product_list.jsp">艺术</a> <a href="page/product_list.jsp">原版</a>
-		<a href="page/product_list.jsp">科技</a> <a href="page/product_list.jsp">考试</a>
-		<a href="page/product_list.jsp">生活百科</a> <a
+		<a href="page/product_list.jsp">文学</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="page/product_list.jsp">生活</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="page/product_list.jsp">计算机</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+			href="page/product_list.jsp">外语</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="page/product_list.jsp">经管</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="page/product_list.jsp">励志</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="page/product_list.jsp">社科</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="page/product_list.jsp">学术</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="page/product_list.jsp">少儿</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="page/product_list.jsp">艺术</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="page/product_list.jsp">原版</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="page/product_list.jsp">科技</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="page/product_list.jsp">考试</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="page/product_list.jsp">生活百科</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
 			href="page/product_list.jsp" style="color: #FFFF00">全部商品目录</a>
 	</div>
 	<!-- menu end -->
@@ -100,14 +100,14 @@
 					</table>
 					<table width="100%" border="0" cellspacing="0">
 						<tr>
-							<td style="width: 50; text-align: center"><a href="info.jsp"><img
+							<td style="width: 50; text-align: center"><a href="page/info.jsp"><img
 									src="bookcover/travelbook.jpg" width="102" height="130"
-									border="0" /></a><br /> <a href="info.jsp">TravelBook<br />
+									border="0" /></a><br /> <a href="page/info.jsp">TravelBook<br />
 									作者:Lonley Plant
 							</a></td>
-							<td style="width: 50; text-align: center"><a href="info.jsp"><img
+							<td style="width: 50; text-align: center"><a href="page/info.jsp"><img
 									src="bookcover/java2.jpg" width="102" height="130" border="0" /></a><br />
-								<a href="info.jsp">Java2入门经典(JDK5) <br /> 作者:(美)霍顿
+								<a href="page/info.jsp">Java2入门经典(JDK5) <br /> 作者:(美)霍顿
 							</a></td>
 						</tr>
 					</table></td>
