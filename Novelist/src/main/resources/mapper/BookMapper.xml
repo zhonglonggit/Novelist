@@ -5,12 +5,16 @@
 <mapper namespace="com.yc.novelist.mapper.BookMapper">
 	
 
-	<select id="getBookName" parameterType="Book" resultType="Book" >
-		select * from bookinfo where bookName=#{bookName}
+	<select id="getBookName" parameterType="String" resultType="Book" >
+		select * from bookinfo where bookName LIKE CONCAT(CONCAT('%', #{bookName}), '%')
 	</select>
 	
 	<select id="getBookAuthor" parameterType="Book" resultType="Book" >
-		select * from bookinfo where bookAuthor=#{bookAuthor}
+		select * from bookinfo where bookAuthor LIKE CONCAT(CONCAT('%', #{bookAuthor}), '%')
+	</select>
+	
+	<select id="getAllBookInfo" resultType="Book" >
+		select * from bookinfo 
 	</select>
 	
 </mapper>
