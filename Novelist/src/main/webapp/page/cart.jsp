@@ -52,10 +52,7 @@
 						border="0" style="margin-bottom: -4px" /></a></td>
 			</tr>
 		</table>
-
 	</div>
-
-
 	<div id="divpagecontent">
 		<table width="100%" border="0" cellspacing="0">
 			<tr>
