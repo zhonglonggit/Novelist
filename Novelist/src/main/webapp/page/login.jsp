@@ -58,7 +58,7 @@
 							<input type="password" class="input-text" name="userPassword"  placeholder="请输入密码"/></span>
 							
 							<br/><span style="margin-left:40px;display:block;height:20px;line-height:20px;text-align:center;"><input type="submit" class="input-button" name="submit" value="登录" />
-							 <a style="margin-left:20px" href="user/register">新用户注册</a></span>
+							 <a style="margin-left:20px" href="page/register.jsp">新用户注册</a></span>
 							 
 							 <a href=""></a>
 						</dl>

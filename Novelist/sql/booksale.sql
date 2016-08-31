@@ -31,7 +31,7 @@ select * from userinfo;
 drop table bookstype;
 --图书类型表
 create table booktype(
-       btId int primary key, 
+       btId int primary key, --
        btName varchar2(50) not null,
        parent_id int not null
 );
