@@ -8,9 +8,9 @@
 	var flag;
 
 	obj=$('#admins_data').datagrid({    
-	    url:'../../adminsServlet',
-	    queryParams: {op:'findAllAdmins'},
-	    fitColumns:true,
+	    url:'admin/findAllAdmin',
+/* 	    queryParams: {op:'findAllAdmins'},
+ */	    fitColumns:true,
 	    striped:true,
 	    loadMsg:"数据加载中...",
 	    pagination:true,
@@ -30,7 +30,7 @@
 	    	text:"添加",
 	    	iconCls:"icon-add",
 	    	handler:function(){
-	    		currentOp="addAdmins";
+	    		/* currentOp="addAdmins"; */
 	    		flag="添加";
 	    		if(editRow!=undefined){
 	    			obj.datagrid("rejectChanges");//回滚所有的数据

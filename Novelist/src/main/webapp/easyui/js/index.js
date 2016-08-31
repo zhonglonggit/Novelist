@@ -1,7 +1,7 @@
 $(function(){
 	$('#center_area').tabs('add',{    
 		title:'首页',
-		href:"yc.html"
+		href:"back/manager/yc.html"
 	}); 
 	$('#menu_tree').tree({    
 		onClick: function(node){
@@ -13,7 +13,7 @@ $(function(){
 				}else{
 					tabs.tabs('add',{
 						title:"图书类型管理",
-						href:"types.html",
+						href:"back/manager/types.html",
 						closable:true
 					});
 				}
@@ -23,7 +23,7 @@ $(function(){
 				}else{
 					tabs.tabs('add',{
 						title:"图书管理",
-						href:"news.html",
+						href:"back/manager/news.html",
 						closable:true
 					});
 				}
@@ -33,7 +33,7 @@ $(function(){
 				}else{
 					tabs.tabs('add',{
 						title:"会员管理",
-						href:"user.html",
+						href:"back/manager/user.html",
 						closable:true
 					});
 				}
@@ -43,7 +43,7 @@ $(function(){
 				}else{
 					tabs.tabs('add',{
 						title:"管理员管理",
-						href:"admins.html",
+						href:"back/manager/admins.html",
 						closable:true
 					});
 				}
@@ -53,7 +53,7 @@ $(function(){
 				}else{
 					tabs.tabs('add',{
 						title:"会员信息",
-						href:"mine.html",
+						href:"back/manager/mine.html",
 						closable:true
 					});
 				}

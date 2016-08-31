@@ -1,84 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:context="http://www.springframework.org/schema/context" 
 	 xmlns:mvc="http://www.springframework.org/schema/mvc"
-	  xmlns:tx="http://www.springframework.org/schema/tx"
-	   xmlns:aop="http://www.springframework.org/schema/aop"
-	   xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:util="http://www.springframework.org/schema/util"
 	xsi:schemaLocation="
-        http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
-      	http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd
-        http://www.springframework.org/schema/mvc
-        http://www.springframework.org/schema/mvc/spring-mvc.xsd
-        http://www.springframework.org/schema/aop
-        http://www.springframework.org/schema/aop/spring-aop.xsd
         http://www.springframework.org/schema/util
-        http://www.springframework.org/schema/util/spring-util.xsd">
-
-	<!-- 注解方式配置bean，指定bean所在的包 -->
-	<context:component-scan base-package="com.yc.novelist"/>
+        http://www.springframework.org/schema/util/spring-util.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+          http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+        
+	<context:component-scan base-package="com.yc.novelist" />
 	
+	<context:property-placeholder location="classpath:db.properties"/>
 	
-	<!-- 引入外部的属性文件 -->
-	<context:property-placeholder location="classpath:db.properties"></context:property-placeholder>
-	
-	<!--配置数据源 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
-		<property name="driverClassName" value="${jdbc.driverClassName}"></property>
-		<property name="url"  value="${jdbc.url}"></property>
-		<property name="username"  value="${jdbc.username}"></property>
-		<property name="password"  value="${jdbc.password}"></property>
-		<property name="initialSize"  value="${jdbc.initialSize}"></property>
-		<property name="minIdle"  value="${jdbc.minIdle}"></property>
-		<property name="maxTotal"  value="${jdbc.maxTotal}"></property>
-	</bean> 
-	
-	<!--mybatis框架整合  -->
-	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean" >
-		<property name="dataSource" ref="dataSource"></property><!-- 数据源  -->
-		<property name="typeAliasesPackage" value="com.yc.novelist.eneity"></property><!-- 采用别名的实体类的包 -->
-		<property name="mapperLocations" value="classpath:mapper/*Mapper.xml"></property><!--配置映射文件  -->
+	<property name="driverClassName" value="${jdbc.driverClassName}" />
+	<property name="url" value="${jdbc.url}" />
+	<property name="username" value="${jdbc.username}" />
+	<property name="password" value="${jdbc.password}" />
+	<property name="initialSize" value="${jdbc.initialSize}" />
+	<property name="maxTotal" value="${jdbc.maxTotal}" />
+	<property name="minIdle" value="${jdbc.minIdle}" />
 	</bean>
 	
-	<!--配置mybatis的mapper bean -->
-	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.yc.novelist.mapper"></property><!--配置映射接口所在包  -->
-		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property><!-- 映射sqlSessionFactory在spring容器中的bean的id值-->
-	</bean>
-	
-	<!--邮件发送处理bean  -->
+	<!-- 邮件发送处理bean -->
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
-		<property name="host" value="${mail.smtp.host}"></property>
-		<property name="username" value="${mail.smtp.username}"></property>
-		<property name="password" value="${mail.smtp.password}"></property>
-		<property name="javaMailProperties" >
+		<property name="host" value="${mail.smtp.host}"/>
+		<property name="username" value="${mail.smtp.username}"/>
+		<property name="password" value="${mail.smtp.password}"/>
+		<property name="javaMailProperties">
 			<props>
 				<prop key="mail.smtp.auth">${mail.smtp.auth}</prop>
 				<prop key="mail.smtp.timeout">${mail.smtp.timeout}</prop>
 			</props>
 		</property>
+	
 	</bean>
 	
-	<!--响应处理，视图处理器配置-->
-	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/page/"></property>
-		<property name="suffix" value=".jsp"></property>
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<property name="dataSource" ref="dataSource"/><!-- 数据源 -->
+	<property name="typeAliasesPackage" value="com.yc.novelist.eneity"/><!-- 采用别名 的实体类的包 -->
+	<property name="mapperLocations" value="classpath:mapper/*Mapper.xml"/><!-- 配置映射文件 --> 
 	</bean>
-
-
-	<!--默认静态资源的请求处理  -->
-	<mvc:default-servlet-handler />
 	
-	<mvc:annotation-driven />
-	
-<!-- 	<bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
-		<property name="converters">
-			<set>
-				<ref bean="employeeConversion"/>
-			</set>
-		</property>
-	</bean> -->
-</beans>
+	<!-- 配置mybatis的mapper bean -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+	<property name="basePackage" value="com.yc.novelist.mapper"/><!-- 配置映射接口所在包 -->
+	<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/><!-- 映射sqlSessionFactory在spring容器中的bean的ID值 -->
+	</bean>
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/page/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	 <!-- 默认静态资源的请求处理 -->
+        <mvc:default-servlet-handler/>
+        <mvc:annotation-driven/>
+</beans>             
