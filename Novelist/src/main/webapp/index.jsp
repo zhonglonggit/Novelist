@@ -15,7 +15,7 @@
 <link rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet"  href="css/style.css"type="text/css" />
 <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="js/BookType.js"></script>
+<script type="text/javascript" src="js/Book.js"></script>
 </head>
 
 <body class="main">
@@ -35,15 +35,7 @@
 	<!-- Logo end -->
 	<!-- menu -->
 	<div id="divmenu">
-		<!-- <a href="page/product_list.jsp">文学</a> <a href="page/product_list.jsp">生活</a>
-		<a href="page/product_list.jsp">计算机</a> <a
-			href="page/product_list.jsp">外语</a> <a href="page/product_list.jsp">经管</a>
-		<a href="page/product_list.jsp">励志</a> <a href="page/product_list.jsp">社科</a>
-		<a href="page/product_list.jsp">学术</a> <a href="page/product_list.jsp">少儿</a>
-		<a href="page/product_list.jsp">艺术</a> <a href="page/product_list.jsp">原版</a>
-		<a href="page/product_list.jsp">科技</a> <a href="page/product_list.jsp">考试</a>
-		<a href="page/product_list.jsp">生活百科</a> <a
-			href="page/product_list.jsp" style="color: #FFFF00">全部商品目录</a> -->
+	
 	</div>
 	<!-- menu end -->
 	<!-- search -->

@@ -15,7 +15,7 @@
 <link rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet"  href="css/style.css"type="text/css"/>
 <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="js/BookType.js"></script>
+<script type="text/javascript" src="js/Book.js"></script>
 </head>
 
 <body class="main">

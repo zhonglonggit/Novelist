@@ -14,8 +14,7 @@
 <link rel="shortcut icon" href="favicon.ico" >
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="js/BookType.js"></script>
-<script type="text/javascript" src="js/BookInfo.js"></script>
+<script type="text/javascript" src="js/Book.js"></script>
 </head>
 
 <body class="main">
@@ -55,12 +54,13 @@
 <div id="divpagecontent">
   <table width="100%" border="0" cellspacing="0">
     <tr>
-      <td width="25%"><table width="100%" border="0" cellspacing="0" style="margin-top:30px">
+      <td width="25%"><table width="100%" border="0" cellspacing="0" style="margin-top:30px" class="bookType">
         <tr>
           <td class="listtitle">分类</td>
         </tr>
       </table></td>
       <td>
+      
       <div style="text-align:right; margin:5px 10px 5px 0px"><a href="page/index.jsp">首页</a>&nbsp;&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;&nbsp;旅游&nbsp;&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;&nbsp;图书列表</div>
         
 		
@@ -76,9 +76,10 @@
 		  
 	
 		  
-		  <table cellspacing="0" class="booklist">
+		  <div class="booklist" id="booklistt">
+        		
+          </div>	
           
-          </table>	
           <div class="pagination"> 
             <ul> 
             <li class="disablepage"><< 上一页 
