@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==>  Preparing: select * from bookinfo where bookName=? 
 信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==> Parameters: 动物世界(String)
 信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==>  Preparing: select * from bookinfo where bookName=? 
@@ -73,3 +74,13 @@
 信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==>  Preparing: select * from bookinfo where bookAuthor LIKE CONCAT(CONCAT('%', ?), '%') 
 信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==> Parameters: 黎(String)
 信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - <==      Total: 6
+=======
+信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==>  Preparing: select * from Admin where aname=?,pwd=? 
+信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==> Parameters: mm(String), a(String)
+信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==>  Preparing: select * from admin where aname=?,pwd=? 
+信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==> Parameters: mm(String), a(String)
+信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==>  Preparing: select * from admin where aname=?,pwd=? 
+信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==> Parameters: mm(String), a(String)
+信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==>  Preparing: select * from admin where aname=? and pwd=? 
+信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==> Parameters: mm(String), a(String)
+>>>>>>> branch 'master' of ssh://git@github.com/zhonglonggit/Novelist.git

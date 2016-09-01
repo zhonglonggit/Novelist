@@ -6,7 +6,11 @@
 	
 
 	<select id="findAdmin" parameterType="Admin" resultType="Admin" >
-		select * from Admin where aname=#{aname},pwd=#{pwd}
+		select * from admin where aname=#{aname} and pwd=#{pwd}
+	</select>
+	
+	<select id="getAllAdmin" resultType="Admin" >
+		select * from admin 
 	</select>
 	
 </mapper>
