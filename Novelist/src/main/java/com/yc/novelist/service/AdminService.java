@@ -10,4 +10,6 @@ public interface AdminService {
 
 	List<Admin> findAllAdmin();
 
+	int addAdmin(Admin admin);
+
 }

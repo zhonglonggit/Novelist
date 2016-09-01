@@ -8,6 +8,8 @@ create table admin(
 drop sequence seq_aid;
 create sequence seq_aid start with 1101;
 insert into admin values(seq_aid.nextval,'mm','a');
+insert into admin values(seq_aid.nextval,'xx','a');
+delete from admin where aid=1121;
 select * from admin;
 
 drop table userinfo;

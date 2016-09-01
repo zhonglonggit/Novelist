@@ -3,14 +3,16 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.yc.novelist.mapper.AdminMapper">
-	
 
-	<select id="findAdmin" parameterType="Admin" resultType="Admin" >
+
+	<select id="findAdmin" parameterType="Admin" resultType="Admin">
 		select * from admin where aname=#{aname} and pwd=#{pwd}
 	</select>
-	
-	<select id="getAllAdmin" resultType="Admin" >
-		select * from admin 
+
+	<select id="getAllAdmin" resultType="Admin">
+		select * from admin
 	</select>
-	
+	<insert id="addAdmins" parameterType="Admin">
+	insert into admin values(seq_aid.nextval,aname=#{aname},pwd=#{pwd})
+	</insert>
 </mapper>

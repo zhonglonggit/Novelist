@@ -119,16 +119,16 @@
 	    		
 	    		//获取正在被编辑的数据
 	    		var rows=obj.datagrid("getChanges")[0];
-	    		
+	    		console.info(rows);
 	    		if(rows==undefined){
 	    			obj.datagrid("rejectChanges");//回滚所有的数据
 	    			obj.datagrid("endEidit",editRow);//关闭正在被编辑的行
 	    			editRow=undefined;
 	    		}else{
 	    			//保存到数据库
-	    			rows["op"]="addAdmins";
-	    			
-	    			$.post("../../adminsServlet",rows,function(data){
+/* 	    			rows["op"]="addAdmins";
+ */	    			
+	    			$.post("admin/addAdmin",rows,function(data){
 	    				if(data>0){
 	    					$.messager.show({
 	    						title:'成功提示',

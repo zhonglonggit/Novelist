@@ -35,11 +35,18 @@ public class AdminHandler {
 	
 	@RequestMapping("/findAllAdmin")
 	public void findAllAdmin(PrintWriter out){
-		System.out.println("ss");
 		Gson gson=new Gson();
 		List<Admin> admins=adminService.findAllAdmin();
 		System.out.println(admins);
 		out.println(gson.toJson(admins));
+		out.flush();
+		out.close();
+	}
+	
+	@RequestMapping(value="/addAdmin",method=RequestMethod.POST)
+	public void addAdmin(Admin admin,PrintWriter out){
+		System.out.println("admin==="+admin);
+		out.println(adminService.addAdmin(admin));
 		out.flush();
 		out.close();
 	}

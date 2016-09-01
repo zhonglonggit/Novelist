@@ -21,5 +21,10 @@ public class AdminServiceImplTest {
 		Admin admin=adminService.login(new  Admin(1101,"mm","a"));
 		System.out.println(admin);
 	}
+	@Test
+	public void adds() {
+	int res=adminService.addAdmin(new Admin("hh","a"));
+		System.out.println(res);
+	}
 
 }
