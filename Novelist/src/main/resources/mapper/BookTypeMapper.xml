@@ -3,14 +3,22 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.yc.novelist.mapper.BookTypeMapper">
-	
-
-	<select id="getFindType" resultType="BookType" >
-		select * from (select rownum rn,b.* from booktype b)where 14>rn
+	<select id="findAllBookTypes" resultType="BookType">
+		select * from BookType 
 	</select>
+	<insert id="addBookType" parameterType="BookType">
+		insert into booktype values(seq_booktype.nextval,#{btName},0)
+	</insert>
 	
-	<select id="getFindAllType" resultType="BookType" >
-		select * from booktype
-	</select>
+	<delete id="delBookTypes" parameterType="java.util.List">
+	delete from booktype where btId in
+		<foreach collection="list" index="index" item="item" open="("
+			separator="," close=")">
+			#{item}
+		</foreach>
+	</delete>
 	
+	<update id="updateBookTypes" parameterType="BookType">
+		update booktype set btName=#{btName} where btId=#{btId} and  parent_id=0
+	</update>
 </mapper>

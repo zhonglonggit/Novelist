@@ -1,3 +1,4 @@
+
 package com.yc.novelist.service.impl;
 
 import static org.junit.Assert.*;
@@ -22,14 +23,14 @@ public class BookTypeServiceImplTest {
 	
 	@Test
 	public void testFindType() {
-		List<BookType> type=bookTypeService.findType();
+		List<BookType> type=bookTypeService.findAllBookTypes();
 		System.out.println(type);
 		assertNotNull(type);
 	}
 
 	@Test
 	public void testFindAllType() {
-		List<BookType> type=bookTypeService.findAllType();
+		List<BookType> type=bookTypeService.findAllBookTypes();
 		System.out.println(type);
 		assertNotNull(type);
 	}

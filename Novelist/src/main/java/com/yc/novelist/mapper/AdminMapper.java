@@ -10,4 +10,11 @@ public interface AdminMapper {
 
 	List<Admin> getAllAdmin();
 
+	int addAdmins(Admin admin);
+
+	int delAdmins(List<Integer> aid);
+
+
+	int updateAdmins(Admin admin);
+
 }

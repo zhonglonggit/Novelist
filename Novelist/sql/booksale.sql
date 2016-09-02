@@ -2,12 +2,14 @@
 drop table admin;
 create table admin(
 	aid int primary key,
-	aname varchar2(20),
+	aname varchar2(20)not null ,
 	pwd varchar2(20)
 );
 drop sequence seq_aid;
 create sequence seq_aid start with 1101;
 insert into admin values(seq_aid.nextval,'mm','a');
+delete from admin where aname='hh'
+delete from admin where aid=1121;
 select * from admin;
 
 drop table userinfo;
@@ -34,6 +36,8 @@ create table booktype(
        btName varchar2(50) not null,
        parent_id int not null
 );
+
+select * from BookType 
 select * from booktype where btId=3 or btId in (select btId from booktype where  parent_id=1);
 
 select * from (select rownum rn,b.* from booktype b)where 14>rn;
@@ -69,6 +73,7 @@ create table bookinfo(
        bookAuthor  varchar2(100) not null,--作者
        bookDate date,--出版日期
        salePrice number(10,2),--价钱
+
        bookPress varchar2(100), --出版社
        bookDescription varchar2(800), --图书描述
        saleCount int default '0', --售出数量
