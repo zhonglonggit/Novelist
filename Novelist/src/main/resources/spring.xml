@@ -59,6 +59,6 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	 <!-- 默认静态资源的请求处理 -->
-        <mvc:default-servlet-handler/>
-        <mvc:annotation-driven/>
-</beans>             
+    <mvc:default-servlet-handler/>
+    <mvc:annotation-driven/>
+</beans>                     

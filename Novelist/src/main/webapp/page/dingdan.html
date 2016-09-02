@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>我的订单</title>
+</head>
+
+<body>
+<div class="head" style="width:100%;height:200px; background:#969;border-bottom:5px solid #ff3228;">
+	vv
+</div>
+
+<div class="body" style="width:100%;height:750px;background:#3F0; margin-top:30px;">
+	<div class="first" style="width:75%;height:750px;background:#CF0; margin-left:150px;">
+    	<div class="mydnew_break" style="width:100%;height:30px;border:1px solid #003; padding-top:20px;">
+			您现在的位置：<a href="#" style="text-decoration:none; a:hover{ text-decoration:underline;}">当当</a> > <span><a href="#" style="text-decoration:none;">我的当当</a></span> > <span>我的订单</span>        
+        </div>
+        <div class="mydang_left" style="width:180px;height:600px;border:1px solid #900;float:left;">
+        tt
+        </div>
+        <div class="centersidebar" style="width:815px;height:45px;border:1px solid #30C; margin-left:182px;">
+        gg
+        </div>
+        <div class="centersidebar" style="width:815px;height:640px;border:1px solid #900; margin-left:182px;">
+        	<div class="myddorder_tab" style="width:815px;height:25px;border:1px solid #399; padding-top:10px;">
+            	<a href="#" style="padding-left:10px; text-decoration:none;a:hover{text-decoration:underline;}"><span class=				                    "current">我的订单</span></a>
+                <a href="#" style="float:right; padding-right:10px; text-decoration:none;">订单回收站</a>
+            </div>
+            <div class="myddorder_search" style="width:800px;height:35px;border:1px solid #CC6;">
+            	<input id="searchKey" placeholder="商品名称、订单号、收货人姓名" style="width:200px;height:25px;
+                padding-left:5px; margin-left:520px; margin-top:5px;">
+                <a id="search" href="#" style="
+                width:50px;height:25px; padding-left:15px;
+                background:#999;border:1px solid #666;float:right; margin-right:10px;margin-top:6px; text-decoration:none;color:                 #fff;">搜索</a>
+            </div>
+           <div class="myddorder_tab" style="width:815px;height:300px; background:#FFF;">
+           <span></span>
+           <table class="order_list" cellspacing="0" cellpadding="0" style="width:815px;height:300px; background:#999; padding-bottom:100px; padding-left:30px;">
+           		<head>
+            	<tr class="">
+                	<td class="row01" style="padding-left:100px; width:170px;height:50;border:1px solid #009; margin-left:5px;font-size:14px;">商品信息</td>
+                    <td class="row02" style="padding-left:10px; width:80px;height:50;border:1px solid #F00;font-size:14px;">实付款</td>
+                    <td class="row03" style="padding-left:10px; width:80px;height:50;border:1px solid #666;font-size:14px;">订单信息</td>
+                    <td class="row04" style="padding-left:10px; width:95px;height:50;border:1px solid #F00;font-size:14px;"><div class="select_div"><select id="o_time" autocomplete="off" onchange="javascript:showOrders(1,1);" style="z-index: 0;">
+                    <option selected="selected" value="1">30天以内</option>
+                    <option value="2">3个月以内</option>
+                    <option value="3">2016年</option>
+                    <option value="4">2015年</option>
+                    <option value="5">更早的订单</option>
+            </select>
+                    </div></td>
+                    <td class="row05" style="padding-left:10px;width:95px;height:50;border:1px solid #666;"><div class="select_div"><select id="o_status" onchange="javascript:showOrders(1,1);" autocomplete="off" style="z-index: 0;">
+                    <option selected="" value="0">全部状态</option>
+                    <option value="1">待付款</option>
+                    <option value="5">待确认收货</option>
+                    <option value="6">待评价</option>
+                    <option value="2">交易进行中</option>
+                    <option value="3">交易成功</option>
+                    <option value="4">交易失败</option>
+                    </select>
+                    </div>
+                    </td>
+                    <td class="row06"  style="padding-left:20px;width:60px;height:50;border:1px solid #f00;">操作</td>
+                </tr>
+                </head>
+                <tbody>
+                	<tr>
+                    	<td colspan="6" style="background:#39F; padding-top:10px; padding-bottom:5px;">
+                        	<div class="fanye fanye_top" style="float:right;">
+                            	<a class="fanye_page fanye_none" href="javascript:void(0);"  style="text-decoration:none; ">
+                                	<span style="width:60px;height:30px;border:1px solid  #878787; background:#ff3228;font-size:14px;">下一页</span>
+                                </a>
+                                <a class="nonce" href="javascript:void(0);" style="text-decoration:none;">
+                               	    <span style="width:35px;height:10px; background:#0C3;">1 </span>
+                                </a>
+                                <a class="fanye_page fanye_none" href="javascript:void(0);"  style="text-decoration:none; ">
+                                	<span style="width:60px;height:30px;border:1px solid  #878787; background:#ff3228;font-size:14px;">上一页</span>
+                                </a>		
+                            </div>
+                            <label>
+                            	<span class="checkbox_none" style="font-size:14px;">
+                                    <input type="checkbox" name="unionselect" disabled="disabled" >
+                                    </span>
+                                    全选
+                            </label>
+                             <a class="btn_gr btn_gr_none" target="_blank" onclick="javascript: return unionPayCheck()" name="unionpaylink" href="javascript:void(0)" style="background-position: left -250px; width:150px;height:30px;border:1px solid #CCC; text-decoration:none; font-size:14px;">合并支付</a>
+            				<span class="order_prompt" style="font-size:14px;">提示：刚提交的订单可能无法马上显示，请您耐心等待。</span>
+                        </td>
+                    </tr>
+                    <tr class="order_number">
+                    	<td colspan="6" style=" padding-top:10px; padding-bottom:5px;">
+                        	<span class="f1">
+                            	<span class="checkbox_none">
+                                	<input id="ckb_parent_34044092170" type="checkbox" disabled="disabled">
+                                </span>
+                                <span class="icon shop_i"></span>
+                                <span class="number">
+                                    订单号：
+                                    <a name="orderlink" target="_blank" href="http://order.dangdang.com/orderdetails.aspx?orderid=34044092170#bg34044092170">34044092170</a>
+                                    </span>
+                            </span>
+                           <span class="zaixian" onclick="javascript:shopOnlineService(14730,34044092170,35.90)">
+                            <span class="onlines" style="display: block;"></span>
+                            </span>
+                            <span class="zaixian" title="系统暂时繁忙，请您稍后访问">
+                            <span class="offlines" style="display: none;"></span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td style="width:120px;height:100px;border:1px solid #F00; padding-left:10px;">
+                        	<div class="pic_box" style="width:100px;height:100px;border:1px solid #000;"><a>aaa</a></div>
+                        </td>
+                        <td style="width:120px;height:100px;border:1px solid #666; padding-left:10px;">aa</td>
+                        <td  style="width:120px;height:100px;border:1px solid #F00; padding-left:10px;">ss</td>
+                        <td style="width:120px;height:100px;border:1px solid #666; padding-left:10px;" >dd</td>
+                        <td  style="width:120px;height:100px;border:1px solid #F00; padding-left:10px;">ff</td>
+                        <td style="width:120px;height:100px;border:1px solid #666; padding-left:10px;">gg</td>
+                        </tr>
+                        <tr>
+                        	<td colspan="6" style=" padding-top:10px; padding-bottom:5px;">
+                                <div class="fanye" style="float:right;">
+                                <a class="fanye_page fanye_none" href="javascript:void(0);" style="text-decoration:none; ">
+                                <span style="width:60px;height:30px;border:1px solid  #878787; background:#ff3228;font-size:14px;">下一页</span>
+                                </a>
+                                <a class="nonce"  style="text-decoration:none;">
+                                <span style="width:35px;height:10px; background:#0C3;">1</span>
+                                </a>
+                                <a class="fanye_page fanye_none" href="javascript:void(0);"  style="text-decoration:none; ">
+                                <span style="width:60px;height:30px;border:1px solid  #878787; background:#ff3228;font-size:14px;">上一页</span>
+                                </a>
+                                </div>
+                                <label>
+                                <span class="checkbox_none">
+                                <input type="checkbox" name="unionselect" disabled="disabled">
+                                </span>
+                                全选
+                                </label>
+                                <a id="unionpaylink2" class="btn_gr btn_gr_none" target="_blank" onclick="javascript: return unionPayCheck()" style="display: none;" name="unionpaylink" href="#">合并支付</a>
+                                </td>
+
+                        </tr>
+                </tbody>
+                <footer>
+                <tr>
+                	<td colspan="6">
+                <div class="youhui" style="width:780px;height:300px;border:1px solid #000;margin-top:10px;">
+                	<div class="youhui01" style="width:100%;height:40px;border:1px solid #fff;">
+                    	<span>
+                        <p id="fp_title" style="font-size:14px;padding-left:10px;">24小时特惠</p>
+                        </span>
+                    </div>
+                    <div class="youhui02" style="width:100%;height:250px;border:1px solid #606;">
+                    
+                    </div>
+                </div>
+                </td>
+                </tr>
+                </footer>
+                </table>
+              
+            </div>
+           
+        </div>
+    </div>
+</div>
+
+<div class="footer" style="width:100%;height:150px; background:#666;"></div>
+
+
+</body>
+</html>

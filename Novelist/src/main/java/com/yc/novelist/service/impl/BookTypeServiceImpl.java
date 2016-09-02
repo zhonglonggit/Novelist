@@ -16,7 +16,7 @@ public class BookTypeServiceImpl implements BookTypeService {
 
 	@Override
 	public List<BookType> findAllBookTypes() {
-		return bookTypeMapper.findAllTypes();
+		return bookTypeMapper.findAllBookTypes();
 	}
 
 	@Override
