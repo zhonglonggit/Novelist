@@ -1,0 +1,6 @@
+信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==>  Preparing: select * from booktype 
+信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==> Parameters: 
+信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - <==      Total: 16
+信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==>  Preparing: select * from bookinfo 
+信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==> Parameters: 
+信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - <==      Total: 3
