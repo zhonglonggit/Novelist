@@ -22,7 +22,13 @@ public class Admin {
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
 	}
-	public Admin(String aname, String pwd) {
+
+	public Admin(Integer aid, String aname, String pwd) {
+		this.aid = aid;
+		this.aname = aname;
+		this.pwd = pwd;
+	}
+	public Admin(  String aname, String pwd) {
 		this.aname = aname;
 		this.pwd = pwd;
 	}

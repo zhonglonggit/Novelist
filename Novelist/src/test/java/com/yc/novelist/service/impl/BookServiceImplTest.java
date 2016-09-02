@@ -21,15 +21,24 @@ public class BookServiceImplTest {
 	private BookService  bookService;
 	@Test
 	public void testFindBook() {
-		List<Book> book = bookService.findBookName("动物世界");
+		List<Book> book = bookService.findBookName("中国");
 		System.out.println(book);
 		assertNotNull(book);
 	}
 	
+	
 	@Test
-	public void testFindBook02() {
-		List<Book> book = bookService.findBookByAuthor("霍顿");
-		System.out.println(book);
-		assertNotNull(book);
+	public void testFindBookAuthor() {
+		List<Book> bookAuthor = bookService.findBookByAuthor("黎");
+		System.out.println(bookAuthor);
+		assertNotNull(bookAuthor);
 	}
+	
+	@Test
+	public void testFindBookInfo() {
+		List<Book> bookInfo = bookService.findAllBookInfo();
+		System.out.println(bookInfo);
+		assertNotNull(bookInfo);
+	}
+	
 }

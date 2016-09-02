@@ -11,7 +11,7 @@
 <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
 <script type="text/javascript" src="js/jquery.KinSlideshow-1.2.1.min.js"></script>
 </head>
-<body style="background-color:#F6F9FB;">
+	<body style="background-color:#F6F9FB;">
 	<div style="width:900px; margin-bottom:20px;">
         <div class="" style=" height:130px;">
         	<img src="images/logo_login.png" style=" float:left; padding:20px 0px 40px 50px;"/>
@@ -61,7 +61,5 @@ text-decoration:underline;}">立即注册</a>
         <span><a href="#" target="_blank" rel="nofollow">京ICP证1000000001号</a></span>
         <span>出版物经营许可证 新出发京批字第直10000101号</span>
     </div>
-
-
 </body>
 </html>

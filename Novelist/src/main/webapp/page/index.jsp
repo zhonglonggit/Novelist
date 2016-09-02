@@ -10,6 +10,7 @@
 <link rel="stylesheet" type="text/css" media="all"  href="css/styles.css"/>
 <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
 <script type="text/javascript" src="js/jquery.KinSlideshow-1.2.1.min.js"></script>
+<script type="text/javascript" src="js/Book.js"></script>
 </head>
 <script type="text/javascript">
 	$(function() {

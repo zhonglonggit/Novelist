@@ -29,13 +29,13 @@
 </div>
 
 <div id="divmenu">
-<a href="page/product_list.jsp">文学</a>　　<a href="page/product_list.jsp">生活</a>　
-　<a href="page/product_list.jsp">计算机</a>　　<a href="page/product_list.jsp">外语</a>
-　　<a href="page/product_list.jsp">经管</a>　　<a href="page/product_list.jsp">励志</a>　
-　<a href="page/product_list.jsp">社科</a>　　<a href="page/product_list.jsp">学术</a>　
-　<a href="page/product_list.jsp">少儿</a>　　<a href="page/product_list.jsp">艺术</a>　
-　<a href="page/product_list.jsp">原版</a>　　<a href="page/product_list.jsp">科技</a>　
-　<a href="page/product_list.jsp">考试</a>　　<a href="page/product_list.jsp">生活百科</a>　　
+<a href="page/product_list.jsp">文学</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;　　<a href="page/product_list.jsp">生活</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;　
+　<a href="page/product_list.jsp">计算机</a>　&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;　<a href="page/product_list.jsp">外语</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+　　<a href="page/product_list.jsp">经管</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;　　<a href="page/product_list.jsp">励志</a>　&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+　<a href="page/product_list.jsp">社科</a>　&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;　<a href="page/product_list.jsp">学术</a>　&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+　<a href="page/product_list.jsp">少儿</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;　　<a href="page/product_list.jsp">艺术</a>　&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+　<a href="page/product_list.jsp">原版</a>　&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;　<a href="page/product_list.jsp">科技</a>　&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+　<a href="page/product_list.jsp">考试</a>　&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;　<a href="page/product_list.jsp">生活百科</a>　　&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 　　<a href="page/product_list.jsp" style="color:#FFFF00">全部商品目录</a></div>
 <div id="divsearch"><table width="100%" border="0" cellspacing="0">
   <tr>

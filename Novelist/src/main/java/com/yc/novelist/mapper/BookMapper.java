@@ -8,4 +8,6 @@ public interface BookMapper {
 	List<Book> getBookName(String bookName);
 	
 	List<Book> getBookAuthor(String bookAuthor);
-}
+	
+	List<Book> getAllBookInfo();
+ }

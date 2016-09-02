@@ -2,6 +2,10 @@ eclipse.preferences.version=1
 encoding//sql/booksale.sql=UTF-8
 encoding//src/main/java=utf-8
 encoding//src/main/resources=utf-8
+<<<<<<< HEAD
 encoding//src/main/webapp/image.jsp=UTF-8
+=======
+encoding//src/main/webapp/page/product_list.jsp=UTF-8
+>>>>>>> branch 'master' of git@github.com:zhonglonggit/Novelist.git
 encoding//src/test/java=utf-8
 encoding/<project>=utf-8
