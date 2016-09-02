@@ -30,7 +30,7 @@
 	    	text:"添加",
 	    	iconCls:"icon-add",
 	    	handler:function(){
-	    		/* currentOp="addAdmins"; */
+	    		 currentOp="addAdmin"; 
 	    		flag="添加";
 	    		if(editRow!=undefined){
 	    			obj.datagrid("rejectChanges");//回滚所有的数据
@@ -46,7 +46,7 @@
 	    	text:"修改",
 	    	iconCls:"icon-edit",
 	    	handler:function(){
-	    		currentOp="updateAdmins";
+	    		 currentOp="updateAdmin"; 
 	    		flag="修改";
 	    		var rows=obj.datagrid("getChecked")[0];
 	    		if(rows!=undefined){
@@ -85,10 +85,10 @@
 	    					}
 	    					aids+=rows[i].aid;
 	    					//发送请求到数据库请求删除
-	    					$.post("../../adminsServlet",{op:"delAdmins",aid:aids},function(data){
+	    					$.post("admin/delAdmin",{"aids":aids},function(data){//{op:"delAdmins",aid:aids},
 	    						if(data>0){
 	    							$.messager.show({title:'成功提示',
-	    								msg:'新闻类型删除成功...',
+	    								msg:'管理员删除成功...',
 	    								timeout:2000,
 	    								showType:'slide'
 	    								});
@@ -127,12 +127,12 @@
 	    		}else{
 	    			//保存到数据库
 /* 	    			rows["op"]="addAdmins";
- */	    			
-	    			$.post("admin/addAdmin",rows,function(data){
+ */    			alert(currentOp);
+	    			$.post("admin/"+currentOp,rows,function(data){
 	    				if(data>0){
 	    					$.messager.show({
 	    						title:'成功提示',
-	    						msg:'新闻类型'+flag+'成功',
+	    						msg:'管理员'+flag+'成功',
 	    						timeout:2000,
 	    						showType:'slide'
 	    					});
@@ -142,7 +142,7 @@
 	    					obj.datagrid("rejectChanges");//回滚所有的数据
 			    			obj.datagrid("endEidit",editRow);//关闭正在被编辑的行
 	    				}else{
-	    					$.messager.alert('失败提示','新闻'+flag+'失败...','error');
+	    					$.messager.alert('失败提示','管理员'+flag+'失败...','error');
 	    				}
 	    			});
 	    		}

@@ -2,13 +2,13 @@
 drop table admin;
 create table admin(
 	aid int primary key,
-	aname varchar2(20),
+	aname varchar2(20)not null ,
 	pwd varchar2(20)
 );
 drop sequence seq_aid;
 create sequence seq_aid start with 1101;
 insert into admin values(seq_aid.nextval,'mm','a');
-insert into admin values(seq_aid.nextval,'xx','a');
+delete from admin where aname='hh'
 delete from admin where aid=1121;
 select * from admin;
 
@@ -37,6 +37,8 @@ create table booktype(
        btName varchar2(50) not null,
        parent_id int not null
 );
+
+select * from BookType 
 select * from booktype where btId=3 or btId in (select btId from booktype where  parent_id=1);
 
 
@@ -72,6 +74,7 @@ create table bookinfo(
        bookPress varchar2(20), --出版社
        bookDescription varchar2(500), --图书描述
        saleCount int default '0' --售出数量
+       
 );
 create sequence seq_bookinfo  start with 10001;
 insert into bookinfo values(seq_bookinfo.nextval,'动物世界','黎茜茜',null,100,'兰州大学出版社',null,0);

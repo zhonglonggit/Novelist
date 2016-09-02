@@ -12,4 +12,9 @@ public interface AdminService {
 
 	int addAdmin(Admin admin);
 
+	int delAdmin(List<Integer> aid);
+
+	int updateAdmin(Admin admin);
+
+
 }

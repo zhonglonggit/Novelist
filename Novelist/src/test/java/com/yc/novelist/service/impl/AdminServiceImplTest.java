@@ -26,5 +26,9 @@ public class AdminServiceImplTest {
 	int res=adminService.addAdmin(new Admin("hh","a"));
 		System.out.println(res);
 	}
+	
+	@Test
+	public void delAdmin(Integer aid) {
+	}
 
 }

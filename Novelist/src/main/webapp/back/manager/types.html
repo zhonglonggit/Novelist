@@ -7,8 +7,8 @@
 	var flag;
 
 	obj=$('#types_data').datagrid({    
-		    url:'../../newTypes',
-		    queryParams: {op:'findAllTypes'	},
+		    url:'bookType/findAllBookType',
+		    /* queryParams: {op:'findAllTypes'	}, */
 		    fitColumns:true,
 		    striped:true,
 		    loadMsg:"数据加载中...",
@@ -17,18 +17,19 @@
 		    pageNumber:1,
 		    pageSize:5,
 		    pageList:[5,10,15,20,30,3],
-		    sortName:'tid',
+		    sortName:'btId',
 		    remoteSort:false,
 		    columns:[[    
-				{field:'tids',title:'',width:100,align:'center',checkbox:true},
-		        {field:'tid',title:'新闻类型编号',width:100,align:'center',sortable:true},    
-		        {field:'tname',title:'新闻类型名称',width:100,align:'center',editor:{type:"text",options:{requires:true}}},    
-		    ]],
+				{field:'btids',title:'',width:100,align:'center',checkbox:true},
+		        {field:'btId',title:'图书类型编号',width:80,align:'center',sortable:true},    
+		        {field:'btName',title:'图书名称',width:80,align:'center',editor:{type:"text",options:{requires:true}}},
+ 		        {field:'parent_id',title:'图书父类编号',width:80,align:'center',sortable:true},
+ 		    ]],
 		    toolbar:[{
 		    	text:"添加",
 		    	iconCls:"icon-add",
 		    	handler:function(){
-		    		currentOp="addNewsTypes";
+		    		currentOp="addBookType";
 		    		flag="添加";
 		    		if(editRow!=undefined){
 		    			obj.datagrid("rejectChanges");//回滚所有的数据
@@ -44,7 +45,7 @@
 		    	text:"修改",
 		    	iconCls:"icon-edit",
 		    	handler:function(){
-		    		currentOp="updateType";
+		    		currentOp="updateBookTypes";
 		    		flag="修改";
 		    		var rows=obj.datagrid("getChecked")[0];
 		    		if(rows!=undefined){
@@ -77,16 +78,16 @@
 		    		if(rows!=undefined){
 		    			$.messager.confirm('信息确认','你确定要删除选中的数据吗',function(rs){
 		    				if(rs){
-		    					var tids="";
+		    					var btIds="";
 		    					for(var i=0;i<rows.length-1;i++){
-		    						tids+=rows[i].tid+",";
+		    						btIds+=rows[i].btId+",";
 		    					}
-		    					tids+=rows[i].tid;
+		    					btIds+=rows[i].btId;
 		    					//发送请求到数据库请求删除
-		    					$.post("../../newTypes",{op:"delNewsType",tid:tids},function(data){
+		    					$.post("bookType/delBookTypes",{"btId":btIds},function(data){
 		    						if(data>0){
 		    							$.messager.show({title:'成功提示',
-		    								msg:'新闻类型删除成功...',
+		    								msg:'图书类型删除成功...',
 		    								timeout:2000,
 		    								showType:'slide'
 		    								});
@@ -94,9 +95,9 @@
 		    							obj.datagrid("reload");//刷新表格
 		    							
 		    						}else{
-		    							$.messager.alert('失败提示','新闻类型删除失败...','error');
+		    							$.messager.alert('失败提示','图书类型删除失败...','error');
 		    						}
-		    					});
+		    					},"json");
 		    				}else{
 		    					return;
 		    					}
@@ -124,13 +125,13 @@
 		    			editRow=undefined;
 		    		}else{
 		    			//保存到数据库
-		    			rows["op"]="addNewsTypes";
+		    			/* rows["op"]="addNewsTypes"; */
 		    			
-		    			$.post("../../newTypes",rows,function(data){
+		    			$.post("bookType/"+currentOp,rows,function(data){
 		    				if(data>0){
 		    					$.messager.show({
 		    						title:'成功提示',
-		    						msg:'新闻类型'+flag+'成功',
+		    						msg:'图书类型'+flag+'成功',
 		    						timeout:2000,
 		    						showType:'slide'
 		    					});
@@ -140,7 +141,7 @@
 		    					obj.datagrid("rejectChanges");//回滚所有的数据
 				    			obj.datagrid("endEidit",editRow);//关闭正在被编辑的行
 		    				}else{
-		    					$.messager.alert('失败提示','新闻'+flag+'失败...','error');
+		    					$.messager.alert('失败提示','图书'+flag+'失败...','error');
 		    				}
 		    			});
 		    		}
