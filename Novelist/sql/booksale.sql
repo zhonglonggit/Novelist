@@ -20,13 +20,14 @@ create table userinfo(
        userPassword varchar2(20) not null,--用户密码
        userSex varchar2(5) default '男' ,
  	    userEmail  varchar2(50), --邮箱账号
-       userTelphone number(15),
-       userAddress varchar2(50) 
+       userTelphone number(15),--会员电话
+       userAddress varchar2(50),--会员地址
+       photo varchar2(1000)--会员头像
 );
 
+drop sequence seq_userinfo;
 create sequence seq_userinfo  start with 1002;
-insert into  userinfo values (1001,'xqq','a','男',null,null,null);
-
+insert into  userinfo values (seq_userinfo.nextval,'xqq','a','男',null,null,null,null);
 select * from userinfo;
 
 drop table bookstype;
@@ -39,32 +40,9 @@ create table booktype(
 
 select * from BookType 
 select * from booktype where btId=3 or btId in (select btId from booktype where  parent_id=1);
-
 select * from (select rownum rn,b.* from booktype b)where 14>rn;
-
 create sequence seq_booktype  start with 1;
-insert into booktype values(seq_booktype.nextval,'文学',0);
-insert into booktype values(seq_booktype.nextval,'生活',0);
-insert into booktype values(seq_booktype.nextval,'计算机',0);
-insert into booktype values(seq_booktype.nextval,'外语',0);
-insert into booktype values(seq_booktype.nextval,'经管',0);
-insert into booktype values(seq_booktype.nextval,'励志',0);
-insert into booktype values(seq_booktype.nextval,'社科',0);
-insert into booktype values(seq_booktype.nextval,'学术',0);
-insert into booktype values(seq_booktype.nextval,'艺术',0);
-insert into booktype values(seq_booktype.nextval,'科技',0);
-insert into booktype values(seq_booktype.nextval,'考试',0);
-insert into booktype values(seq_booktype.nextval,'生活百科',0);
-
-insert into booktype values(seq_booktype.nextval,'Java',1);
-insert into booktype values(seq_booktype.nextval,'C++',1);
-insert into booktype values(seq_booktype.nextval,'C语言',1);
-insert into booktype values(seq_booktype.nextval,'计算机基础',1);
-
-
-
 select * from booktype;
-
 drop table bookinfo;
 --图书信息表
 create table bookinfo(

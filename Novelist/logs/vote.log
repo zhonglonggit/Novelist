@@ -1,11 +1,3 @@
-信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==>  Preparing: insert into admin values(seq_aid.nextval,aname=?,pwd=?) 
-信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==> Parameters: hh(String), a(String)
-信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==>  Preparing: insert into admin values(seq_aid.nextval,aname=?,pwd=?) 
-信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==> Parameters: hh(String), a(String)
-信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==>  Preparing: insert into admin values(seq_aid.nextval,aname=?,pwd=?) 
-信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==> Parameters: hh(String), a(String)
-信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==>  Preparing: insert into admin values(seq_aid.nextval,aname=?,pwd=?) 
-信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==> Parameters: hh(String), a(String)
-信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==>  Preparing: insert into admin values(seq_aid.nextval,?,?) 
-信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==> Parameters: hh(String), a(String)
-信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - <==    Updates: 1
+信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==>  Preparing: select * from userinfo 
+信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - ==> Parameters: 
+信息: DEBUG BaseJdbcLogger (BaseJdbcLogger.java:145) - <==      Total: 2
