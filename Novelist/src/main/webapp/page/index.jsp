@@ -43,7 +43,7 @@
 	<!-- 头部 -->
 	<div class="divhead">
     	<div class="headyork">
-        	<a href="About_us/about.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;某某上市公司</a>
+        	<a href="../dd/About_us/about.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;某某上市公司</a>
         </div>
        
     	<div class="headmenu">
