@@ -75,7 +75,9 @@ create table bookinfo(
     	btId int
            constraint FK_bookinfo_booktype_btId references booktype(btId)   
 );
+alter table bookinfo add bphoto varchar2(1000);
 create sequence seq_bookinfo  start with 10001;
+select * from bookinfo;
 insert into bookinfo values(seq_bookinfo.nextval,'动物世界','黎茜茜',null,100,'兰州大学出版社',null,0,2);
 insert into bookinfo values(seq_bookinfo.nextval,'Java2入门经典','霍顿',to_date('2000-11-26','yyyy-mm-dd'),118.5,'机械工业出版社','《Java2入门经典》(JDK5)综合介绍了使用J2SE(Java 2 Standard Edition)5．0
 或更高版本开发动态程序的过程，阐述了Java语言的各个方面，包括Java语言结构
@@ -83,7 +85,7 @@ insert into bookinfo values(seq_bookinfo.nextval,'Java2入门经典','霍顿',to
 以期帮助读者掌握Java语言的最新特性和Java类库中主要的功能包，积累Java应用
 环境的使用经验，并在核心技术领域打下坚实的基础。《Java2入门经典》(JDK5)系
 统全面、浅显易懂，非常适合没有任何编程经验的初学者阅读，也可作为软件开发
-人员和高校师生的必备参考书。',0,3);
+人员和高校师生的必备参考书。',0,3,'');
 insert into bookinfo values(seq_bookinfo.nextval,'中国自助游','《中国自助游》编辑部 ',to_date('2010-10-26','yyyy-mm-dd'),200,'陕西师范大学出版社','中国自助游：是一本为真正渴望发现旅游乐趣的人准备的指南。由资深旅游者和
 当地旅游局提供千锤百炼的第一手资料，并以更深入、更细致的态度，更务实、
 更专业的旅游信息。',0,28);
