@@ -171,10 +171,3 @@ create table order(
 );
 
 select * from userinfo where userName ='xqq' and userPassword='a';
-
-
-
-
-
-
-

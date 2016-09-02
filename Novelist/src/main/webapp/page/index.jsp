@@ -1,139 +1,147 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <base href="/Novelist/">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<meta content="all" name="robots" />
-<meta name="author" content="Fisher" />
-<meta name="Copyright"
-	content="Copyright 2007-2008, 版权所有 www.reefdesign.cn" />
-<meta name="description" content="reefdesign" />
-<meta name="keywords" content="reefdesign" />
-<title>电子书城</title>
+<meta charset="utf-8" />
+<title>模板</title>
 <link rel="shortcut icon" href="favicon.ico">
-<link rel="stylesheet"  href="css/style.css"type="text/css"/>
-<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<link rel="stylesheet" type="text/css" media="all"  href="css/styles.css"/>
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="js/jquery.KinSlideshow-1.2.1.min.js"></script>
 <script type="text/javascript" src="js/Book.js"></script>
 </head>
-
+<script type="text/javascript">
+	$(function() {
+		$("#KinSlideshow").KinSlideshow({
+			moveStyle : "left", //设置切换方向为左
+			intervalTime : 2, //设置时间间隔为2秒 默认时间间隔为5秒
+			mouseEvent : "mouseover", //设置鼠标事件为划过切换  【默认鼠标点击是切换】
+			titleFont : {
+				TitleFont_size : 14,
+				TitleFont_color : "pink"
+			},
+			mouseSpeedTime : 200,//切换一张图片 所需要的时间
+			isHasTitleBar : false, //是否显示标题背景  true|false  默认为  true
+			isHasTitleFont : false, //是否显示标题文字  默认为true
+			isHasBtn : true, //是否显示按钮
+			btn : {
+				btn_bgColor : "#666",
+				btn_bgHoverColor : "#CC0000",
+				btn_fontColor : "pink",
+				btn_fontHoverColor : "black",
+				btn_borderColor : "pink",
+				btn_borderHoverColor : "#CCC",
+				btn_borderWidth :1,
+				btn_bgAlpha :.7
+			}
+		//按钮样式设置 （isHasBtn = true 前提下启用）
+		})
+	});
+</script>
 <body class="main">
-	<!-- Logo -->
-	<div id="divhead">
-		<table cellspacing="0" class="headtable">
-			<tr>
-				<td><a href="index.jsp"><img src="images/logo.gif"
-						width="95" height="30" border="0" /></a></td>
-				<td style="text-align: right"><img src="images/cart.gif"
-					width="26" height="23" style="margin-bottom: -4px" />&nbsp; <a
-					href="page/cart.jsp">购物车</a> | <a href="#">帮助中心</a> | <a
-					href="page/login.jsp">我的帐户</a> | <a href="page/register.jsp">新用户注册</a></td>
-			</tr>
-		</table>
-	</div>
-	<!-- Logo end -->
-	<!-- menu -->
-	<div id="divmenu">
-		<!-- <a href="page/product_list.jsp">文学</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="page/product_list.jsp">生活</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<a href="page/product_list.jsp">计算机</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
-			href="page/product_list.jsp">外语</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="page/product_list.jsp">经管</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<a href="page/product_list.jsp">励志</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="page/product_list.jsp">社科</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<a href="page/product_list.jsp">学术</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="page/product_list.jsp">少儿</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<a href="page/product_list.jsp">艺术</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="page/product_list.jsp">原版</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<a href="page/product_list.jsp">科技</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="page/product_list.jsp">考试</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<a href="page/product_list.jsp">生活百科</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-			href="page/product_list.jsp" style="color: #FFFF00">全部商品目录</a> -->
-	</div>
-	<!-- menu end -->
-	<!-- search -->
-	<div id="divsearch">
-		<table width="100%" border="0" cellspacing="0">
-			<tr>
-				<td style="text-align: right; padding-right: 220px"><input
-					type="text" name="textfield" class="inputtable" /> <!--<input name="searchbutton" type="image" src="images/serchbutton.gif" style=" margin-bottom:-4px"/>-->
-					<a href="page/search.jsp"><img src="images/serchbutton.gif"
-						border="0" style="margin-bottom: -4px" /></a></td>
-			</tr>
-		</table>
-
-	</div>
-	<!-- search end -->
-	<!-- 广告   -->
-	<div id="divad">
-		<img src="ad/index_ad.jpg" />
-	</div>
-	<!-- 广告  end -->
-
-	<!-- 正文   -->
-	<div id="divcontent">
-		<table width="900px" border="0" cellspacing="0">
-			<tr>
-				<td width="497"><img src="images/billboard.gif" width="497"
-					height="38" />
-					<table cellspacing="0" class="ctl">
-						<tr>
-							<td>&middot;<a href="page/news.jsp" style="color: #000000">图书3折起，支持在线浏览
-									先看再买不后悔,任何商品免费送货</a></td>
-						</tr>
-						<tr>
-							<td>&middot;<a href="page/news.jsp" style="color: #000000">Lonely
-									Planet 已出版600多种旅行指南，几乎覆盖了全世界的每个角落。</a></td>
-						</tr>
-						<tr>
-							<td>&middot;<a href="page/news.jsp" style="color: #000000">2007年中旅游图书畅销榜速递
-									中国游,世界游,旅游图书全部7折封顶</a></td>
-						</tr>
-						<tr>
-							<td>&middot;<a href="page/news.jsp" style="color: #000000">50万种图书3折,百货团购价热卖
-									畅销榜新书速递,促销天天有</a></td>
-						</tr>
-						<tr>
-							<td>&middot;<a href="page/news.jsp" style="color: #000000">50万种图书3折,百货团购价热卖
-									畅销榜新书速递,促销天天有</a></td>
-						</tr>
-					</table></td>
-				<td style="padding: 5px 15px 10px 40px"><table width="100%"
-						border="0" cellspacing="0">
-						<tr>
-							<td><img src="images/hottitle.gif" width="126" height="29" /></td>
-						</tr>
-					</table>
-					<table width="100%" border="0" cellspacing="0">
-						<tr>
-							<td style="width: 50; text-align: center"><a href="page/info.jsp"><img
-									src="bookcover/travelbook.jpg" width="102" height="130"
-									border="0" /></a><br /> <a href="page/info.jsp">TravelBook<br />
-									作者:Lonley Plant
-							</a></td>
-							<td style="width: 50; text-align: center"><a href="page/info.jsp"><img
-									src="bookcover/java2.jpg" width="102" height="130" border="0" /></a><br />
-								<a href="page/info.jsp">Java2入门经典(JDK5) <br /> 作者:(美)霍顿
-							</a></td>
-						</tr>
-					</table></td>
-			</tr>
-		</table>
-	</div>
-	<!-- 正文 end   -->
-
-	<!-- footer -->
-	<div id="divfoot">
-		<table width="100%" border="0" cellspacing="0">
-			<tr>
-				<td rowspan="2" style="width: 10%"><img
-					src="images/bottomlogo.gif" width="195" height="50"
-					style="margin-left: 175px" /></td>
-				<td style="padding-top: 5px; padding-left: 50px"><a href="#"><font
-						color="#747556"><b>CONTACT US</b></font></a></td>
-			</tr>
-			<tr>
-				<td style="padding-left: 50px"><font color="#CCCCCC"><b>COPYRIGHT
-							2008 &copy; eShop All Rights RESERVED.</b></font></td>
-			</tr>
-		</table>
-	</div>
-	<!-- footer end -->
-
+	<!-- 头部 -->
+	<div class="divhead">
+    	<div class="headyork">
+        	<a href="../dd/About_us/about.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;某某上市公司</a>
+        </div>
+       
+    	<div class="headmenu">
+        	<li><a href="#">我的订单</a></li>
+            <li><a href="#">原创征文</a></li>
+            <li><a href="#">我的当当</a></li>
+            <li><a href="#">客户服务</a></li>
+        </div>
+        <div class="headlogin">
+        	欢迎光临当当，<a href="#">&nbsp;请登录&nbsp;&nbsp;</a>成为会员
+        </div>
+    </div>
+    <!-- 搜索 -->
+    <div class="divsearch">
+    	<div class="divsearch_logo"><img src="images/DDlogoNEW.gif"/></div>
+        <div class="divsearch_seek">
+        	<div class="divsearch_seek_foun1" >
+            <input type="text" id="seek" placeholder="书籍一折起包邮！"/>
+            </div>
+        	<div class="divsearch_seek_foun" ><a href="#">搜索</a></div>
+        </div>
+    </div>
+    <!--目录-->
+    <div class="contents">
+    	<li id="contents_1"><a href="#">全部书籍分类</a></li> 
+    	<li><a href="#">文学</a></li> 
+        <li><a href="#">生活</a></li>
+        <li><a href="#">计算机</a></li> 
+        <li><a href="#">外语</a></li> 
+        <li><a href="#">经管</a></li>
+        <li><a href="#">励志</a></li> 
+        <li><a href="#">社科</a></li>
+        <li><a href="#">学术</a></li> 
+        <li><a href="#">少儿</a></li>
+        <li><a href="#">艺术</a></li> 
+        <li><a href="#">原版</a></li>
+        <li><a href="#">科技</a></li> 
+        <li><a href="#">生活百科</a></li>
+        <li><a href="#">其他</a></li> 
+    </div>
+    <!-- 菜单 -->
+    <div class="divmenu">
+       <a href="#">首页</a> 
+       <a href="#">预售</a> 
+       <a href="#">特价</a>
+       <a href="#">社区</a>
+       <a href="#">电子书</a> 
+       <a href="#">文化用品</a> 
+    </div>
+    <!-- 主体 -->
+    <div class="divmian" >
+    	<div id="KinSlideshow" style="width:750px; height:315px; visibility: hidden; float:left;auto">
+            <a href="#" target="_blank"><img src="images/pic_1.jpg" alt="这是标题一" /></a>
+            <a href="#" target="_blank"><img src="images/pic_2.jpg" alt="这是标题二" /></a>
+            <a href="#" target="_blank"><img src="images/pic_3.jpg" alt="这是标题三" /></a>
+            <a href="#" target="_blank"><img src="images/pic_4.jpg" alt="这是标题四" /></a>
+            <a href="#" target="_blank"><img src="images/pic_5.jpg" alt="这是标题五" /></a> 
+        </div>
+        <div class="tscxb" style=" width:200px; height:450px; float:right; background-image:url(images/sprite.png) no-repeat; ">
+        	<div>图书畅销榜</div>
+            <ul>
+            	<li>
+                <img src="images/display.jpg" style="width:100px; height:100px; float:left;"/>
+                <a href="#" style="float:right; text-decoration:blink ;">你为什么是穷人</a></li>
+                
+                <li>
+                <img src="images/display.jpg" style="width:100px; height:100px; float:left;"/>
+                <a href="#" style="float:right; text-decoration:blink ;">你为什么是穷人</a></li>
+            </ul>
+        </div>
+        <div style="background:#999;">
+        
+        </div>
+    </div>
+    <!-- 推广 -->
+    <div class="divhelp" style="height:860px; width:1200px; float:left; background-color:#666;">
+    </div>
+    <!-- 帮助 -->
+    <div class="footer" >
+    	<div class="footer_pic_new">
+        	<a class="footer_pic01" name="foot01" href="#" target="_blank"><span></span></a>
+        	<a class="footer_pic02" name="foot02" href="#" target="_blank"><span></span></a>
+            <a class="footer_pic03" name="foot03" href="#" target="_blank"><span></span></a>
+            <a class="footer_pic04" name="foot04" href="#" target="_blank"><span></span></a>
+        </div>
+        
+        <div class="footer_copyright">
+            <span>Copyright (C) 当当网 3004-3016, All Rights Reserved</span>
+            <a href="#" target="_blank" class="footer_img" rel="nofollow"></a>
+            <span><a href="#" target="_blank" rel="nofollow">京ICP证1000000001号</a></span>
+            <span>出版物经营许可证 新出发京批字第直10000101号</span>
+        </div>
+    </div>
+    
+    <div class="" style="position:fixed; top:500px; left:1330px; width:40px; height:75px; border:.5px solid #ccc;">
+    	<a style=" padding:0px 43px 25px 0px; background-image:url(images/ritfloat-index.png);" href="#"></a>
+        <div style=" margin-top:18px;"><a style=" color:#b7b7b7;">意见反馈</a></div>
+    </div>
 </body>
 </html>

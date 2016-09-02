@@ -1,130 +1,72 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ page contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html><!-- 注册 -->
 <html>
 <head>
 <base href="/Novelist/">
-<meta charset="UTF-8">
-<meta content="all" name="robots" />
-<meta name="author" content="Fisher" />
-<meta name="Copyright"
-	content="Copyright 2007-2008, 版权所有 www.reefdesign.cn" />
-<meta name="description" content="reefdesign" />
-<meta name="keywords" content="reefdesign" />
-<title>电子书城</title>
+<meta charset="utf-8" />
+<title>模板</title>
 <link rel="shortcut icon" href="favicon.ico">
-<link rel="stylesheet" rev="stylesheet" href="css/style.css"
-	type="text/css" media="all" />
+<link rel="stylesheet" type="text/css" media="all"  href="css/styles.css"/>
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="js/jquery.KinSlideshow-1.2.1.min.js"></script>
 </head>
-
-<body class="main" style="background-image:url(ad/back2.jpg)">
-
-	<div id="divhead">
-		<table cellspacing="0" class="headtable">
-			<tr>
-				<td><img src="images/logo.gif" width="95" height="30" /></td>
-				<td style="text-align: right"><img src="images/cart.gif"
-					width="26" height="23" style="margin-bottom: -4px" />&nbsp;<a
-					href="page/cart.jsp">购物车</a> | <a href="#">帮助中心</a> | <a
-					href="page/my.jsp">我的帐户</a> | <a href="page/register.jsp">新用户注册</a></td>
-			</tr>
-		</table>
-	</div>
-
-	<div id="divmenu">
-		<a href="page/product_list.jsp">文学</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="page/product_list.jsp">生活</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<a href="page/product_list.jsp">计算机</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
-			href="page/product_list.jsp">外语</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="page/product_list.jsp">经管</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<a href="page/product_list.jsp">励志</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="page/product_list.jsp">社科</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<a href="page/product_list.jsp">学术</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="page/product_list.jsp">少儿</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<a href="page/product_list.jsp">艺术</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="page/product_list.jsp">原版</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<a href="page/product_list.jsp">科技</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="page/product_list.jsp">考试</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<a href="page/product_list.jsp">生活百科</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
-			href="page/product_list.jsp" style="color: #FFFF00">全部商品目录</a>
-	</div>
-	<div id="divsearch">
-		<table width="100%" border="0" cellspacing="0">
-			<tr>
-				<td style="text-align: right; padding-right: 220px"><input
-					type="text" name="textfield" class="inputtable" /> <!--<input name="searchbutton" type="image" src="images/serchbutton.gif" style=" margin-bottom:-4px"/>-->
-					<a href="page/search.jsp"><img src="images/serchbutton.gif"
-						border="0" style="margin-bottom: -4px" /></a></td>
-			</tr>
-		</table>
-
-	</div>
-	<div id="divcontent">
-		<table width="850px" border="0" cellspacing="0">
-			<tr>
-				<td style="font-size: 16px;">
-					<table style="color:#999999;" width="700px" border="0" cellspacing="2" class="upline">
-						<tr>
-							<h1 style="margin: 40%; letter-spacing: 8px; font-size: 24px;">新会员注册</h1>
-						</tr>
-						<tr>
-							<td style="text-align: right;">会员邮箱：</td>
-							<td style="width: 330px;"><input type="text"
-								class="textinput" /></td>
-						</tr>
-						<tr>
-							<td style="text-align: right">会员名：</td>
-							<td><input type="text" class="textinput" /></td>
-						</tr>
-						<tr>
-							<td style="text-align: right">密码：</td>
-							<td><input type="password" class="textinput" /></td>
-						</tr>
-						<tr>
-							<td style="text-align: right"></td>
-							<td class="nopad">
-								<ul class="ucr-stronger clearfix">
-									<li>弱</li><li>中</li><li>强</li>
-								</ul>
-							</td>
-						</tr>
-						<tr>
-							<td style="text-align: right">重复密码：</td>
-							<td><input type="password" class="textinput" /></td>
-							<td>&nbsp;</td>
-						</tr>
-						<tr>
-							<td style="text-align: right">性别：</td>
-							<td colspan="2">&nbsp;&nbsp;<input type="radio"
-								name="radiobutton" value="radiobutton" /> 男
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"
-								name="radiobutton" value="radiobutton" /> 女
-							</td>
-						</tr>
-						<tr>
-							<td style="text-align: right">联系方式：</td>
-
-
-							<td colspan="2"><input name="text2" type="text"
-								class="textinput" /></td>
-						</tr>
-
-						<tr>
-							<td style="text-align: right">&nbsp;</td>
-							<td align="center"><input type="submit" class="input-button"
-								name="submit" value="立即注册" />
-						</tr>
-					</table>
-		</table>
-	</div>
-	<div id="divfoot">
-		<table width="100%" border="0" cellspacing="0">
-			<tr>
-				<td rowspan="2" style="width: 10%"><img
-					src="images/bottomlogo.gif" width="195" height="50"
-					style="margin-left: 175px" /></td>
-				<td style="padding-top: 5px; padding-left: 50px"><a href="#"><font
-						color="#747556"><b>CONTACT US</b></font></a></td>
-			</tr>
-			<tr>
-				<td style="padding-left: 50px"><font color="#CCCCCC"><b>COPYRIGHT
-							2008 &copy; eShop All Rights RESERVED.</b></font></td>
-			</tr>
-		</table>
-	</div>
+<body style="background-color:#F6F9FB;">
+	<div style="width:900px; margin-bottom:20px;">
+    	<!--head-->
+        <div class="head_img">
+        	<img src="../images/ddnewhead_logo.gif" style="float:left;"/>
+        </div>
+        <!--register-->
+	    <div class="register_main">
+        	<div class="register_main_main">
+            	<span style=" float:right; padding:55px 40px 0px 0px;">
+                	<a style="padding-right:18px;" href="#"> 首页 </a>
+                    <a href="#"> 帮助 </a>
+                </span>
+				<div class="register_main_top">
+                	<div>新用户注册</div>
+                </div>
+<form class="register_form">
+	<ul>
+        <div>
+           <li><label>用户账号</label>
+            <input name="txt_username" id="txt_username"  maxlength="25" tabindex="1" value=""  placeholder="请输入您的用户名" class="text" type="text"></li>
+        </div>
+        <div>
+             <li><label>登录密码</label>
+             <input name="txt_userpwd" id="txt_userpwd"  maxlength="25" tabindex="1" value="" class="text" type="text"></li>
+        </div>        
+        <div>
+        	<li><label>确认密码</label>
+            <input name="txt_username" id="txt_username"  maxlength="25" tabindex="1" value="" class="text" type="text"></li>
+        </div>
+        <div>
+        	<li><label>验证邮箱</label>
+        	<input name="txt_username" id="txt_username"  maxlength="25" tabindex="1" value="" placeholder="请输入您的邮箱" class="text" type="text"></li>
+        </div>
+        <div>
+        	<li><label>图片验证</label>
+        	<input name="txt_username" id="txt_username"  maxlength="25" tabindex="1" value=""  placeholder="请输入验证码" class="text" type="text"></li>
+        </div>
+    </ul>
+</form>
+                    
+    <span class="float_l">
+        <input style="cursor: pointer;" id="chb_agreement" name="chb_agreement" 
+        onmouseover="this.style.cursor='pointer';this.style.cursor='hand';" 
+        tabindex="7" checked="checked" type="checkbox">我已阅读并同意
+        <a target="_blank" href="#" tabindex="8">《当当交易条款》</a>和
+        <a target="_blank" href="#" tabindex="9">《当当社区条款》</a>
+    </span></br>
+    
+    <span style="color:#ff3228;">您必须同意当当服务条款后，才能提交注册。</span></br>
+					<a href="#" class="reg_reg">立即注册</a>
+					
+               
+            </div>
+        	<div class="cloud"></div>
+        </div>  
+    </div>   
 </body>
 </html>
