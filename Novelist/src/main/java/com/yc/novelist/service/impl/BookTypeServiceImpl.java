@@ -11,17 +11,27 @@ import com.yc.novelist.service.BookTypeService;
 
 @Service("bookTypeService")
 public class BookTypeServiceImpl implements BookTypeService {
-
 	@Autowired
-	private  BookTypeMapper bookTypeMapper;
-	
+	private BookTypeMapper bookTypeMapper;
+
 	@Override
-	public List<BookType> findType(){
-		return bookTypeMapper.getFindType();
+	public List<BookType> findAllBookTypes() {
+		return bookTypeMapper.findAllBookTypes();
 	}
-	
+
 	@Override
-	public List<BookType> findAllType(){
-		return bookTypeMapper.getFindAllType();
+	public int addBookType(BookType bookType) {
+		return bookTypeMapper.addBookType(bookType);
 	}
+
+	@Override
+	public int delBookType(List<Integer> bookType) {
+		return bookTypeMapper.delBookTypes(bookType);
+	}
+
+	@Override
+	public int updateBookTypes(BookType bookType) {
+		return bookTypeMapper.updateBookTypes(bookType);
+	}
+
 }

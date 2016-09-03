@@ -28,6 +28,10 @@ public class Admin {
 		this.aname = aname;
 		this.pwd = pwd;
 	}
+	public Admin(  String aname, String pwd) {
+		this.aname = aname;
+		this.pwd = pwd;
+	}
 	public Admin() {
 	}
 	@Override

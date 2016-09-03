@@ -1,34 +1,40 @@
 package com.yc.novelist.eneity;
 
 public class BookType {
-	private int btId;
+	private Integer btId;
 	private String btName;
-	private int parent_id;
-	
-	public BookType() {
-	}
-	public int getBtId() {
+	private Integer parent_id;
+	public Integer getBtId() {
 		return btId;
+	}
+	public void setBtId(Integer btId) {
+		this.btId = btId;
 	}
 	public String getBtName() {
 		return btName;
 	}
-	public int getParent_id() {
-		return parent_id;
-	}
-	public void setBtId(int btId) {
-		this.btId = btId;
-	}
 	public void setBtName(String btName) {
 		this.btName = btName;
 	}
-	public void setParent_id(int parent_id) {
+	public Integer getParent_id() {
+		return parent_id;
+	}
+	public void setParent_id(Integer parent_id) {
 		this.parent_id = parent_id;
 	}
+	public BookType(Integer btId, String btName, Integer parent_id) {
+		this.btId = btId;
+		this.btName = btName;
+		this.parent_id = parent_id;
+	}
+	public BookType() {
+	}
+	
 	@Override
 	public String toString() {
-		return "\nBookType [btId=" + btId + ", btName=" + btName + ", parent_id=" + parent_id + "]";
+		return "BookType [btId=" + btId + ", btName=" + btName + ", parent_id=" + parent_id + "]";
 	}
 	
 	
+
 }

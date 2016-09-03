@@ -94,12 +94,140 @@
 											排列 每页显示<strong>20</strong>条
 											<hr />
 
+<<<<<<< HEAD
 
 
 											<div class="searchtable" id="searchtable"></div>
 
 
 
+=======
+											<table border="0" cellspacing="0" class="searchtable">
+												<tr>
+													<td width="20%" rowspan="2">
+														<div class="divbookpic">
+															<p>
+																<a href="page/info.jsp"> <img
+																	src="bookcover/dayongxiaohua.jpg" width="115"
+																	height="129" border="0" /></a>
+															</p>
+														</div>
+													</td>
+													<td colspan="2"><font class="bookname">大勇和小花的欧洲日记</font><br />
+														作者：薛勇，林若岚 著<br />
+														《大勇和小花的欧洲日记》串起了欧洲文明的溯源之旅。从屹立在近现代艺术之巅的巴黎拾级而下，依次是蓬皮杜博物馆（现代艺术）、奥塞博物馆（印象派艺术）、卢浮宫博物馆（古典主义）....
+													</td>
+												</tr>
+												<tr>
+													<td>售价：<font color="#FF0000">￥18.60</font>&nbsp;&nbsp;&nbsp;&nbsp;原价：<s>￥30.00</s>
+													</td>
+													<td style="text-align: right"><a href="page/cart.jsp">
+															<img src="images/buy.gif" width="91" height="27"
+															border="0" style="margin-bottom: -8px" />
+													</a></td>
+												</tr>
+											</table>
+											<table border="0" cellspacing="0" class="searchtable">
+												<tr>
+													<td width="20%" rowspan="2">
+														<div class="divbookpic">
+															<p>
+																<a href="page/info.jsp"> <img
+																	src="bookcover/dulala.jpg" width="109" height="141"
+																	border="0" /></a>
+															</p>
+														</div>
+													</td>
+													<td colspan="2"><font class="bookname">大勇和小花的欧洲日记</font><br />
+														作者：薛勇，林若岚 著<br />
+														《大勇和小花的欧洲日记》串起了欧洲文明的溯源之旅。从屹立在近现代艺术之巅的巴黎拾级而下，依次是蓬皮杜博物馆（现代艺术）、奥塞博物馆（印象派艺术）、卢浮宫博物馆（古典主义）....
+													</td>
+												</tr>
+												<tr>
+													<td>售价：<font color="#FF0000">￥18.60</font>&nbsp;&nbsp;&nbsp;&nbsp;原价：<s>￥30.00</s>
+													</td>
+													<td style="text-align: right"><a href="page/cart.jsp">
+															<img src="images/buy.gif" width="91" height="27"
+															border="0" style="margin-bottom: -8px" />
+													</a></td>
+												</tr>
+											</table>
+											<table border="0" cellspacing="0" class="searchtable">
+												<tr>
+													<td width="20%" rowspan="2">
+														<div class="divbookpic">
+															<p>
+																<a href="page/info.jsp"> <img
+																	src="bookcover/tripcn.jpg" width="83" height="135"
+																	border="0" /></a>
+															</p>
+														</div>
+													</td>
+													<td colspan="2"><font class="bookname">大勇和小花的欧洲日记</font><br />
+														作者：薛勇，林若岚 著<br />
+														《大勇和小花的欧洲日记》串起了欧洲文明的溯源之旅。从屹立在近现代艺术之巅的巴黎拾级而下，依次是蓬皮杜博物馆（现代艺术）、奥塞博物馆（印象派艺术）、卢浮宫博物馆（古典主义）....
+													</td>
+												</tr>
+												<tr>
+													<td>售价：<font color="#FF0000">￥18.60</font>&nbsp;&nbsp;&nbsp;&nbsp;原价：<s>￥30.00</s>
+													</td>
+													<td style="text-align: right"><a href="page/cart.jsp">
+															<img src="images/buy.gif" width="91" height="27"
+															border="0" style="margin-bottom: -8px" />
+													</a></td>
+												</tr>
+											</table>
+											<table border="0" cellspacing="0" class="searchtable">
+												<tr>
+													<td width="20%" rowspan="2">
+														<div class="divbookpic">
+															<p>
+																<a href="page/info.jsp"> <img
+																	src="bookcover/photog.jpg" width="92" height="128"
+																	border="0" /></a>
+															</p>
+														</div>
+													</td>
+													<td colspan="2"><font class="bookname">大勇和小花的欧洲日记</font><br />
+														作者：薛勇，林若岚 著<br />
+														《大勇和小花的欧洲日记》串起了欧洲文明的溯源之旅。从屹立在近现代艺术之巅的巴黎拾级而下，依次是蓬皮杜博物馆（现代艺术）、奥塞博物馆（印象派艺术）、卢浮宫博物馆（古典主义）....
+													</td>
+												</tr>
+												<tr>
+													<td>售价：<font color="#FF0000">￥18.60</font>&nbsp;&nbsp;&nbsp;&nbsp;原价：<s>￥30.00</s>
+													</td>
+													<td style="text-align: right"><a href="page/cart.jsp">
+															<img src="images/buy.gif" width="91" height="27"
+															border="0" style="margin-bottom: -8px" />
+													</a></td>
+												</tr>
+											</table>
+											<table border="0" cellspacing="0" class="searchtable">
+												<tr>
+													<td width="20%" rowspan="2">
+														<div class="divbookpic">
+															<p>
+																<a href="page/info.jsp"> <img
+																	src="bookcover/java2.jpg" width="102" height="130"
+																	border="0" /></a>
+															</p>
+														</div>
+													</td>
+													<td colspan="2"><font class="bookname">大勇和小花的欧洲日记</font><br />
+														作者：薛勇，林若岚 著<br />
+														《大勇和小花的欧洲日记》串起了欧洲文明的溯源之旅。从屹立在近现代艺术之巅的巴黎拾级而下，依次是蓬皮杜博物馆（现代艺术）、奥塞博物馆（印象派艺术）、卢浮宫博物馆（古典主义）....
+													</td>
+												</tr>
+												<tr>
+													<td>售价：<font color="#FF0000">￥18.60</font>&nbsp;&nbsp;&nbsp;&nbsp;原价：<s>￥30.00</s>
+													</td>
+													<td style="text-align: right"><a href="page/cart.jsp">
+															<img src="images/buy.gif" width="91" height="27"
+															border="0" style="margin-bottom: -8px" />
+													</a></td>
+												</tr>
+											</table>
+>>>>>>> branch 'master' of ssh://git@github.com/zhonglonggit/Novelist.git
 
 											<div class="pagination">
 												<ul>
