@@ -31,9 +31,7 @@
 			</tr>
 		</table>
 	</div>
-	<div id="divmenu">
-		
-	</div>
+	<div id="divmenu"></div>
 	<div id="divsearch">
 		<table width="100%" border="0" cellspacing="0">
 			<tr>
@@ -116,8 +114,9 @@
 													<td width="20%" rowspan="2">
 														<div class="divbookpic">
 															<p>
-																<a href="page/info.jsp"> <img src="bookcover/dulala.jpg"
-																	width="109" height="141" border="0" /></a>
+																<a href="page/info.jsp"> <img
+																	src="bookcover/dulala.jpg" width="109" height="141"
+																	border="0" /></a>
 															</p>
 														</div>
 													</td>
@@ -140,8 +139,9 @@
 													<td width="20%" rowspan="2">
 														<div class="divbookpic">
 															<p>
-																<a href="page/info.jsp"> <img src="bookcover/tripcn.jpg"
-																	width="83" height="135" border="0" /></a>
+																<a href="page/info.jsp"> <img
+																	src="bookcover/tripcn.jpg" width="83" height="135"
+																	border="0" /></a>
 															</p>
 														</div>
 													</td>
@@ -164,8 +164,9 @@
 													<td width="20%" rowspan="2">
 														<div class="divbookpic">
 															<p>
-																<a href="page/info.jsp"> <img src="bookcover/photog.jpg"
-																	width="92" height="128" border="0" /></a>
+																<a href="page/info.jsp"> <img
+																	src="bookcover/photog.jpg" width="92" height="128"
+																	border="0" /></a>
 															</p>
 														</div>
 													</td>
@@ -188,8 +189,9 @@
 													<td width="20%" rowspan="2">
 														<div class="divbookpic">
 															<p>
-																<a href="page/info.jsp"> <img src="bookcover/java2.jpg"
-																	width="102" height="130" border="0" /></a>
+																<a href="page/info.jsp"> <img
+																	src="bookcover/java2.jpg" width="102" height="130"
+																	border="0" /></a>
 															</p>
 														</div>
 													</td>
