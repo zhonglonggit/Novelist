@@ -145,12 +145,17 @@ MARGIN-LEFT: auto;
 MARGIN-LEFT: auto;
 	
 }
+#divcontent .searchtable{
+	width:900px;
+	height:800px;
+	background-color: red;
+}
 
 #divpagecontent{
 	width:900px;
 	margin-top:10px;
 	MARGIN-RIGHT: auto;
-MARGIN-LEFT: auto;
+	MARGIN-LEFT: auto;
 }
 
 .listtitle{
@@ -460,4 +465,5 @@ text-align:center;
 	margin-top:10px;
 	margin-bottom:20px;
 	border: 1px solid #CCCCCC;
+	background-color: red;
 }

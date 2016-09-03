@@ -50,13 +50,12 @@
 	<div id="divsearch">
 		<table width="100%" border="0" cellspacing="0">
 			<tr>
-				<td style="text-align: right; padding-right: 220px"><input
-					type="text" name="textfield" class="inputtable" /> <!--<input name="searchbutton" type="image" src="images/serchbutton.gif" style=" margin-bottom:-4px"/>-->
-					<a href="page/search.jsp"><img src="images/serchbutton.gif"
+				<td style="text-align: right; padding-right: 220px">
+				 <input type="text" name="textfield" id="textfield" class="inputtable"/>
+					<a href="#" onclick="gettext()"><img src="images/serchbutton.gif"
 						border="0" style="margin-bottom: -4px" /></a></td>
 			</tr>
 		</table>
-
 	</div>
 	<!-- search end -->
 	<!-- 广告   -->

@@ -35,7 +35,6 @@ public class BookTypeHandler {
 	@RequestMapping(value="/search03")
 	public String findBookAllType(ModelMap map,PrintWriter out){
 		List<BookType> bookType = bookTypeService.findAllType();
-		System.out.println(bookType);
 		Gson gson=new Gson();
 		out.println(gson.toJson(bookType));
 		out.flush();

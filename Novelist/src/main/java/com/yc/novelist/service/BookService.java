@@ -5,9 +5,8 @@ import java.util.List;
 import com.yc.novelist.eneity.Book;
 
 public interface BookService {
-	List<Book> findBookName(String bookName);
-
-	 List<Book> findBookByAuthor(String bookAuthor);
 	 
 	 List<Book> findAllBookInfo();
+
+	List<Book> findBook(String searchName);
 }

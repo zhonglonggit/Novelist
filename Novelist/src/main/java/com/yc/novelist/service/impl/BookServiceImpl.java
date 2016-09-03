@@ -17,16 +17,9 @@ public class BookServiceImpl implements  BookService{
 	
 
 	@Override
-	public List<Book> findBookName(String bookName) {
-		return bookMapper.getBookName(bookName);
+	public List<Book> findBook(String searchName) {
+		return bookMapper.getBookByName(searchName);
 	}
-
-
-	@Override
-	public List<Book> findBookByAuthor(String bookAuthor) {
-		return bookMapper.getBookAuthor(bookAuthor);
-	}
-
 
 	@Override
 	public List<Book> findAllBookInfo() {

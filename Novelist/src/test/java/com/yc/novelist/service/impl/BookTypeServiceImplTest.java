@@ -23,14 +23,14 @@ public class BookTypeServiceImplTest {
 	@Test
 	public void testFindType() {
 		List<BookType> type=bookTypeService.findType();
-		System.out.println(type);
+		//System.out.println(type);
 		assertNotNull(type);
 	}
 
 	@Test
 	public void testFindAllType() {
 		List<BookType> type=bookTypeService.findAllType();
-		System.out.println(type);
+		//System.out.println(type);
 		assertNotNull(type);
 	}
 
