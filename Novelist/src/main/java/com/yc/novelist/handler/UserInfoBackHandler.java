@@ -29,7 +29,6 @@ public class UserInfoBackHandler {
 		out.flush();
 		out.close();
 	}
-	
 	@RequestMapping(value="/addUserInfoBack")
 	public void addUserInfoBack(UserInfoBack users,String uname,String sex,String pwd,String email,
 			String photo,String address, PrintWriter out){
