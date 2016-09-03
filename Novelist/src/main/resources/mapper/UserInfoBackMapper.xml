@@ -8,8 +8,7 @@
 	</select>
 	
 	<insert id="addUsers" parameterType="UserInfoBack">
-	insert into  userinfo values 
-	(seq_userinfo.nextval,#{userName},#{userPassword},#{userSex},#{userEmail},#{userTelphone},#{userAddress},#{photo})
+	insert into  userinfo values(seq_userinfo.nextval,#{userName},#{userPassword},#{userSex},#{userEmail,jdbcType=VARCHAR},#{userTelphone,jdbcType=VARCHAR},#{userAddress,jdbcType=VARCHAR},#{photo,jdbcType=VARCHAR})
 	</insert>
 	
 </mapper>

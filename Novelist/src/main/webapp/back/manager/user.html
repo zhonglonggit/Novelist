@@ -5,9 +5,9 @@
 <form action="" style="float:left;padding-left:20px">
 		<label>会员名字:</label><input type="text" id="userName" name="uname" required="required" /><br /><br />
 		<label>会员性别:</label><input type="text" id="userSex" name="sex" required="required" /><br /><br />
-		<label>密&nbsp;&nbsp;码:</label><input type="text" id="userPassword" name="pwd" required="required" /><br /><br />
-		<label>会员地址:</label><input type="text" id="userAddress" name="userAddress" required="required" /><br /><br />
-		<label>email:</label><input type="text" id="userEmail" name="email" required="required"/><br /><br />
+		<label>密&nbsp;&nbsp;码:</label><input type="password" id="userPassword" name="pwd" required="required" /><br /><br />
+		<label>会员地址:</label><input type="text" id="userAddress" name="userAddress" required="required" value="湖南衡阳"/><br /><br />
+		<label>email:</label><input type="text" id="userEmail" name="email" required="required" value="12345@qq.com"/><br /><br />
 		<label>会员头像:</label><input type="file" multiple="multiple" id="photo" name="pics"  onchange="previewMultipleImage(this,'pic_show')"/><br /><br />
 	
 		<a href="javascript:addUserInfo()" class="easyui-linkbutton" data-options="iconCls:'icon-add'">添加</a>
@@ -197,6 +197,8 @@
 		var email=$.trim($("#userEmail").val());
 		var photo=$.trim($("#photo").val());
 		var address=$.trim($("#userAddress").val());
+		
+		alert(uname+sex+pwd+email+photo+address);
 	
 		$.ajaxFileUpload({
 			url:"userInfoBack/addUserInfoBack",

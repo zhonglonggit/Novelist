@@ -22,5 +22,11 @@ public class UserInfoBackServiceImplTest {
 		List<UserInfoBack> users = userInfoBackService.findAllUsers();
 		System.out.println(users);
 	}
+	
+	@Test
+	public void testAddUsers() {
+		int result = userInfoBackService.addUsers(new UserInfoBack("zz","a","女","12345@qq.com","18463847635","湖南",null));
+		System.out.println(result);
+	}
 
 }

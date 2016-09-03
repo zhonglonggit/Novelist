@@ -21,7 +21,6 @@ public class UserInfoBackServiceImpl implements UserInfoBackService{
 
 	@Override
 	public int addUsers(UserInfoBack users) {
-		// TODO Auto-generated method stub
 		return userInfoBackMapper.addUsers(users);
 	}
 

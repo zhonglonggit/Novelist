@@ -57,9 +57,8 @@ public class UserInfoBack {
 	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
-	public UserInfoBack(Integer userId, String userName, String userPassword, String userSex, String userEmail,
+	public UserInfoBack( String userName, String userPassword, String userSex, String userEmail,
 			String userTelphone, String userAddress, String photo) {
-		this.userId = userId;
 		this.userName = userName;
 		this.userPassword = userPassword;
 		this.userSex = userSex;

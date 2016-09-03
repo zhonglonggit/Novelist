@@ -20,7 +20,7 @@ create table userinfo(
        userPassword varchar2(20) not null,--用户密码
        userSex varchar2(5) default '男' ,
  	    userEmail  varchar2(50), --邮箱账号
-       userTelphone number(15),--会员电话
+       userTelphone varchar2(40),--会员电话
        userAddress varchar2(50),--会员地址
        photo varchar2(1000)--会员头像
 );
