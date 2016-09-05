@@ -1646,7 +1646,6 @@
             </div>
         </div>
         <!-- 原创潜力红文结束 -->
-		
         <!-- 大家都在看begin -->
         <div class="index_story index_pindao_total floor_level" dd_name="大家都在看">
             <div class="index_pindao_title">
@@ -1733,7 +1732,6 @@
             <a class="footer_pic03" name="foot03" href="#" target="_blank"><span></span></a>
             <a class="footer_pic04" name="foot04" href="#" target="_blank"><span></span></a>
         </div>
-        
         <div class="footer_copyright">
             <span>Copyright (C) 当当网 3004-3016, All Rights Reserved</span>
             <a href="#" target="_blank" class="footer_img" rel="nofollow"></a>
