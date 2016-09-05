@@ -1,14 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page  contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <base href="/Novelist/">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta content="all" name="robots" />
 <meta name="author" content="Fisher" />
-<meta name="Copyright"
-	content="Copyright 2007-2008, 版权所有 www.reefdesign.cn" />
+<meta name="Copyright"content="Copyright 2007-2008, 版权所有 www.reefdesign.cn" />
 <meta name="description" content="reefdesign" />
 <meta name="keywords" content="reefdesign" />
 <title>电子书城</title>
@@ -42,13 +41,12 @@
 	<div id="divsearch">
 		<table width="100%" border="0" cellspacing="0">
 			<tr>
-				<td style="text-align: right; padding-right: 220px"><input
-					type="text" name="textfield" class="inputtable" /> <!--<input name="searchbutton" type="image" src="images/serchbutton.gif" style=" margin-bottom:-4px"/>-->
-					<a href="page/search.jsp"><img src="images/serchbutton.gif"
+				<td style="text-align: right; padding-right: 220px">
+				 <input type="text" name="textfield" id="textfield" class="inputtable" placeholder="       书名/作者名" />
+					<a href="#" onclick="gettext(this)"><img src="images/serchbutton.gif"
 						border="0" style="margin-bottom: -4px" /></a></td>
 			</tr>
 		</table>
-
 	</div>
 	<!-- search end -->
 	<!-- 广告   -->

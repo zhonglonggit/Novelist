@@ -24,6 +24,7 @@ public class BookTypeServiceImplTest {
 	@Test
 	public void testFindType() {
 		List<BookType> type=bookTypeService.findAllBookTypes();
+		//System.out.println(type);
 		System.out.println(type);
 		assertNotNull(type);
 	}

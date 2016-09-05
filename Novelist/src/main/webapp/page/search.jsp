@@ -1,10 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <base href="/Novelist/">
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta content="all" name="robots" />
 <meta name="author" content="Fisher" />
 <meta name="Copyright"
@@ -16,8 +15,13 @@
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="js/Book.js"></script>
+<script type="text/javascript" src="js/search.js"></script>
+<% String searchtext=request.getParameter("searchtext"); 
+%>
 </head>
 <body class="main">
+
+	<input type="hidden" value="<%=searchtext %>" id="searchtext">
 	<div id="divhead">
 		<table cellspacing="0" class="headtable">
 			<tr>
@@ -36,15 +40,18 @@
 		<table width="100%" border="0" cellspacing="0">
 			<tr>
 				<td style="text-align: right; padding-right: 220px"><input
-					type="text" name="textfield" class="inputtable" /> <!--<input name="searchbutton" type="image" src="images/serchbutton.gif" style=" margin-bottom:-4px"/>-->
-					<a href="page/search.jsp"> <img src="images/serchbutton.gif"
-						border="0" style="margin-bottom: -4px" /></a></td>
+					type="text" name="textfield" id="textfield" class="inputtable"
+					placeholder="       书名/作者名" /> <a href="#" onclick="gettext()"><img
+						src="images/serchbutton.gif" border="0"
+						style="margin-bottom: -4px" /></a></td>
 			</tr>
 		</table>
 	</div>
 	<div id="divpagecontent">
 		<table width="100%" border="0" cellspacing="0">
 			<tr>
+			
+			
 				<td width="25%">
 					<table width="100%" border="0" cellspacing="0"
 						style="margin-top: 30px">
@@ -54,7 +61,8 @@
 						<tr>
 							<td class="listtd"><br />
 								<p>
-									关键字：<input type="text" name="textfield2" class="inputtable" />
+									关键字：<input type="text" name="textfield2" class="inputtable"
+										value="${searchtext }" />
 								</p>
 								<p>
 									类&nbsp;&nbsp;&nbsp;&nbsp;别：<select name="select">
@@ -71,6 +79,8 @@
 						</tr>
 					</table>
 				</td>
+				
+				
 				<td>
 					<div style="text-align: right; margin: 5px 10px 5px 0px">
 						<a href="page/index.jsp">首页</a>&nbsp;&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;&nbsp;公告新闻&nbsp;&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;&nbsp;文章标题
@@ -84,6 +94,14 @@
 											排列 每页显示<strong>20</strong>条
 											<hr />
 
+<<<<<<< HEAD
+
+
+											<div class="searchtable" id="searchtable"></div>
+
+
+
+=======
 											<table border="0" cellspacing="0" class="searchtable">
 												<tr>
 													<td width="20%" rowspan="2">
@@ -209,6 +227,7 @@
 													</a></td>
 												</tr>
 											</table>
+>>>>>>> branch 'master' of ssh://git@github.com/zhonglonggit/Novelist.git
 
 											<div class="pagination">
 												<ul>
@@ -227,6 +246,8 @@
 													<li class="nextpage"><a href="#">下一页 >></a></li>
 												</ul>
 											</div>
+											
+											
 										</td>
 									</tr>
 								</table>

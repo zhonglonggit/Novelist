@@ -14,4 +14,5 @@ public interface BookTypeService {
 
 	int updateBookTypes(BookType bookType);
 
+
 }
