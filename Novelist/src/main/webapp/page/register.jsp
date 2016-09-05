@@ -6,7 +6,6 @@
 <base href="/Novelist/">
 <meta charset="utf-8" />
 <title>模板</title>
-<link rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" type="text/css" media="all"  href="css/styles.css"/>
 <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
 <script type="text/javascript" src="js/jquery.KinSlideshow-1.2.1.min.js"></script>
@@ -15,7 +14,7 @@
 	<div style="width:900px; margin-bottom:20px;">
     	<!--head-->
         <div class="head_img">
-        	<img src="../images/ddnewhead_logo.gif" style="float:left;"/>
+        	<img src="./images/ddnewhead_logo.gif" style="float:left;"/>
         </div>
         <!--register-->
 	    <div class="register_main">
@@ -51,7 +50,6 @@
         </div>
     </ul>
 </form>
-                    
     <span class="float_l">
         <input style="cursor: pointer;" id="chb_agreement" name="chb_agreement" 
         onmouseover="this.style.cursor='pointer';this.style.cursor='hand';" 
@@ -59,11 +57,9 @@
         <a target="_blank" href="#" tabindex="8">《当当交易条款》</a>和
         <a target="_blank" href="#" tabindex="9">《当当社区条款》</a>
     </span></br>
-    
     <span style="color:#ff3228;">您必须同意当当服务条款后，才能提交注册。</span></br>
 					<a href="#" class="reg_reg">立即注册</a>
 					
-               
             </div>
         	<div class="cloud"></div>
         </div>  
