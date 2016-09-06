@@ -23,7 +23,7 @@ $(function(){
 				}else{
 					tabs.tabs('add',{
 						title:"图书管理",
-						href:"back/manager/news.html",
+						href:"back/manager/bookback.html",
 						closable:true
 					});
 				}

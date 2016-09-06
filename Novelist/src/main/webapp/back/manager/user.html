@@ -5,6 +5,7 @@
 <form action="" style="float:left;padding-left:20px">
 		<label>会员名字:</label><input type="text" id="userName" name="uname" required="required" /><br /><br />
 		<label>会员性别:</label><input type="text" id="userSex" name="sex" required="required" /><br /><br />
+		<label>会员电话:</label><input type="text" id="phone" name="phone" required="required" /><br /><br />
 		<label>密&nbsp;&nbsp;码:</label><input type="password" id="userPassword" name="pwd" required="required" /><br /><br />
 		<label>会员地址:</label><input type="text" id="userAddress" name="userAddress" required="required" value="湖南衡阳"/><br /><br />
 		<label>email:</label><input type="text" id="userEmail" name="email" required="required" value="12345@qq.com"/><br /><br />
@@ -195,17 +196,17 @@
 		var sex=$.trim($("#userSex").val());
 		var pwd=$.trim($("#userPassword").val());
 		var email=$.trim($("#userEmail").val());
-		var photo=$.trim($("#photo").val());
+		var phone=$.trim($("#phone").val());
 		var address=$.trim($("#userAddress").val());
 		
 		alert(uname+sex+pwd+email+photo+address);
 	
-		$.ajaxFileUpload({
+		/* $.ajaxFileUpload({
 			url:"userInfoBack/addUserInfoBack",
 			secureuri:false,
-			fileElementId:"new_pics",
+			fileElementId:"photo",
 			dataType:"json",
-			data:{uname:uname,sex:sex,pwd:pwd,email:email,photo:photo,address:address},
+			data:{userName:uname,userSex:sex,userPassword:pwd,userEmail:email,userAddress:address,userTelphone:phone},
 			success:function(data,status){
 				if(data>0){
 					$.messager.show({title:'成功提示',msg:"会员信息添加成功...",timeout:2000,showType:'slide'});
@@ -224,7 +225,22 @@
 				$.messager.alert("错误提示","会员信息添加失败...\n"+e,"error");
 			}
 		
-		});
+		}); */
+		
+		$.post("userInfoBack/addUserInfoBack",{userName:uname,userSex:sex,userPassword:pwd,userEmail:email,userAddress:address,userTelphone:phone},function(data){
+			if(data>0){
+				$.messager.show({title:'成功提示',msg:"会员信息添加成功...",timeout:2000,showType:'slide'});
+				$("#userName").val("");
+				$("#userPassword").val("");
+				$("#userEmail").val("");
+				$("#pic_show").html("");
+				
+				$('#add_users').dialog('close');
+				$('#users_data').datagrid("reload");
+			}else{
+				$.messager.alert("错误提示","会员信息添加失败...\n","error");
+			}
+		},"json")
 	}
 		    
 </script>

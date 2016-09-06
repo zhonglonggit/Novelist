@@ -8,6 +8,6 @@ public interface UserInfoBackService {
 
 	List<UserInfoBack> findAllUsers();
 
-	int addUsers(UserInfoBack users);
+	int addUsers(UserInfoBack userInfoBack);
 
 }

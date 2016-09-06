@@ -20,8 +20,9 @@ public class UserInfoBackServiceImpl implements UserInfoBackService{
 	}
 
 	@Override
-	public int addUsers(UserInfoBack users) {
-		return userInfoBackMapper.addUsers(users);
+	public int addUsers(UserInfoBack userInfoBack) {
+		System.out.println("==?>输出所添加的信息"+userInfoBack);
+		return userInfoBackMapper.addUsers(userInfoBack);
 	}
 
 }

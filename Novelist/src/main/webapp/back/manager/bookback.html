@@ -3,7 +3,7 @@
 
 <div id="find" style="position:absolute; left:250px; top:60px;">
 	<form>
-		<label>新闻类型:</label><select id="look_newstypes" name="tid">
+		<label>图书类型:</label><select id="look_newstypes" name="tid">
 		<option>全部</option>
 		</select>&nbsp;&nbsp;
 		<label>标题：</label><input type="text" id="look_title" name="title" required/>&nbsp;&nbsp;
@@ -16,13 +16,13 @@
 <div id="add_news" class="easyui-dialog" title="添加新闻" data-options="iconCls:'icon-add',resizable:true,modal:true,closed:true,fit:true">
 <br />
 <form action="" style="float:left;padding-left:20px">
-	<label>新闻类型:</label><select id="news_newstype" name="tid"></select><br /><br />
-	<label>新闻标题:</label><input type="text" id="news_title" name="title" required="required" /><br /><br />
-	<label>新闻作者:</label><input type="text" id="news_author" name="author" required="required" value="新闻中国"/><br /><br />
-	<label>发布日期:</label><input type="text" id="news_date" name="mdate" class="easyui-datebox" required="required" /><br /><br />
-	<label>新闻权重:</label><input type="number" id="news_weight" min="0" name="weight" required="required"  value="0"/><br /><br />
-	<label>新闻图片:</label><input type="file" multiple="multiple" id="new_pics" name="pics"  onchange="previewMultipleImage(this,'news_pic_show')"/><br /><br />
-	<label>新闻内容:</label>
+	<label>图书类型:</label><select id="news_newstype" name="tid"></select><br /><br />
+	<label>书名:</label><input type="text" id="news_title" name="title" required="required" /><br /><br />
+	<label>作者:</label><input type="text" id="news_author" name="author" required="required" value="新闻中国"/><br /><br />
+	<label>出版日期:</label><input type="text" id="news_date" name="mdate" class="easyui-datebox" required="required" /><br /><br />
+	<label>出版社:</label><input type="number" id="news_weight" min="0" name="weight" required="required"  value="0"/><br /><br />
+	<label>图书价格:</label><input type="file" multiple="multiple" id="new_pics" name="pics"  onchange="previewMultipleImage(this,'news_pic_show')"/><br /><br />
+	<label>图书描述:</label>
 	
 	<div>
     	<script id="editor" type="text/plain" style="width:800px;height:300px;"></script>

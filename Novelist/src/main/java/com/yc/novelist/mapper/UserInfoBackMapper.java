@@ -8,6 +8,6 @@ public interface UserInfoBackMapper {
 
 	List<UserInfoBack> findAllUser();
 
-	int addUsers(UserInfoBack users);
+	int addUsers(UserInfoBack userInfoBack);
 
 }

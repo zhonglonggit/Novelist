@@ -32,9 +32,13 @@
 	
 </head>
 <body class="easyui-layout">
-	<div data-options="region:'north',border:false" style="height:60px;background:#B3DFDA;padding:10px">欢迎您：<%-- <%=aname.getAname() %> --%>
-		<a href="back/login.jsp">注销登陆</a>
-	</div>
+		<div data-options="region:'north',border:false"
+		style="height: 60px; background: #B3DFDA; padding: 10px;text-align: center">
+		<h2>网上书店管理系统</h2>
+		<div style="float:right;text-align: center;">
+		欢迎你：${admin.aname}
+		</div>
+		</div>
 	<div data-options="region:'west',split:true,title:'菜单'" style="width:150px;padding:10px;">
 	<ul class="easyui-tree" id="menu_tree">
 			<li>

@@ -10,8 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.google.gson.Gson;
 import com.yc.novelist.eneity.Admin;
@@ -19,7 +21,13 @@ import com.yc.novelist.service.AdminService;
 
 @Controller
 @RequestMapping("/admin")
+@SessionAttributes("admin")
 public class AdminHandler {
+	
+	@ModelAttribute
+	public void admin(ModelMap map){
+		map.put("admin", new Admin());
+	}
 	
 	@Autowired
 	private AdminService adminService;
@@ -33,7 +41,8 @@ public class AdminHandler {
 			map.put("errorMsg", "用户名或者密码不能为空");
 			return "login";
 		}
-		return "forward:/back/manager/index.html";
+		map.put("admin", admin);
+		return "redirect:../back/manager/index.jsp";
 	}
 	
 	@RequestMapping("/findAllAdmin")
