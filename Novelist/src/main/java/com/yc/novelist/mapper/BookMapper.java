@@ -5,9 +5,7 @@ import java.util.List;
 import com.yc.novelist.eneity.Book;
 
 public interface BookMapper {
-	List<Book> getBookName(String bookName);
-	
-	List<Book> getBookAuthor(String bookAuthor);
-	
 	List<Book> getAllBookInfo();
+
+	List<Book> getBookByName(String searchName);
  }

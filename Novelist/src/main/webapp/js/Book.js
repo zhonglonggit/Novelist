@@ -35,5 +35,9 @@ $.get("bookType/search03",function(data){
 			$("#booklistt").append(BookInfo);
 		}, "json");
 
-
-
+	
+	function  gettext(obj){
+		obj.href="page/search.jsp?searchtext="+$("#textfield").val();
+	}
+	
+	

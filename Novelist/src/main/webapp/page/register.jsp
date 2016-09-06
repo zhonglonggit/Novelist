@@ -51,7 +51,6 @@
         </div>
     </ul>
 </form>
-                    
     <span class="float_l">
         <input style="cursor: pointer;" id="chb_agreement" name="chb_agreement" 
         onmouseover="this.style.cursor='pointer';this.style.cursor='hand';" 
@@ -59,11 +58,9 @@
         <a target="_blank" href="#" tabindex="8">《当当交易条款》</a>和
         <a target="_blank" href="#" tabindex="9">《当当社区条款》</a>
     </span></br>
-    
     <span style="color:#ff3228;">您必须同意当当服务条款后，才能提交注册。</span></br>
 					<a href="#" class="reg_reg">立即注册</a>
 					
-               
             </div>
         	<div class="cloud"></div>
         </div>  

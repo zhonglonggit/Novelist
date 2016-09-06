@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -29,6 +30,15 @@ public class BookTypeHandler {
 		out.println(gson.toJson(bookTypes));
 		out.flush();
 		out.close();
+	}
+	
+	
+	@RequestMapping(value="/search03")
+	public String findBookAllType(ModelMap map,PrintWriter out){
+		List<BookType> bookType = bookTypeService.findAllBookTypes();
+		Gson gson=new Gson();
+		out.println(gson.toJson(bookType));
+		return null;
 	}
 	
 	@RequestMapping(value="/addBookType")
