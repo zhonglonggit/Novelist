@@ -227,7 +227,7 @@
 		
 		}); */
 		
-		$.post("userInfoBack/addUserInfoBack",{userName:uname,userSex:sex,userPassword:pwd,userEmail:email,userAddress:address,userTelphone:phone},function(data){
+		$.post("userInfoBack/addUserInfoBack",{uname:uname,userSex:sex,userPassword:pwd,userEmail:email,userAddress:address,userTelphone:phone},function(data){
 			if(data>0){
 				$.messager.show({title:'成功提示',msg:"会员信息添加成功...",timeout:2000,showType:'slide'});
 				$("#userName").val("");
@@ -240,7 +240,7 @@
 			}else{
 				$.messager.alert("错误提示","会员信息添加失败...\n","error");
 			}
-		},"json")
+		})
 	}
 		    
 </script>

@@ -35,12 +35,13 @@ public class UserInfoBackHandler {
 	@RequestMapping(value="/addUserInfoBack")
 	@ResponseBody
 	public int addUserInfoBack(HttpServletRequest request,UserInfoBack userInfoBack,PrintWriter out){
-		String uname=(String) request.getAttribute("userName");
-		String sex=(String) request.getAttribute("userSex");
-		String pwd=(String) request.getAttribute("userPassword");
-		String email=(String) request.getAttribute("userEmail");
-		String address=(String) request.getAttribute("userAddress");
-		String phone=(String) request.getAttribute("userTelphone");
+		String uname= request.getParameter("uname");
+		String sex= request.getParameter("userSex");
+		String pwd= request.getParameter("userPassword");
+		String email= request.getParameter("userEmail");
+		String address= request.getParameter("userAddress");
+		String phone= request.getParameter("userTelphone");
+		System.out.println(uname);
 		userInfoBack.setUserName(uname);
 		userInfoBack.setUserSex(sex);
 		userInfoBack.setUserPassword(pwd);
