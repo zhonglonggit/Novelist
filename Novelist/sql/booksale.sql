@@ -8,10 +8,8 @@ create table admin(
 drop sequence seq_aid;
 create sequence seq_aid start with 1101;
 insert into admin values(seq_aid.nextval,'mm','a');
-delete from admin where aname='hh'
-delete from admin where aid=1121;
+delete from admin where aname='mm';
 select * from admin;
-
 drop table userinfo;
 --用户信息表
 create table userinfo(

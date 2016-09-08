@@ -1,12 +1,11 @@
-<%@ page contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
 <!DOCTYPE html><!-- 注册 -->
 <html>
 <head>
 <base href="/Novelist/">
 <meta charset="utf-8" />
-<title>模板</title>
-<link rel="shortcut icon" href="favicon.ico">
+<title>当当-注册</title>
+<link rel="shortcut icon" href="./images/favicon.png"/>
 <link rel="stylesheet" type="text/css" media="all"  href="css/styles.css"/>
 <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
 <script type="text/javascript" src="js/jquery.KinSlideshow-1.2.1.min.js"></script>
@@ -15,14 +14,14 @@
 	<div style="width:900px; margin-bottom:20px;">
     	<!--head-->
         <div class="head_img">
-        	<img src="../images/ddnewhead_logo.gif" style="float:left;"/>
+        	<img src="./images/ddnewhead_logo.gif" style="float:left;"/>
         </div>
         <!--register-->
 	    <div class="register_main">
         	<div class="register_main_main">
             	<span style=" float:right; padding:55px 40px 0px 0px;">
-                	<a style="padding-right:18px;" href="#"> 首页 </a>
-                    <a href="#"> 帮助 </a>
+                	<a style="padding-right:18px;" href="./page/index.jsp"> 首页 </a>
+                    <a href="./page/index.jsp"> 帮助 </a>
                 </span>
 				<div class="register_main_top">
                 	<div>新用户注册</div>
@@ -60,7 +59,6 @@
     </span></br>
     <span style="color:#ff3228;">您必须同意当当服务条款后，才能提交注册。</span></br>
 					<a href="#" class="reg_reg">立即注册</a>
-					
             </div>
         	<div class="cloud"></div>
         </div>  
