@@ -44,7 +44,6 @@ public class AdminHandler {
 		map.put("admin", admin);
 		return "redirect:../back/manager/index.jsp";
 	}
-	
 	@RequestMapping("/findAllAdmin")
 	public void findAllAdmin(PrintWriter out){
 		Gson gson=new Gson();
@@ -54,7 +53,6 @@ public class AdminHandler {
 		out.flush();
 		out.close();
 	}
-	
 	@RequestMapping(value="/addAdmin",method=RequestMethod.POST)
 	public void addAdmin(Admin admin,PrintWriter out){
 		System.out.println("admin====add=="+admin);
@@ -62,7 +60,6 @@ public class AdminHandler {
 		out.flush();
 		out.close();
 	}
-	
 	@RequestMapping(value="/delAdmin",method=RequestMethod.POST)
 	public void delAdmin(PrintWriter out,HttpServletRequest request){
 		String aids=request.getParameter("aids");
@@ -76,7 +73,6 @@ public class AdminHandler {
 		out.flush();
 		out.close();
 	}
-	
 	@RequestMapping(value="/updateAdmin",method=RequestMethod.POST)
 	public void updateAdmin(Admin admin,PrintWriter out){
 		System.out.println("============update==="+admin);
