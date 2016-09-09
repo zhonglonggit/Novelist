@@ -102,12 +102,11 @@
 			</div>
             <!-- 菜单 -->
             <div class="divmenu">
-               <a href="javascript:void(0)">首页</a> 
-               <a href="javascript:void(0)">预售</a> 
-               <a href="javascript:void(0)">特价</a>
-               <a href="javascript:void(0)">社区</a>
-               <a href="javascript:void(0)">电子书</a> 
-               <a href="javascript:void(0)">文化用品</a> 
+               <a href="javascript:void(0)" target="_blank">预售</a> 
+               <a href="javascript:void(0)" target="_blank">特价</a>
+               <a href="javascript:void(0)" target="_blank">社区</a>
+               <a href="javascript:void(0)" target="_blank">电子书</a> 
+               <a href="javascript:void(0)" target="_blank">文化用品</a> 
             </div>
             <!-- 主体 -->
             <div class="divmian">

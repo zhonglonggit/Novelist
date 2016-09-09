@@ -34,7 +34,7 @@ int yl = random.nextInt(12);
 g.drawLine(x,y,x+xl,y+yl);
 }
 String sRand="";
-for (int i=0;i<4;i++){
+for (int i=0;i<6;i++){
 String rand=String.valueOf(random.nextInt(10));
 sRand+=rand;
 g.setColor(new Color(20+random.nextInt(110),20+random.nextInt(110),20+random.nextInt(110)));
