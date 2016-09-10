@@ -13,16 +13,16 @@
 		<a href="javascript:lookNewsInfo()" class="easyui-linkbutton" data-options="iconCls:'icon-search'">搜索</a> 	
 	</form>	
 </div>
-<div id="add_news" class="easyui-dialog" title="添加新闻" data-options="iconCls:'icon-add',resizable:true,modal:true,closed:true,fit:true">
+<div id="add_news" class="easyui-dialog" title="添加书籍" data-options="iconCls:'icon-add',resizable:true,modal:true,closed:true,fit:true">
 <br />
 <form action="" style="float:left;padding-left:20px">
 	<label>图书类型:</label><select id="news_newstype" name="tid"></select><br /><br />
 	<label>书名:</label><input type="text" id="news_title" name="title" required="required" /><br /><br />
-	<label>作者:</label><input type="text" id="news_author" name="author" required="required" value="新闻中国"/><br /><br />
+	<label>作者:</label><input type="text" id="news_author" name="author" required="required"/><br /><br />
 	<label>出版日期:</label><input type="text" id="news_date" name="mdate" class="easyui-datebox" required="required" /><br /><br />
 	<label>出版社:</label><input type="number" id="news_weight" min="0" name="weight" required="required"  value="0"/><br /><br />
-	<label>图书价格:</label><input type="file" multiple="multiple" id="new_pics" name="pics"  onchange="previewMultipleImage(this,'news_pic_show')"/><br /><br />
-	<label>图书描述:</label>
+	<label>书籍封面:</label><input type="file" multiple="multiple" id="new_pics" name="pics"  onchange="previewMultipleImage(this,'news_pic_show')"/><br /><br />
+	<label>图书添加:</label>
 	
 	<div>
     	<script id="editor" type="text/plain" style="width:800px;height:300px;"></script>
@@ -43,13 +43,14 @@
 <div id="update_news" class="easyui-dialog" title="修改新闻" data-options="iconCls:'icon-edit',resizable:true,modal:true,closed:true,fit:true">
 <br />
 <form action="" style="float:left;padding-left:20px">
-	<label>新闻类型:</label><select id="update_news_newstype" name="tid"></select><br /><br />
-	<label>新闻标题:</label><input type="text" id="update_news_title" name="title" required="required" /><br /><br />
-	<label>新闻作者:</label><input type="text" id="update_news_author" name="author" required="required" value="新闻中国"/><br /><br />
-	<label>发布日期:</label><input type="text" id="update_news_date" name="mdate" class="easyui-datebox" required="required" /><br /><br />
-	<label>新闻权重:</label><input type="number" id="update_news_weight" min="0" name="weight" required="required"  value="0"/><br /><br />
-	<label>新闻图片:</label><input type="file" multiple="multiple" id="update_new_pics" name="pics"  onchange="previewMultipleImage(this,'news_pic_show')"/><br /><br />
-	<label>新闻内容:</label>
+	<label>图书类型:</label><select id="news_newstype" name="tid"></select><br /><br />
+	<label>书名:</label><input type="text" id="news_title" name="title" required="required" /><br /><br />
+	<label>作者:</label><input type="text" id="news_author" name="author" required="required" value="新闻中国"/><br /><br />
+	<label>出版日期:</label><input type="text" id="news_date" name="mdate" class="easyui-datebox" required="required" /><br /><br />
+	<label>出版社:</label><input type="number" id="news_weight" min="0" name="weight" required="required"  value="0"/><br /><br />
+	<label>图书价格:</label><input type="file" multiple="multiple" id="new_pics" name="pics"  onchange="previewMultipleImage(this,'news_pic_show')"/><br /><br />
+	<label>图书描述:</label>
+	
 	
 	<div>
     	<script id="update_editor" type="text/plain" style="width:800px;height:300px;"></script>
@@ -83,16 +84,18 @@ var update_ue=UE.getEditor('update_editor');
 	    pageNumber:1,
 	    pageSize:5,
 	    pageList:[5,10,15,20,30],
-	    sortName:'tid',
+	    sortName:'bookId',
 	    remoteSort:false,
 	    columns:[[    
 			{field:'tid',title:'',width:100,align:'center',checkbox:true},
-	        {field:'nid',title:'新闻编号',width:100,align:'center',sortable:true},    
-	        {field:'title',title:'新闻标题',width:100,align:'center'},
-	        {field:'author',title:'新闻作者',width:100,align:'center'},
-	        {field:'mdate',title:'发布时间',width:100,align:'center'},
-	        {field:'tname',title:'新闻类型',width:100,align:'center'},
-	        {field:'weight',title:'新闻权重',width:100,align:'center',
+	        {field:'bookId',title:'图书编号',width:100,align:'center',sortable:true},    
+	        {field:'bookName',title:'书名',width:100,align:'center'},
+	        {field:'bookAuthor',title:'作者',width:100,align:'center'},
+	        {field:'bookDate',title:'上架时间',width:100,align:'center'},
+	        {field:'salePrice',title:'价钱',width:100,align:'center'},
+	        {field:'bookPress',title:'出版社',width:100,align:'center',
+	        field:'bookDescription',title:'书籍描述',width:100,align:'center',
+	        field:'saleCount',title:'售出数量',width:100,align:'center',
 	        	formatter:function(value,rowData,index){
 	        		return value+"&nbsp;<a href='javascript:changeTop("+rowData.nid+")'>置顶</a>&nbsp;&nbsp;<a href='javascript:changefront("+rowData.nid+")'>上移</a>&nbsp;"
 	        	}	
