@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -78,11 +77,7 @@
       <td><div style="text-align:right; margin:5px 10px 5px 0px"><a href="page/index.jsp">首页</a>
       &nbsp;&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;<a href="page/cart.jsp">&nbsp;购物车
       </a>&nbsp;&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;&nbsp;订单</div>
-        
-		
-		
-		
-		
+   
         <table cellspacing="0" class="infocontent">
         <tr>
           <td><table width="100%" border="0" cellspacing="0">

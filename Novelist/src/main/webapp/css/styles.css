@@ -14,7 +14,14 @@ body{/*border:1px solid #f00*/
 	font-size:14px;
 	width:1200px;
 	 }
-a:hove{color:#ff3228;}
+.contents li a:hover{
+	background-color:#CCC;
+	border-top:.1px solid #ff3228;
+	border-bottom:.1px solid #ff3228;
+	opacity:.5;
+	color:#ff3228;
+}
+
 
 /*头部*/
 .divhead{
@@ -25,10 +32,18 @@ a:hove{color:#ff3228;}
 	border-bottom:.5px solid #CCC;	
 	}
 .contents{height:500px; width:250px; float:left; line-height:30px; background-color:#f5f5f5;border-bottom:3px solid #ff3228; border-top:3px solid #ff3228;}
-#contents_1{border-bottom:.5px solid #CCC; line-height:51px; background-color:#ff3228; margin-bottom:10px;}
-#contents_1 a{ color:#FFF;}
+#contents_1{border-bottom:.5px solid #CCC; line-height:50px; background-color:#ff3228; margin-bottom:10px;}
+#contents_1 a{ color:#FFF; height:40px;}
 .contents li{line-height:30px;}
-.contents li a{line-height:30px; color:#333; font-size:16px;}
+.contents li a{line-height:30px; color:#333; font-size:16px; display:inline-block; width:248px; height:30px;}
+/*D动画
+animation:animations 1s ease  alternate;
+@-webkit-keyframes animations{
+	0%{-webkit-transform:translate(0,0);}
+	50%{-webkit-transform:translate(50px,0);}
+	100%{-webkit-transform:translate(0,0);}}
+.contents li a:hover{ color:#F0F;}
+*/
 /*搜索*/
 .divsearch{
 	padding:10px 0px 0px 20px;
@@ -65,6 +80,7 @@ a:hove{color:#ff3228;}
 	float:right;
 	line-height:40px;
 	}
+
 .divsearch_seek_foun a{
 	color:#FFF;
 	}
@@ -191,26 +207,28 @@ a:hove{color:#ff3228;}
 	padding-left:50px;
 	margin:20px 20px 20px -10px;
 	}
+/*热榜*/
 .tscxb div{
-	padding-left:20px;
+	padding:15px 0px 15px 15px;
 	letter-spacing:5px;
 	background:url(../images/sprite.png) no-repeat;
-	background-position:22px 7px;
+	background-position:22px 22px;
 	line-height:40px; 
 	color:#ff3228; 
 	font-size:18px;
 }
-.tscxb ul li{
-	height:100px;
-	width:200px;
-	border-top:.5px solid #eaeaea;
-}
-.tscxb ul li img{ 
-	display:none;
-}
-.tscxb ul li:hover img{
-	display:block;
-}
+.tscxb ul li {
+	height:30px;
+	
+	}
+.tscxb ul li a{
+	border-bottom:.5px dashed #ccc;
+	display:inline-block;
+	width:180px;
+	height:30px;
+	text-decoration:blink ;
+	}
+
 .footer{
 	height:180px;
 	width:1200px; 

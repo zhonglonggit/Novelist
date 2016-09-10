@@ -5,10 +5,9 @@
 <head>
 <base href="/Novelist/">
 <meta charset="UTF-8">
-<link rel="shortcut icon" href="./images/favicon.png"/>
 <link type="text/css" rel="stylesheet" href="css/common.min.css">
 <link type="text/css" rel="stylesheet" href="css/index_page.min.css">
-<title>书城-首页</title>
+<title>首页</title>
 <script type="text/javascript" charset="utf-8"  src="js/index.js"></script>
 <script type="text/javascript" charset="utf-8"  src="js/jquery.min.js"></script>
 <script type="text/javascript" charset="utf-8"  src="js/underscore.min.js"></script>
@@ -54,7 +53,7 @@
 	<!-- 头部 -->
 	<div class="divhead">
     	<div class="headyork">
-        	<a target="_blank" href="./page/dd/About_us/about.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;某某上市公司</a>
+        	<a href="./page/dd/index.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;某某上市公司</a>
         </div>
     	<div class="headmenu">
         	<li><a href="javascript:void(0)">我的订单</a></li>
@@ -63,22 +62,18 @@
             <li><a href="javascript:void(0)">客户服务</a></li>
         </div>
         <div class="headlogin">
-        	欢迎光临当当，<a href="./page/login.jsp" style="color:#F03;">&nbsp;请登录&nbsp;&nbsp;</a>
-        		<a href="./page/register.jsp" style="color:#F03;">&nbsp;立马注册</a>
+        	欢迎光临当当，<a href="./page/login.jsp" style="color:#F03;">&nbsp;请登录&nbsp;&nbsp;</a>成为会员
         </div>
     </div>
 	 <!-- 搜索 -->
 	<div class="divsearch">
-    	<div class="divsearch_logo">
-	    	<a href="./page/index.jsp" style="width:200px;height:60px;">
-	    		<img src="images/DDlogoNEW.gif"/>
-	    	</a>
-    	</div>
+    	<div class="divsearch_logo"><img src="images/DDlogoNEW.gif"/></div>
         <div class="divsearch_seek">
         	<div class="divsearch_seek_foun1" >
             <input type="text" id="seek" placeholder="书籍一折起包邮！"/>
             </div>
         	<div class="divsearch_seek_foun" ><a href="javascript:void(0)">搜索</a></div>
+            
         </div>
     </div>
 		<div style=" width:1200px; margin:0 auto;height:505px;">
@@ -102,11 +97,12 @@
 			</div>
             <!-- 菜单 -->
             <div class="divmenu">
-               <a href="javascript:void(0)" target="_blank">预售</a> 
-               <a href="javascript:void(0)" target="_blank">特价</a>
-               <a href="javascript:void(0)" target="_blank">社区</a>
-               <a href="javascript:void(0)" target="_blank">电子书</a> 
-               <a href="javascript:void(0)" target="_blank">文化用品</a> 
+               <a href="javascript:void(0)">首页</a> 
+               <a href="javascript:void(0)">预售</a> 
+               <a href="javascript:void(0)">特价</a>
+               <a href="javascript:void(0)">社区</a>
+               <a href="javascript:void(0)">电子书</a> 
+               <a href="javascript:void(0)">文化用品</a> 
             </div>
             <!-- 主体 -->
             <div class="divmian">
@@ -118,7 +114,7 @@
                 </div>
             </div>
 		</div>
-	</div>
+	</div>	
     <!-- 首页各个模块 -->
     <div class="index_content padding_top_10">
         <!-- 左右 -->
@@ -170,7 +166,7 @@
 									<div class="bookcover">
 										<i class=""></i>
 										<a target="_blank" href="javascript:void(0)">
-											<img src="images/mej.png" alt="满额减" class="promotion_label">
+												<img src="images/mej.png" alt="满额减" class="promotion_label">
 										<img src="images/yc_yc_3.jpg" style="display: inline;"></a>
 									</div>
 									<div class="bookinfo">
@@ -1646,10 +1642,11 @@
                             </div>
                         </div>
                     </div>
+                   
             </div>
         </div>
         <!-- 原创潜力红文结束 -->
-        
+		
         <!-- 大家都在看begin -->
         <div class="index_story index_pindao_total floor_level" dd_name="大家都在看">
             <div class="index_pindao_title">
@@ -1727,7 +1724,7 @@
         </div>
         <!-- 大家都在看end -->
     </div>
-<!-- 页尾end -->
+<!-- 页尾end -->  
     <div class="footer" >
     	<div class="footer_pic_new">
         	<a class="footer_pic01" name="foot01" href="#" target="_blank"><span></span></a>
@@ -1735,6 +1732,7 @@
             <a class="footer_pic03" name="foot03" href="#" target="_blank"><span></span></a>
             <a class="footer_pic04" name="foot04" href="#" target="_blank"><span></span></a>
         </div>
+        
         <div class="footer_copyright">
             <span>Copyright (C) 当当网 3004-3016, All Rights Reserved</span>
             <a href="#" target="_blank" class="footer_img" rel="nofollow"></a>
@@ -1742,11 +1740,12 @@
             <span>出版物经营许可证 新出发京批字第直10000101号</span>
         </div>
     </div>
-<!--
+	<!--
     <div class="" style="position:fixed; top:500px; left:1300px; width:40px; height:75px; border:.5px solid #ccc;">
     	<a style=" padding:0px 43px 25px 0px; background-image:url(.images/ritfloat-index.png);" href="#"></a>
         <div style=" margin-top:18px;"><a style=" color:#b7b7b7;">意见反馈</a></div>
     </div>   
--->
+	-->
+	
 </body>
 </html>
