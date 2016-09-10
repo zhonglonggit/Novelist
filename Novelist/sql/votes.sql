@@ -144,3 +144,4 @@ insert into comments values(seq_comments.nextval,11002,666600002,'好书！好�
 insert into comments values(seq_comments.nextval,11004,666600001,'好书！好书！好书!',to_date('1012-2-2','yyyy-mm-dd'),5);
 
 
+select * from comments

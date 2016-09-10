@@ -3,13 +3,11 @@
 <script>
 	var obj;
 	var editRow=undefined;//记录当前正在被编辑的行
-	
 	var currentOp;
 	var flag;
-	
 	obj=$('#mine_data').datagrid({    
-		    url:'../../adminsServlet',
-		    queryParams: {op:'findAllByAid'	},
+		    url:'comments/findAllComments',
+		    /* queryParams: {op:'findAllByAid'	}, */
 		    fitColumns:true,
 		    striped:true,
 		    loadMsg:"数据加载中...",
@@ -30,10 +28,10 @@
 		        {field:'state',title:'评价分数',width:100,align:'center',sortable:true},
 		        {field:'_operate',title:'操作',width:100,align:"center",
 		        	formatter:function(value,rowData,index){
-		        		return "<a href='javascript:newsMore("+rowData.eid+")'>回复</>";
+		        		return "<a href='javascript:replay("+rowData.eid+")'>回复</>";
 		        	}}
 		    ]],
-		    toolbar:[{
+		   /*  toolbar:[{
 		    	text:"修改",
 		    	iconCls:"icon-edit",
 		    	handler:function(){
@@ -61,7 +59,7 @@
 		    			});
 		    		}
 		    	}
-		    }]
+		    }] */
 
 	});
 </script>
