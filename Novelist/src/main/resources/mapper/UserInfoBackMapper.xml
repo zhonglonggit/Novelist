@@ -10,5 +10,11 @@
 	<insert id="addUsers" parameterType="UserInfoBack">
 	insert into  userinfo values(seq_userinfo.nextval,#{userName},#{userPassword},#{userSex},#{userEmail},#{userTelphone},#{userAddress},#{photo,jdbcType=VARCHAR})
 	</insert>
-	
+	<delete id="delBackUser" parameterType="java.util.List">
+		delete from userinfo where userId in
+		<foreach collection="list" index="index" item="item" open="("
+			separator="," close=")">
+			#{item}
+		</foreach>
+	</delete>
 </mapper>

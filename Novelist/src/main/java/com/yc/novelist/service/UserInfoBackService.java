@@ -10,4 +10,6 @@ public interface UserInfoBackService {
 
 	int addUsers(UserInfoBack userInfoBack);
 
+	int delBackUser(List<Integer> userId);
+
 }

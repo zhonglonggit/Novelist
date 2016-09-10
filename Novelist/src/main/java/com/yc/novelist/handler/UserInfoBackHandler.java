@@ -1,6 +1,7 @@
 package com.yc.novelist.handler;
 
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -8,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
@@ -54,7 +56,19 @@ public class UserInfoBackHandler {
 		}	
 		out.flush();
 		out.close();
-		//return userInfoBackService.addUsers(userInfoBack);
 	}
 
+	@RequestMapping(value="/delBackUser",method=RequestMethod.POST)
+	public void delBackUser(PrintWriter out,HttpServletRequest request){
+		String userIds=request.getParameter("userIds");
+		System.out.println("userId===>"+userIds);
+		String[] userId=userIds.split(",");
+		List<Integer> ls=new ArrayList<Integer>();
+		for (int i = 0; i < userId.length; i++) {
+			ls.add(Integer.parseInt(userId[i]));
+		}
+		out.println(userInfoBackService.delBackUser(ls));
+		out.flush();
+		out.close();
+	}
 }
