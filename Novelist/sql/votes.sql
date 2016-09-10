@@ -39,7 +39,7 @@ drop table bookstype;
 select * from bookstype;
 --图书类型表
 create table bookstype(
-   btId int primary key,			--类型编号
+   btId int primary key,		--类型编号
    btName varchar2(50) not null	--类型名称
 );
 --共14个字段
@@ -140,4 +140,5 @@ insert into comments values(seq_comments.nextval,11003,666600003,'好书！好�
 insert into comments values(seq_comments.nextval,11001,666600001,'好书！好书！好书!',sysdate,3);
 insert into comments values(seq_comments.nextval,11002,666600002,'好书！好书！好书!',sysdate,4);
 insert into comments values(seq_comments.nextval,11002,666600001,'好书！好书！好书!',sysdate,5);
+
 
