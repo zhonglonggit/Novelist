@@ -29,4 +29,9 @@ public class UserInfoBackServiceImpl implements UserInfoBackService{
 		return userInfoBackMapper.delBackUser(userId);
 	}
 
+	@Override
+	public int updateBackUsers(UserInfoBack userInfoBack) {
+		return userInfoBackMapper.updateBackUsers(userInfoBack);
+	}
+
 }

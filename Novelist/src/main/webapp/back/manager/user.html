@@ -74,7 +74,7 @@
 		    	text:"修改",
 		    	iconCls:"icon-edit",
 		    	handler:function(){
-		    		currentOp="updateusers";
+		    		currentOp="updateBackUsers";
 		    		flag="修改";
 		    		var rows=obj.datagrid("getChecked")[0];
 		    		if(rows!=undefined){
@@ -156,7 +156,7 @@
 		    			//保存到数据库
 		    			rows["op"]="addusers";
 		    			
-		    			$.post("userInfoBack/",rows,function(data){
+		    			$.post("userInfoBack/"+currentOp,rows,function(data){
 		    				if(data>0){
 		    					$.messager.show({
 		    						title:'成功提示',

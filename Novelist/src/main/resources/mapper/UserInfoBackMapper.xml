@@ -17,4 +17,8 @@
 			#{item}
 		</foreach>
 	</delete>
+	<update id="updateBackUsers" parameterType="UserInfoBack">
+	update userinfo set userName=#{userName},userPassword=#{userPassword},userSex=#{userSex},userEmail=#{userEmail},userTelphone=#{userTelphone},userAddress=#{userAddress}
+	where userId=#{userId}
+	</update>
 </mapper>

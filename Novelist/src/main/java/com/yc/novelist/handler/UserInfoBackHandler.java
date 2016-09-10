@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
+import com.yc.novelist.eneity.Admin;
 import com.yc.novelist.eneity.UserInfoBack;
 import com.yc.novelist.service.UserInfoBackService;
 
@@ -68,6 +69,14 @@ public class UserInfoBackHandler {
 			ls.add(Integer.parseInt(userId[i]));
 		}
 		out.println(userInfoBackService.delBackUser(ls));
+		out.flush();
+		out.close();
+	}
+	
+	@RequestMapping(value="/updateBackUsers",method=RequestMethod.POST)
+	public void updateBackUsers(UserInfoBack userInfoBack,PrintWriter out){
+		System.out.println("============update==="+userInfoBack);
+		out.println(userInfoBackService.updateBackUsers(userInfoBack));
 		out.flush();
 		out.close();
 	}

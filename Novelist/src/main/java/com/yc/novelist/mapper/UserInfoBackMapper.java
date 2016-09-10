@@ -12,4 +12,6 @@ public interface UserInfoBackMapper {
 
 	int delBackUser(List<Integer> userId);
 
+	int updateBackUsers(UserInfoBack userInfoBack);
+
 }
