@@ -24,7 +24,7 @@ create table userinfo(
 
 drop sequence seq_userinfo;
 create sequence seq_userinfo  start with 1002;
-insert into  userinfo values (seq_userinfo.nextval,'xqq','a','男',null,null,null,null);
+insert into  userinfo values (seq_userinfo.nextval,'xqq','a','男',null,null,null,'../../images/ali.jpg');
 select * from userinfo;
 drop table bookstype;
 

@@ -54,7 +54,7 @@
 		        			var str="";
 		        			var pics=value.split(",");
 		        			for(var i=0;i<pics.length;i++){
-		        				str+="<img src='../../"+pics[i]+"' width='60px' height='60px'/>&nbsp;";
+		        				str+="<img src='"+pics[i]+"' width='60px' height='60px'/>&nbsp;";
 		        			}
 		        			return str;
 		        		}else{
@@ -222,7 +222,7 @@
 		}); */
 		
 		$.post("userInfoBack/addUserInfoBack",{uname:uname,userSex:sex,userPassword:pwd,userEmail:email,userAddress:address,userTelphone:phone},function(data){
-			if(data>0){
+			if(data==1){
 				$.messager.show({title:'成功提示',msg:"会员信息添加成功...",timeout:2000,showType:'slide'});
 				$("#userName").val("");
 				$("#userPassword").val("");

@@ -30,7 +30,7 @@ public class UserInfoBackHandler {
 	}
 	@RequestMapping(value="/addUserInfoBack")
 	@ResponseBody
-	public int addUserInfoBack(HttpServletRequest request,UserInfoBack userInfoBack,PrintWriter out){
+	public void addUserInfoBack(HttpServletRequest request,UserInfoBack userInfoBack,PrintWriter out){
 		String uname= request.getParameter("uname");
 		String sex= request.getParameter("userSex");
 		String pwd= request.getParameter("userPassword");
@@ -44,11 +44,17 @@ public class UserInfoBackHandler {
 		userInfoBack.setUserEmail(email);
 		userInfoBack.setUserAddress(address);
 		userInfoBack.setUserAddress(phone);
-		System.out.println("==?>输出所添加的信息"+userInfoBack);
-		out.print(userInfoBackService.addUsers(userInfoBack));
+		userInfoBack.setPhoto("images/ali.jpg");
+		System.out.println("==>输出所添加的信息"+userInfoBack);
+		int result = userInfoBackService.addUsers(userInfoBack);
+		if(result==1){
+			out.print(1);
+		}else{
+			out.print(0);
+		}	
 		out.flush();
 		out.close();
-		return userInfoBackService.addUsers(userInfoBack);
+		//return userInfoBackService.addUsers(userInfoBack);
 	}
 
 }
