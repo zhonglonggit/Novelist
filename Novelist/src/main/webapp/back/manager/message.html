@@ -18,13 +18,20 @@
 		    pageNumber:1,
 		    pageSize:5,
 		    pageList:[5,10,15,20,30,3],
-		    sortName:'aid',
+		    sortName:'eid',
 		    remoteSort:false,
 		    columns:[[    
-				{field:'aids',title:'',width:100,align:'center',checkbox:true},
-		        {field:'aid',title:'编号',width:100,align:'center',sortable:true},    
-		        {field:'aname',title:'姓名',width:100,align:'center',editor:{type:"text",options:{requires:true}}}, 
-		        {field:'pwd',title:'密码',width:100,align:'center',editor:{type:"text",options:{requires:true}}}
+				{field:'eids',title:'',width:100,align:'center',checkbox:true},
+		        {field:'eid',title:'评论编号',width:100,align:'center',sortable:true},   
+		        {field:'usid',title:'用户ID',width:100,align:'center',sortable:true},
+		        {field:'gid',title:'商品ID',width:100,align:'center',sortable:true},
+		        {field:'econtent',title:'评价内容',width:200,align:'center',editor:{type:"text",options:{requires:true}}},
+		        {field:'edate',title:'评价时间',width:100,align:'center',editor:{type:"text",options:{requires:true}}},
+		        {field:'state',title:'评价分数',width:100,align:'center',sortable:true},
+		        {field:'_operate',title:'操作',width:100,align:"center",
+		        	formatter:function(value,rowData,index){
+		        		return "<a href='javascript:newsMore("+rowData.eid+")'>回复</>";
+		        	}}
 		    ]],
 		    toolbar:[{
 		    	text:"修改",
