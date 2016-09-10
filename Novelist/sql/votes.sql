@@ -124,9 +124,13 @@ insert into sTate values( 3,'待收货');
 insert into sTate values( 4,'已收货');
 )
 
-drop table comments;
+
+select *from bookinfo
+drop table ofgoods;
 select * from  comments;
 --评价表
+drop table 
+--评论表
 create table comments(
 		eid int primary key,				--评论编号
 		usid int references userinfo(userId),	--用户id
@@ -135,10 +139,14 @@ create table comments(
 		edate date,              			--评价时间
 		state int            				--评价分数1-5
 );
-
+drop sequence seq_comments
 create sequence seq_comments  start with 1010100001;
 insert into comments values(seq_comments.nextval,11001,666600002,'好书！好书！好书!',sysdate,1);
 insert into comments values(seq_comments.nextval,11003,666600003,'好书！好书！好书!',sysdate,2);
 insert into comments values(seq_comments.nextval,11001,666600001,'好书！好书！好书!',sysdate,3);
 insert into comments values(seq_comments.nextval,11002,666600002,'好书！好书！好书!',sysdate,4);
 insert into comments values(seq_comments.nextval,11002,666600001,'好书！好书！好书!',sysdate,5);
+select * from comments;
+
+
+select * from comments
