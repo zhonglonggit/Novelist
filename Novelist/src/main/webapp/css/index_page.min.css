@@ -15,7 +15,8 @@ body{margin:0px auto;width:1288px;}
 	float:right;}
 .headyork a{
 	margin:5px 0px 5px 0px;
-	background:url(../js/nyse_icon.png) no-repeat;
+	background:url(../images/nyse_icon.png) no-repeat;
+	margin-right:20px;
 	float:right;
 	color:#F33;
 	}
@@ -42,8 +43,7 @@ body{margin:0px auto;width:1288px;}
 	}
 	
 .divsearch{
-
-	padding:10px 0px 0px 200px;
+	padding:10px 0px 0px 100px;
 	height:105px;
 	}
 .divsearch_logo{

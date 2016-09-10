@@ -3,24 +3,23 @@
 <div id="add_users" class="easyui-dialog" title="添加会员信息" data-options="iconCls:'icon-add',resizable:true,modal:true,closed:true,fit:true">
 <br />
 <form action="" style="float:left;padding-left:20px">
-		<label>会员名字:</label><input type="text" id="news_uname" name="uname" required="required" /><br /><br />
-		<label>密&nbsp;&nbsp;码:</label><input type="text" id="news_pwd" name="pwd" required="required" /><br /><br />
-		<label>email:</label><input type="text" id="news_email" name="email" required="required"/><br /><br />
-		<label>会员头像:</label><input type="file" multiple="multiple" id="new_pics" name="pics"  onchange="previewMultipleImage(this,'news_pic_show')"/><br /><br />
+		<label>会员名字:</label><input type="text" id="userName" name="uname" required="required" /><br /><br />
+		<label>会员性别:</label><input type="text" id="userSex" name="sex" required="required" /><br /><br />
+		<label>会员电话:</label><input type="text" id="phone" name="phone" required="required" /><br /><br />
+		<label>密&nbsp;&nbsp;码:</label><input type="password" id="userPassword" name="pwd" required="required" /><br /><br />
+		<label>会员地址:</label><input type="text" id="userAddress" name="userAddress" required="required" value="湖南衡阳"/><br /><br />
+		<label>email:</label><input type="text" id="userEmail" name="email" required="required" value="12345@qq.com"/><br /><br />
+		<label>会员头像:</label><input type="file" multiple="multiple" id="photo" name="pics"  onchange="previewMultipleImage(this,'pic_show')"/><br /><br />
 	
-	
-	<a href="javascript:addUserInfo()" class="easyui-linkbutton" data-options="iconCls:'icon-add'">添加</a>
+		<a href="javascript:addUserInfo()" class="easyui-linkbutton" data-options="iconCls:'icon-add'">添加</a>
 </form>
 
 	<div style="float:right;width:360px;margin-right:20px;">
-		<fieldset id="news_pic_show">
+		<fieldset id="pic_show">
 			<legend>图片预览</legend>
 		</fieldset>
-	
 	</div>
 </div>
-
-
 <script>
 	var obj;
 	var editRow=undefined;//记录当前正在被编辑的行
@@ -28,8 +27,8 @@
 	var currentOp;
 	var flag;
 	obj=$('#users_data').datagrid({    
-		    url:'../../userServlet',
-		    queryParams: {op:'findAllUsers'	},
+		    url:'userInfoBack/findAllUsers',
+		    /* queryParams: {op:'findAllUsers'	}, */
 		    fitColumns:true,
 		    striped:true,
 		    loadMsg:"数据加载中...",
@@ -38,21 +37,24 @@
 		    pageNumber:1,
 		    pageSize:5,
 		    pageList:[5,10,15,20,30,3],
-		    sortName:'usid',
+		    sortName:'userId',
 		    remoteSort:false,
 		    columns:[[    
-				{field:'usids',title:'',width:100,align:'center',checkbox:true},
-		        {field:'usid',title:'会员编号',width:100,align:'center',sortable:true},    
-		        {field:'uname',title:'会员名字',width:100,align:'center',editor:{type:"text",options:{requires:true}}},
-		        {field:'pwd',title:'会员密码',width:100,align:'center',editor:{type:"text",options:{requires:true}}},
-		        {field:'email',title:'会员邮箱',width:100,align:'center',editor:{type:"text",options:{requires:true}}},
-		        {field:'photo',title:'会员头像',width:100,align:'center',
+				{field:'userIds',title:'',width:100,align:'center',checkbox:true},
+		        {field:'userId',title:'用户Id',width:100,align:'center',sortable:true},    
+		        {field:'userName',title:'会员名字',width:100,align:'center',editor:{type:"text",options:{requires:true}}},
+		        {field:'userSex',title:'会员性别',width:100,align:'center',editor:{type:"text",options:{requires:true}}},
+		        {field:'userPassword',title:'会员密码',width:100,align:'center',editor:{type:"text",options:{requires:true}}},
+		        {field:'userEmail',title:'会员邮箱',width:100,align:'center',editor:{type:"text",options:{requires:true}}},
+		        {field:'userTelphone',title:'会员电话',width:100,align:'center',editor:{type:"text",options:{requires:true}}},
+		        {field:'userAddress',title:'会员地址',width:100,align:'center',editor:{type:"text",options:{requires:true}}},
+		        {field:'photo',title:'会员头像',width:150,align:'center',
 		        	formatter:function(value,rowData,index){
 	        		if(value!=null && value!=""){
 		        			var str="";
 		        			var pics=value.split(",");
 		        			for(var i=0;i<pics.length;i++){
-		        				str+="<img src='../../"+pics[i]+"' width='60px' height='60px'/>&nbsp;";
+		        				str+="<img src='"+pics[i]+"' width='60px' height='60px'/>&nbsp;";
 		        			}
 		        			return str;
 		        		}else{
@@ -105,16 +107,16 @@
 		    		if(rows!=undefined){
 		    			$.messager.confirm('信息确认','你确定要删除选中的数据吗',function(rs){
 		    				if(rs){
-		    					var usids="";
+		    					var userIds="";
 		    					for(var i=0;i<rows.length-1;i++){
-		    						usids+=rows[i].usid+",";
+		    						userIds+=rows[i].userId+",";
 		    					}
-		    					usids+=rows[i].usid;
+		    					userIds+=rows[i].userId;
 		    					//发送请求到数据库请求删除
-		    					$.post("../../userServlet",{op:"delUsers",usid:usids},function(data){
+		    					$.post("userInfoBack/delBackUser",{"userIds":userIds},function(data){
 		    						if(data>0){
 		    							$.messager.show({title:'成功提示',
-		    								msg:'新闻类型删除成功...',
+		    								msg:'会员信息删除成功...',
 		    								timeout:2000,
 		    								showType:'slide'
 		    								});
@@ -122,7 +124,7 @@
 		    							obj.datagrid("reload");//刷新表格
 		    							
 		    						}else{
-		    							$.messager.alert('失败提示','新闻类型删除失败...','error');
+		    							$.messager.alert('失败提示','会员信息删除失败...','error');
 		    						}
 		    					});
 		    				}else{
@@ -154,11 +156,11 @@
 		    			//保存到数据库
 		    			rows["op"]="addusers";
 		    			
-		    			$.post("../../userServlet",rows,function(data){
+		    			$.post("userInfoBack/",rows,function(data){
 		    				if(data>0){
 		    					$.messager.show({
 		    						title:'成功提示',
-		    						msg:'新闻类型'+flag+'成功',
+		    						msg:'用户信息'+flag+'成功',
 		    						timeout:2000,
 		    						showType:'slide'
 		    					});
@@ -168,7 +170,7 @@
 		    					obj.datagrid("rejectChanges");//回滚所有的数据
 				    			obj.datagrid("endEidit",editRow);//关闭正在被编辑的行
 		    				}else{
-		    					$.messager.alert('失败提示','新闻'+flag+'失败...','error');
+		    					$.messager.alert('失败提示','用户'+flag+'失败...','error');
 		    				}
 		    			});
 		    		}
@@ -184,28 +186,28 @@
 		    }]
 		    });
 	
-
 	
 	function addUserInfo(){
 		
-		var uname=$.trim($("#news_uname").val());
-		var pwd=$.trim($("#news_pwd").val());
-		var email=$.trim($("#news_email").val());
-		var photo=$.trim($("#new_pics").val());
-	
-		$.ajaxFileUpload({
-			url:"../../userServlet?op=addusers",
+		var uname=$.trim($("#userName").val());
+		var sex=$.trim($("#userSex").val());
+		var pwd=$.trim($("#userPassword").val());
+		var email=$.trim($("#userEmail").val());
+		var phone=$.trim($("#phone").val());
+		var address=$.trim($("#userAddress").val());
+		/* $.ajaxFileUpload({
+			url:"userInfoBack/addUserInfoBack",
 			secureuri:false,
-			fileElementId:"new_pics",
+			fileElementId:"photo",
 			dataType:"json",
-			data:{uname:uname,pwd:pwd,email:email,photo:photo},
+			data:{userName:uname,userSex:sex,userPassword:pwd,userEmail:email,userAddress:address,userTelphone:phone},
 			success:function(data,status){
 				if(data>0){
 					$.messager.show({title:'成功提示',msg:"会员信息添加成功...",timeout:2000,showType:'slide'});
-					$("#news_uname").val("");
-					$("#news_pwd").val("");
-					$("#news_email").val("");
-					$("#news_pic_show").html("");
+					$("#userName").val("");
+					$("#userPassword").val("");
+					$("#userEmail").val("");
+					$("#pic_show").html("");
 					
 					$('#add_users').dialog('close');
 					$('#users_data').datagrid("reload");
@@ -217,7 +219,22 @@
 				$.messager.alert("错误提示","会员信息添加失败...\n"+e,"error");
 			}
 		
-		});
+		}); */
+		
+		$.post("userInfoBack/addUserInfoBack",{uname:uname,userSex:sex,userPassword:pwd,userEmail:email,userAddress:address,userTelphone:phone},function(data){
+			if(data==1){
+				$.messager.show({title:'成功提示',msg:"会员信息添加成功...",timeout:2000,showType:'slide'});
+				$("#userName").val("");
+				$("#userPassword").val("");
+				$("#userEmail").val("");
+				$("#pic_show").html("");
+				
+				$('#add_users').dialog('close');
+				$('#users_data').datagrid("reload");
+			}else{
+				$.messager.alert("错误提示","会员信息添加失败...\n","error");
+			}
+		})
 	}
 		    
 </script>

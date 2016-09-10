@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yc.novelist.mapper.UserInfoBackMapper">
+	<select id="findAllUser" resultType="UserInfoBack">
+		select * from userinfo
+	</select>
+	
+	<insert id="addUsers" parameterType="UserInfoBack">
+	insert into  userinfo values(seq_userinfo.nextval,#{userName},#{userPassword},#{userSex},#{userEmail},#{userTelphone},#{userAddress},#{photo,jdbcType=VARCHAR})
+	</insert>
+	<delete id="delBackUser" parameterType="java.util.List">
+		delete from userinfo where userId in
+		<foreach collection="list" index="index" item="item" open="("
+			separator="," close=")">
+			#{item}
+		</foreach>
+	</delete>
+</mapper>
