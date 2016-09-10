@@ -1,10 +1,10 @@
 drop table admin;
 select * from admin;
---¹ÜÀíÔ±
+--ç®¡ç†å‘˜
 create table admin(					
-	aid int primary key,			--±àºÅ
-	aname varchar2(20)not null ,	--ÕËºÅ
-	pwd varchar2(20)				--ÃÜÂë
+	aid int primary key,			--ç¼–å·
+	aname varchar2(20)not null ,	--è´¦å·
+	pwd varchar2(20)				--å¯†ç 
 );
 -----------
 
@@ -17,127 +17,128 @@ delete from admin where aname='zhangsan';
 
 drop table userinfo;
 select * from userinfo;
---ÓÃ»§ĞÅÏ¢±í£¬ÉêÇëÕËºÅÊ±£¬Ö»´æÈëÕËºÅ¡¢ÃÜÂë¡¢ºÍÓÊÏä£¬ÆäËûÖµÄ¬ÈÏ£¬ÓĞ¸öÈËÖ÷Ò³¿ÉĞŞ¸Ä
+--ç”¨æˆ·ä¿¡æ¯è¡¨ï¼Œç”³è¯·è´¦å·æ—¶ï¼Œåªå­˜å…¥è´¦å·ã€å¯†ç ã€å’Œé‚®ç®±ï¼Œå…¶ä»–å€¼é»˜è®¤ï¼Œæœ‰ä¸ªäººä¸»é¡µå¯ä¿®æ”¹
 create table userinfo(
-       userId int primary key,				--ÓÃ»§Id
-       userName varchar2(20) not null,		--ÓÃ»§Ãû
-       userPassword varchar2(20) not null,	--ÃÜÂë
-       userEmail  varchar2(50), 			--ÓÊÏä
-       userSex varchar2(5) check (userSex in ('ÄĞ','Å®')),	--ĞÔ±ğ
-       userTelphone varchar2(40),			--µç»°
-       userAddress varchar2(50),			--µØÖ·
-       photo varchar2(1000)					--Í·Ïñ
+       userId int primary key,				--ç”¨æˆ·Id
+       userName varchar2(20) not null,		--ç”¨æˆ·å
+       userPassword varchar2(20) not null,	--å¯†ç 
+       userEmail  varchar2(50), 			--é‚®ç®±
+       userSex varchar2(5) check (userSex in ('ç”·','å¥³')),	--æ€§åˆ«
+       userTelphone varchar2(40),			--ç”µè¯
+       userAddress varchar2(50),			--åœ°å€
+       photo varchar2(1000)					--å¤´åƒ
 );
 
 drop sequence seq_userinfo;
 create sequence seq_userinfo  start with 11001;
-insert into  userinfo values (seq_userinfo.nextval,'user1','a','1220441234@qq.com','ÄĞ','12312345678','ÌìÂíÉ½',null);
-insert into  userinfo values (seq_userinfo.nextval,'user2','a','1220441234@qq.com','ÄĞ','12312345678','ÌìÂíÉ½',null);
-insert into  userinfo values (seq_userinfo.nextval,'user3','a','1220441234@qq.com','ÄĞ','12312345678','ÌìÂíÉ½',null);
+insert into  userinfo values (seq_userinfo.nextval,'user1','a','1220441234@qq.com','ç”·','12312345678','å¤©é©¬å±±',null);
+insert into  userinfo values (seq_userinfo.nextval,'user2','a','1220441234@qq.com','ç”·','12312345678','å¤©é©¬å±±',null);
+insert into  userinfo values (seq_userinfo.nextval,'user3','a','1220441234@qq.com','ç”·','12312345678','å¤©é©¬å±±',null);
 
 drop table bookstype;
 select * from bookstype;
---Í¼ÊéÀàĞÍ±í
+--å›¾ä¹¦ç±»å‹è¡¨
 create table bookstype(
-   btId int primary key,			--ÀàĞÍ±àºÅ
-   btName varchar2(50) not null	--ÀàĞÍÃû³Æ
+   btId int primary key,		--ç±»å‹ç¼–å·
+   btName varchar2(50) not null	--ç±»å‹åç§°
 );
---¹²14¸ö×Ö¶Î
+--å…±14ä¸ªå­—æ®µ
 (
-insert into bookstype values(901001,'ÎÄÑ§');
-insert into bookstype values(901002,'Éú»î');
-insert into bookstype values(901003,'¼ÆËã»ú');
-insert into bookstype values(901004,'ÍâÓï');
-insert into bookstype values(901005,'¾­¹Ü');
-insert into bookstype values(901006,'ÀøÖ¾');
-insert into bookstype values(901007,'Éç¿Æ');
-insert into bookstype values(901008,'Ñ§Êõ');
-insert into bookstype values(901009,'ÉÙ¶ù');
-insert into bookstype values(901010,'ÒÕÊõ');
-insert into bookstype values(901011,'Ô­°æ');
-insert into bookstype values(901012,'¿Æ¼¼');
-insert into bookstype values(901013,'Éú»î°Ù¿Æ');
-insert into bookstype values(901014,'ÆäËû');
+insert into bookstype values(901001,'æ–‡å­¦');
+insert into bookstype values(901002,'ç”Ÿæ´»');
+insert into bookstype values(901003,'è®¡ç®—æœº');
+insert into bookstype values(901004,'å¤–è¯­');
+insert into bookstype values(901005,'ç»ç®¡');
+insert into bookstype values(901006,'åŠ±å¿—');
+insert into bookstype values(901007,'ç¤¾ç§‘');
+insert into bookstype values(901008,'å­¦æœ¯');
+insert into bookstype values(901009,'å°‘å„¿');
+insert into bookstype values(901010,'è‰ºæœ¯');
+insert into bookstype values(901011,'åŸç‰ˆ');
+insert into bookstype values(901012,'ç§‘æŠ€');
+insert into bookstype values(901013,'ç”Ÿæ´»ç™¾ç§‘');
+insert into bookstype values(901014,'å…¶ä»–');
 )
 
 drop table bookinfo;
 select * from  bookinfo;
---Í¼ÊéĞÅÏ¢±í
+--å›¾ä¹¦ä¿¡æ¯è¡¨
 create table bookinfo(
-	   bookId int primary key,			--ÊéµÄ±àºÅ
-	   bookName varchar2(100) not null,	--ÊéÃû
-	   bookImage varchar2(100),			--Í¼Æ¬
-	   bookAuthor varchar2(30) not null,--×÷Õß
-	   bookDate varchar2(40),			--³ö°æÈÕÆÚ
-	   bookPrice number(10,2),			--¼ÛÇ®
-	   bookPress varchar2(100), 		--³ö°æÉç
-	   bookDescription varchar2(800),	--Í¼ÊéÃèÊö
-	   bookCount int default '0', 		--¿â´æ
-	   bookSalesCount int, 				--ÏúÁ¿
-	   commentnum int,    				--ÆÀÂÛÊı
-	   original int check (original in (0,1)),  --ÊÇ·ñÔ­´´ 	0Ô­´´	1·ÇÔ­´´
-	   btId int  constraint FK_bookinfo_booktype_btId references bookstype(btId)   --ÀàĞÍ±àºÅ
+	   bookId int primary key,			--ä¹¦çš„ç¼–å·
+	   bookName varchar2(100) not null,	--ä¹¦å
+	   bookImage varchar2(100),			--å›¾ç‰‡
+	   bookAuthor varchar2(30) not null,--ä½œè€…
+	   bookDate varchar2(40),			--å‡ºç‰ˆæ—¥æœŸ
+	   bookPrice number(10,2),			--ä»·é’±
+	   bookPress varchar2(100), 		--å‡ºç‰ˆç¤¾
+	   bookDescription varchar2(800),	--å›¾ä¹¦æè¿°
+	   bookCount int default '0', 		--åº“å­˜
+	   bookSalesCount int, 				--é”€é‡
+	   commentnum int,    				--è¯„è®ºæ•°
+	   original int check (original in (0,1)),  --æ˜¯å¦åŸåˆ› 	0åŸåˆ›	1éåŸåˆ›
+	   btId int  constraint FK_bookinfo_booktype_btId references bookstype(btId)   --ç±»å‹ç¼–å·
 );
 drop sequence seq_bookinfo;
 create sequence seq_bookinfo  start with 666600001;
-insert into bookinfo values(seq_bookinfo.nextval,'¶¯ÎïÊÀ½ç',null,'ÕÅÈı','2016-9-9',100,'À¼Öİ´óÑ§³ö°æÉç','ÕâÊÇÒ»±¾Êé',999,29,0,0,901001);
-insert into bookinfo values(seq_bookinfo.nextval,'ÎÒµÄÊÀ½ç',null,'ÕÅËÄ','2016-9-9',100,'À¼Öİ´óÑ§³ö°æÉç','ÕâÊÇÒ»±¾Êé',999,29,0,0,901002);
-insert into bookinfo values(seq_bookinfo.nextval,'º£µ×Á½ÍòÀï',null,'ÕÅÎå','2016-9-9',100,'À¼Öİ´óÑ§³ö°æÉç','ÕâÊÇÒ»±¾Êé',999,29,0,0,901003);
-insert into bookinfo values(seq_bookinfo.nextval,'¹şÄ·À×ÌØ',null,'ÕÅÁù','2016-9-9',100,'À¼Öİ´óÑ§³ö°æÉç','ÕâÊÇÒ»±¾Êé',999,29,0,0,901004);
-insert into bookinfo values(seq_bookinfo.nextval,'Ö¸»·Íõ',null,'ÕÅÆß','2016-9-9',100,'À¼Öİ´óÑ§³ö°æÉç','ÕâÊÇÒ»±¾Êé',999,29,0,0,901006);
+insert into bookinfo values(seq_bookinfo.nextval,'åŠ¨ç‰©ä¸–ç•Œ',null,'å¼ ä¸‰','2016-9-9',100,'å…°å·å¤§å­¦å‡ºç‰ˆç¤¾','è¿™æ˜¯ä¸€æœ¬ä¹¦',999,29,0,0,901001);
+insert into bookinfo values(seq_bookinfo.nextval,'æˆ‘çš„ä¸–ç•Œ',null,'å¼ å››','2016-9-9',100,'å…°å·å¤§å­¦å‡ºç‰ˆç¤¾','è¿™æ˜¯ä¸€æœ¬ä¹¦',999,29,0,0,901002);
+insert into bookinfo values(seq_bookinfo.nextval,'æµ·åº•ä¸¤ä¸‡é‡Œ',null,'å¼ äº”','2016-9-9',100,'å…°å·å¤§å­¦å‡ºç‰ˆç¤¾','è¿™æ˜¯ä¸€æœ¬ä¹¦',999,29,0,0,901003);
+insert into bookinfo values(seq_bookinfo.nextval,'å“ˆå§†é›·ç‰¹',null,'å¼ å…­','2016-9-9',100,'å…°å·å¤§å­¦å‡ºç‰ˆç¤¾','è¿™æ˜¯ä¸€æœ¬ä¹¦',999,29,0,0,901004);
+insert into bookinfo values(seq_bookinfo.nextval,'æŒ‡ç¯ç‹',null,'å¼ ä¸ƒ','2016-9-9',100,'å…°å·å¤§å­¦å‡ºç‰ˆç¤¾','è¿™æ˜¯ä¸€æœ¬ä¹¦',999,29,0,0,901006);
 
 drop table ofgoods;
 select * from  ofgoods;
---¶©µ¥±í	
+--è®¢å•è¡¨	
 create table ofgoods(
-	ofId int primary key, 	--¶©µ¥ºÅ
-	ofUserId int references	userinfo(userId),--ÓÃ»§±àºÅ-->ÊÕ»õÈË
-	ofAddress varchar2(200),--ÊÕ»õµØÖ·
-	ofDate varchar2(100),	--ÏÂµ¥Ê±¼ä
-	ofEml varchar2(100), 	--ÓÊ¼Ä·½Ê½
-	ofPrice int,			--¼Û¸ñ
-	ofTel int,				--µç»°
-	ofRemark varchar2(500),	--±¸×¢
-	ofState	int constraint FK_ofgoods_S_tate_S_id references sTate(S_id) --¶©µ¥×´Ì¬
-							--ÊÕ»õÊ±¼ä¡¢±£Áô
+	ofId int primary key, 	--è®¢å•å·
+	ofUserId int references	userinfo(userId),--ç”¨æˆ·ç¼–å·-->æ”¶è´§äºº
+	ofAddress varchar2(200),--æ”¶è´§åœ°å€
+	ofDate varchar2(100),	--ä¸‹å•æ—¶é—´
+	ofEml varchar2(100), 	--é‚®å¯„æ–¹å¼
+	ofPrice int,			--ä»·æ ¼
+	ofTel int,				--ç”µè¯
+	ofRemark varchar2(500),	--å¤‡æ³¨
+	ofState	int constraint FK_ofgoods_S_tate_S_id references sTate(S_id) --è®¢å•çŠ¶æ€
+							--æ”¶è´§æ—¶é—´ã€ä¿ç•™
 )
 drop sequence seq_ofgoods;
 create sequence seq_ofgoods  start with 201600001;
-insert into ofgoods values(seq_ofgoods.nextval,11003,'¹¤Ñ§Ôº',sysdate,'µ±µ±¿ìµİ','39.9',12312345678,'ÇëÊ¹ÓÃµ±µ±¿ìµİ£¡',1);
-insert into ofgoods values(seq_ofgoods.nextval,11002,'Ñ§Ôº',sysdate,'µ±µ±¿ìµİ','39.9',12312345678,'ÇëÊ¹ÓÃµ±µ±¿ìµİ£¡',2);
-insert into ofgoods values(seq_ofgoods.nextval,11001,'¹¤Ñ§Ôº',sysdate,'µ±µ±¿ìµİ','39.9',12312345678,'ÇëÊ¹ÓÃµ±µ±¿ìµİ£¡',3);
-insert into ofgoods values(seq_ofgoods.nextval,11001,'Ê¦Ôº',sysdate,'µ±µ±¿ìµİ','39.9',12312345678,'ÇëÊ¹ÓÃµ±µ±¿ìµİ£¡',4);
+insert into ofgoods values(seq_ofgoods.nextval,11003,'å·¥å­¦é™¢',sysdate,'å½“å½“å¿«é€’','39.9',12312345678,'è¯·ä½¿ç”¨å½“å½“å¿«é€’ï¼',1);
+insert into ofgoods values(seq_ofgoods.nextval,11002,'å­¦é™¢',sysdate,'å½“å½“å¿«é€’','39.9',12312345678,'è¯·ä½¿ç”¨å½“å½“å¿«é€’ï¼',2);
+insert into ofgoods values(seq_ofgoods.nextval,11001,'å·¥å­¦é™¢',sysdate,'å½“å½“å¿«é€’','39.9',12312345678,'è¯·ä½¿ç”¨å½“å½“å¿«é€’ï¼',3);
+insert into ofgoods values(seq_ofgoods.nextval,11001,'å¸ˆé™¢',sysdate,'å½“å½“å¿«é€’','39.9',12312345678,'è¯·ä½¿ç”¨å½“å½“å¿«é€’ï¼',4);
 
 drop table sTate;
 select * from  sTate;
---¶©µ¥×´Ì¬±í
+--è®¢å•çŠ¶æ€è¡¨
 create table sTate(
 S_id int primary key,	
-S_state varchar2(20)--ÒÑ½Óµ¥¡¢ÅÉËÍÖĞ¡¢´ıÊÕ»õ¡¢ÒÑÊÕ»õ
+S_state varchar2(20)--å·²æ¥å•ã€æ´¾é€ä¸­ã€å¾…æ”¶è´§ã€å·²æ”¶è´§
 )
 
-insert into sTate values( 1,'ÒÑ½Óµ¥');
-insert into sTate values( 2,'ÅÉËÍÖĞ');
-insert into sTate values( 3,'´ıÊÕ»õ');
-insert into sTate values( 4,'ÒÑÊÕ»õ');
+insert into sTate values( 1,'å·²æ¥å•');
+insert into sTate values( 2,'æ´¾é€ä¸­');
+insert into sTate values( 3,'å¾…æ”¶è´§');
+insert into sTate values( 4,'å·²æ”¶è´§');
 
 
 drop table ofgoods;
 select * from  comments;
---ÆÀÂÛ±í
+--è¯„è®ºè¡¨
 create table comments(
-		eid int primary key,				--ÆÀÂÛ±àºÅ
-		usid int references userinfo(userId),	--ÓÃ»§id
-		gid int references bookinfo(bookId), 		--ÉÌÆ·id
-		econtent varchar2(200), 	 		--ÆÀ¼ÛÄÚÈİ
-		edate date,              			--ÆÀ¼ÛÊ±¼ä
-		state int            				--ÆÀ¼Û·ÖÊı1-5
+		eid int primary key,				--è¯„è®ºç¼–å·
+		usid int references userinfo(userId),	--ç”¨æˆ·id
+		gid int references bookinfo(bookId), 		--å•†å“id
+		econtent varchar2(200), 	 		--è¯„ä»·å†…å®¹
+		edate date,              			--è¯„ä»·æ—¶é—´
+		state int            				--è¯„ä»·åˆ†æ•°1-5
 );
 
 create sequence seq_comments  start with 1010100001;
-insert into comments values(seq_comments.nextval,11001,666600002,'ºÃÊé£¡ºÃÊé£¡ºÃÊé!',sysdate,1);
-insert into comments values(seq_comments.nextval,11003,666600003,'ºÃÊé£¡ºÃÊé£¡ºÃÊé!',sysdate,2);
-insert into comments values(seq_comments.nextval,11001,666600001,'ºÃÊé£¡ºÃÊé£¡ºÃÊé!',sysdate,3);
-insert into comments values(seq_comments.nextval,11002,666600002,'ºÃÊé£¡ºÃÊé£¡ºÃÊé!',sysdate,4);
-insert into comments values(seq_comments.nextval,11002,666600001,'ºÃÊé£¡ºÃÊé£¡ºÃÊé!',sysdate,5);
+insert into comments values(seq_comments.nextval,11001,666600002,'å¥½ä¹¦ï¼å¥½ä¹¦ï¼å¥½ä¹¦!',sysdate,1);
+insert into comments values(seq_comments.nextval,11003,666600003,'å¥½ä¹¦ï¼å¥½ä¹¦ï¼å¥½ä¹¦!',sysdate,2);
+insert into comments values(seq_comments.nextval,11001,666600001,'å¥½ä¹¦ï¼å¥½ä¹¦ï¼å¥½ä¹¦!',sysdate,3);
+insert into comments values(seq_comments.nextval,11002,666600002,'å¥½ä¹¦ï¼å¥½ä¹¦ï¼å¥½ä¹¦!',sysdate,4);
+insert into comments values(seq_comments.nextval,11002,666600001,'å¥½ä¹¦ï¼å¥½ä¹¦ï¼å¥½ä¹¦!',sysdate,5);
+
 
