@@ -23,7 +23,7 @@ create table userinfo(
        userName varchar2(20) not null,		--用户名
        userPassword varchar2(20) not null,	--密码
        userEmail  varchar2(50), 			--邮箱
-       userSex varchar2(5) check (userSex in ('男','女')),	--性别
+       userSex varchar2(20) default '男',	--性别
        userTelphone varchar2(40),			--电话
        userAddress varchar2(50),			--地址
        photo varchar2(1000)					--头像
@@ -143,5 +143,11 @@ insert into comments values(seq_comments.nextval,11001,666600001,'好书！好�
 insert into comments values(seq_comments.nextval,11002,666600002,'好书！好书！好书!',to_date('1012-2-2','yyyy-mm-dd'),4);
 insert into comments values(seq_comments.nextval,11004,666600001,'好书！好书！好书!',to_date('1012-2-2','yyyy-mm-dd'),5);
 
-
+create table back(
+	backId int primary key,     --回复编号
+	bcontent varchar2(200),     --回复的内容
+	eid int references comments(eid) --评论的ID
+);
+create sequence seq_backId with srart 132044;
+insert into back values(seq_backId.nextval,'很高兴收到你的评论',)
 select * from comments

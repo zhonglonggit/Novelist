@@ -1,5 +1,13 @@
 <table id="mine_data"></table>
 
+<div id="replays" class="easyui-dialog" title="评论回复" data-options="closed:true">
+	<fieldset>
+		<legend>评论回复框</legend>
+		<textarea style="width: 300px; height: 200px;"></textarea><br>
+		<button id="back" style="margin-left: 130px;">确认回复</button>
+	</fieldset>
+</div>
+
 <script>
 	var obj;
 	var editRow=undefined;//记录当前正在被编辑的行
@@ -28,38 +36,28 @@
 		        {field:'state',title:'评价分数',width:100,align:'center',sortable:true},
 		        {field:'_operate',title:'操作',width:100,align:"center",
 		        	formatter:function(value,rowData,index){
-		        		return "<a href='javascript:replay("+rowData.eid+")'>回复</>";
+		        		return "<a href='javascript:#("+rowData.eid+")' onclick='openReply()''>回复</>";
 		        	}}
 		    ]],
-		   /*  toolbar:[{
-		    	text:"修改",
+		    /*  toolbar:[{
+		    	text:"回复",
 		    	iconCls:"icon-edit",
-		    	handler:function(){
-		    		currentOp="updateAdmins";
-		    		flag="修改";
-		    		var rows=obj.datagrid("getChecked")[0];
-		    		if(rows!=undefined){
-		    			if(editRow!=undefined){//说明有行正在被编辑
-		    				obj.datagrid("rejectChanges");//回滚所有的数据
-			    			obj.datagrid("endEidit",editRow);//关闭正在被编辑的行
-			    			editRow=undefined;
-		    			}else{
-		    				//获取用户选中的行的索引
-		    				var index=obj.datagrid("getRowIndex",rows);
-		    				alert(rows);
-		    				obj.datagrid("updateRow",{index:index,row:rows});
-		    				obj.datagrid("beginEdit",index);
-		    				editRow=index;//记录当前被编辑的索引行
-		    			 	}
-		    			}else{
-		    				$.messager.show({title:'温馨提示',
-		    					msg:'请选中你要修改的数据...',
-		    					timeout:2000,
-		    					showType:'slide'
-		    			});
+		    	handler:function(){var rows=obj.datagrid("getChecked");
+	    		if(rows.length>1 || rows.length<=0){
+	    			$.messager.show({title:'温馨提示',
+    					msg:'请选中一条评论进行回复...',
+    					timeout:2000,
+    					showType:'slide'});
+	    		}else{
+		    		$('#replays').dialog('open');
 		    		}
 		    	}
-		    }] */
+		    }]  */
 
 	});
+ 	
+	function openReply(){
+		$('#replays').dialog('open');
+		
+	}
 </script>
