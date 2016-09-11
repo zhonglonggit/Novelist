@@ -4,6 +4,7 @@
 <head>
 <base href="/Novelist/">
 <meta charset="utf-8" />
+
 <title>当当-注册</title>
 <link rel="shortcut icon" href="./images/favicon.png"/>
 <link rel="stylesheet" type="text/css" media="all"  href="css/styles.css"/>

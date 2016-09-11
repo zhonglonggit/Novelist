@@ -39,7 +39,7 @@ drop table bookstype;
 select * from bookstype;
 --图书类型表
 create table bookstype(
-   btId int primary key,		--类型编号
+   btId int primary key,			--类型编号
    btName varchar2(50) not null	--类型名称
 );
 --共14个字段
@@ -60,15 +60,17 @@ insert into bookstype values(901013,'生活百科');
 insert into bookstype values(901014,'其他');
 )
 
+		select * from bookinfo
+
 drop table bookinfo;
 select * from  bookinfo;
 --图书信息表
 create table bookinfo(
 	   bookId int primary key,			--书的编号
 	   bookName varchar2(100) not null,	--书名
-	   bookImage varchar2(100),			--图片
+	   bookImage varchar2(100),--图片
 	   bookAuthor varchar2(30) not null,--作者
-	   bookDate varchar2(40),			--出版日期
+	   bookDate date,			--出版日期
 	   bookPrice number(10,2),			--价钱
 	   bookPress varchar2(100), 		--出版社
 	   bookDescription varchar2(800),	--图书描述
@@ -80,8 +82,8 @@ create table bookinfo(
 );
 drop sequence seq_bookinfo;
 create sequence seq_bookinfo  start with 666600001;
-insert into bookinfo values(seq_bookinfo.nextval,'动物世界',null,'张三','2016-9-9',100,'兰州大学出版社','这是一本书',999,29,0,0,901001);
-insert into bookinfo values(seq_bookinfo.nextval,'我的世界',null,'张四','2016-9-9',100,'兰州大学出版社','这是一本书',999,29,0,0,901002);
+insert into bookinfo values(seq_bookinfo.nextval,'动物世界',null,'张三',to_date('2016-9-9','yyyy-MM-dd'),100,'兰州大学出版社','这是一本书',999,29,0,0,901001);
+insert into bookinfo values(seq_bookinfo.nextval,'我的世界',null,'张四',to_date('2016-8-8','yyyy-MM-dd'),100,'兰州大学出版社','这是一本书',999,29,0,0,901002);
 insert into bookinfo values(seq_bookinfo.nextval,'海底两万里',null,'张五','2016-9-9',100,'兰州大学出版社','这是一本书',999,29,0,0,901003);
 insert into bookinfo values(seq_bookinfo.nextval,'哈姆雷特',null,'张六','2016-9-9',100,'兰州大学出版社','这是一本书',999,29,0,0,901004);
 insert into bookinfo values(seq_bookinfo.nextval,'指环王',null,'张七','2016-9-9',100,'兰州大学出版社','这是一本书',999,29,0,0,901006);
@@ -100,7 +102,7 @@ create table ofgoods(
 	ofRemark varchar2(500),	--备注
 	ofState	int constraint FK_ofgoods_S_tate_S_id references sTate(S_id) --订单状态
 							--收货时间、保留
-)
+);
 drop sequence seq_ofgoods;
 create sequence seq_ofgoods  start with 201600001;
 insert into ofgoods values(seq_ofgoods.nextval,11003,'工学院',sysdate,'当当快递','39.9',12312345678,'请使用当当快递！',1);
@@ -115,15 +117,18 @@ create table sTate(
 S_id int primary key,	
 S_state varchar2(20)--已接单、派送中、待收货、已收货
 )
-
+(
 insert into sTate values( 1,'已接单');
 insert into sTate values( 2,'派送中');
 insert into sTate values( 3,'待收货');
 insert into sTate values( 4,'已收货');
+)
+
 
 select *from bookinfo
 drop table ofgoods;
 select * from  comments;
+--评价表
 drop table 
 --评论表
 create table comments(
@@ -136,12 +141,12 @@ create table comments(
 );
 drop sequence seq_comments
 create sequence seq_comments  start with 1010100001;
+insert into comments values(seq_comments.nextval,11001,666600002,'好书！好书！好书!',sysdate,1);
+insert into comments values(seq_comments.nextval,11003,666600003,'好书！好书！好书!',sysdate,2);
+insert into comments values(seq_comments.nextval,11001,666600001,'好书！好书！好书!',sysdate,3);
+insert into comments values(seq_comments.nextval,11002,666600002,'好书！好书！好书!',sysdate,4);
+insert into comments values(seq_comments.nextval,11002,666600001,'好书！好书！好书!',sysdate,5);
 select * from comments;
-insert into comments values(seq_comments.nextval,11001,666600002,'好书！好书！好书!',to_date('1012-2-2','yyyy-mm-dd'),1);
-insert into comments values(seq_comments.nextval,11003,666600003,'好书！好书！好书!',to_date('1012-2-2','yyyy-mm-dd'),2);
-insert into comments values(seq_comments.nextval,11001,666600001,'好书！好书！好书!',to_date('1012-2-2','yyyy-mm-dd'),3);
-insert into comments values(seq_comments.nextval,11002,666600002,'好书！好书！好书!',to_date('1012-2-2','yyyy-mm-dd'),4);
-insert into comments values(seq_comments.nextval,11004,666600001,'好书！好书！好书!',to_date('1012-2-2','yyyy-mm-dd'),5);
 
 create table back(
 	backId int primary key,     --回复编号
@@ -150,4 +155,6 @@ create table back(
 );
 create sequence seq_backId with srart 132044;
 insert into back values(seq_backId.nextval,'很高兴收到你的评论',)
+select * from comments
+
 select * from comments

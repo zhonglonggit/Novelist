@@ -74,7 +74,7 @@ var ue = UE.getEditor('editor');
 var update_ue=UE.getEditor('update_editor');
 
 	obj=$('#news_data').datagrid({    
-	    url:'../../newsServlet',
+	    url:'book/selectAllBook',
 	    queryParams: {op:'findNewsByPage'},
 	    fitColumns:true,
 	    striped:true,
@@ -88,20 +88,23 @@ var update_ue=UE.getEditor('update_editor');
 	    remoteSort:false,
 	    columns:[[    
 			{field:'tid',title:'',width:100,align:'center',checkbox:true},
-	        {field:'bookId',title:'图书编号',width:100,align:'center',sortable:true},    
+	        {field:'bookId',title:'书籍编号',width:120,align:'center',sortable:true},    
 	        {field:'bookName',title:'书名',width:100,align:'center'},
 	        {field:'bookAuthor',title:'作者',width:100,align:'center'},
-	        {field:'bookDate',title:'上架时间',width:100,align:'center'},
-	        {field:'salePrice',title:'价钱',width:100,align:'center'},
-	        {field:'bookPress',title:'出版社',width:100,align:'center',
-	        field:'bookDescription',title:'书籍描述',width:100,align:'center',
-	        field:'saleCount',title:'售出数量',width:100,align:'center',
+	        {field:'bookDate',title:'上架时间',width:120,align:'center'},
+	        {field:'bookPrice',title:'价钱',width:100,align:'center'},
+	        {field:'bookPress',title:'出版社',width:100,align:'center'},
+	        {field:'bookDescription',title:'书籍描述',width:120,align:'center'},
+	        {field:'bookCount',title:'库存',width:100,align:'center'},
+	        {field:'bookSalesCount',title:'销量',width:100,align:'center'},
+	        {field:'commentnum',title:'评论数',width:100,align:'center'},
+	        {field:'original',title:'是否原创',width:100,align:'center'},
+	        {field:'btId',title:'类型编号',width:100,align:'center',
 	        	formatter:function(value,rowData,index){
-	        		return value+"&nbsp;<a href='javascript:changeTop("+rowData.nid+")'>置顶</a>&nbsp;&nbsp;<a href='javascript:changefront("+rowData.nid+")'>上移</a>&nbsp;"
+	        		return value;
 	        	}	
 	        },
-	        {field:'views',title:'浏览次数',width:100,align:'center'},
-	        {field:'pics',title:'图片',width:400,align:'center',
+	        {field:'bookImage',title:'图片',width:400,align:'center',
 	        	formatter:function(value,rowData,index){
 	        		if(value!=null && value!=""){
 	        			var str="";
