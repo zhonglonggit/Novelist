@@ -9,47 +9,17 @@
 <link type="text/css" rel="stylesheet" href="css/common.min.css">
 <link type="text/css" rel="stylesheet" href="css/index_page.min.css">
 <title>书城-首页</title>
-<script type="text/javascript" charset="utf-8"  src="js/index.js"></script>
-<script type="text/javascript" charset="utf-8"  src="js/jquery.min.js"></script>
-<script type="text/javascript" charset="utf-8"  src="js/underscore.min.js"></script>
-<script type="text/javascript" charset="utf-8"  src="js/backbone.min.js"></script>
-<script type="text/javascript" charset="utf-8"  src="js/jquery.lazyload.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/index.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/underscore.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/backbone.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/jquery.lazyload.min.js"></script>
 </head>
-<!--<img src="图片地址" data-original="图片延迟加载" onerror="加载错误时的图片">-->
 <body>
 <!-- 公共头 -->
 <script type="text/javascript" src="files/ggsmd.js"></script>
 <script src="images/pagetop2015_0827.js" charset="gb2312" type="text/javascript"></script>
 <script src="images/dd.menu-aim.js" charset="gb2312" type="text/javascript"></script>
-<!-- KinSlideshow图片轮换 -->
-<script type="text/javascript">
-	$(function() {
-		$("#KinSlideshow").KinSlideshow({
-			moveStyle : "left", //设置切换方向为左
-			intervalTime : 2, //设置时间间隔为2秒 默认时间间隔为5秒
-			mouseEvent : "mouseover", //设置鼠标事件为划过切换  【默认鼠标点击是切换】
-			titleFont : {
-				TitleFont_size : 14,
-				TitleFont_color : "pink"
-			},
-			mouseSpeedTime : 200,//切换一张图片 所需要的时间
-			isHasTitleBar : false, //是否显示标题背景  true|false  默认为  true
-			isHasTitleFont : false, //是否显示标题文字  默认为true
-			isHasBtn : true, //是否显示按钮  
-			btn : {
-				btn_bgColor : "#666",
-				btn_bgHoverColor : "#CC0000",
-				btn_fontColor : "pink",
-				btn_fontHoverColor : "black",
-				btn_borderColor : "pink",
-				btn_borderHoverColor : "#CCC",
-				btn_borderWidth :1,
-				btn_bgAlpha :.7
-			}
-		//按钮样式设置 （isHasBtn = true 前提下启用）
-		})
-	});
-</script>
 
 	<!-- 头部 -->
 	<div class="divhead">
@@ -111,10 +81,10 @@
             <!-- 主体 -->
             <div class="divmian">
                 <div id="KinSlideshow" style="visibility: hidden; float:left;">
-                    <a href="#" target="_blank"><img src="images/lunhuan_1.jpg" alt="这是标题一" /></a>
-                    <a href="#" target="_blank"><img src="images/lunhuan_2.jpg" alt="这是标题二" /></a>
-                    <a href="#" target="_blank"><img src="images/lunhuan_3.jpg" alt="这是标题三" /></a>
-                    <a href="#" target="_blank"><img src="images/lunhuan_4.jpg" alt="这是标题四" /></a>
+                    <a href="#" target="_blank"><img src="images/lunhuan_1.jpg" alt="这是标题一"/></a>
+                    <a href="#" target="_blank"><img src="images/lunhuan_2.jpg" alt="这是标题二"/></a>
+                    <a href="#" target="_blank"><img src="images/lunhuan_3.jpg" alt="这是标题三"/></a>
+                    <a href="#" target="_blank"><img src="images/lunhuan_4.jpg" alt="这是标题四"/></a>
                 </div>
             </div>
 		</div>
