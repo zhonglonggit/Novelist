@@ -149,5 +149,13 @@ insert into comments values(seq_comments.nextval,11002,666600002,'好书！好�
 insert into comments values(seq_comments.nextval,11002,666600001,'好书！好书！好书!',sysdate,5);
 select * from comments;
 
+create table back(
+	backId int primary key,     --回复编号
+	bcontent varchar2(200),     --回复的内容
+	eid int references comments(eid) --评论的ID
+);
+create sequence seq_backId with srart 132044;
+insert into back values(seq_backId.nextval,'很高兴收到你的评论',)
+select * from comments
 
 select * from comments
