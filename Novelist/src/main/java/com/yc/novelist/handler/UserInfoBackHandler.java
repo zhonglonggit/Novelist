@@ -46,7 +46,7 @@ public class UserInfoBackHandler {
 		userInfoBack.setUserPassword(pwd);
 		userInfoBack.setUserEmail(email);
 		userInfoBack.setUserAddress(address);
-		userInfoBack.setUserAddress(phone);
+		userInfoBack.setUserTelphone(phone);
 		userInfoBack.setPhoto("images/ali.jpg");
 		System.out.println("==>输出所添加的信息"+userInfoBack);
 		int result = userInfoBackService.addUsers(userInfoBack);
@@ -68,6 +68,7 @@ public class UserInfoBackHandler {
 		for (int i = 0; i < userId.length; i++) {
 			ls.add(Integer.parseInt(userId[i]));
 		}
+		System.out.println(ls);
 		out.println(userInfoBackService.delBackUser(ls));
 		out.flush();
 		out.close();

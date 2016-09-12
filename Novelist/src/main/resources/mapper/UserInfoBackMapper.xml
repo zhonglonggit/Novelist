@@ -12,10 +12,9 @@
 	</insert>
 	<delete id="delBackUser" parameterType="java.util.List">
 		delete from userinfo where userId in
-		<foreach collection="list" index="index" item="item" open="("
-			separator="," close=")">
-			#{item}
-		</foreach>
+		 <foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+            #{item,jdbcType=VARCHAR}
+        </foreach>
 	</delete>
 	<update id="updateBackUsers" parameterType="UserInfoBack">
 	update userinfo set userName=#{userName},userPassword=#{userPassword},userSex=#{userSex},userEmail=#{userEmail},userTelphone=#{userTelphone},userAddress=#{userAddress}

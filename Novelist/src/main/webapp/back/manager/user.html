@@ -5,7 +5,7 @@
 <form action="" style="float:left;padding-left:20px">
 		<label>会员名字:</label><input type="text" id="userName" name="uname" required="required" /><br /><br />
 		<label>会员性别:</label><input type="text" id="userSex" name="sex" required="required" /><br /><br />
-		<label>会员电话:</label><input type="text" id="phone" name="phone" required="required" /><br /><br />
+		<label>会员电话:</label><input type="text" id="phone" name="phone" required="required" value=" "/><br /><br />
 		<label>密&nbsp;&nbsp;码:</label><input type="password" id="userPassword" name="pwd" required="required" /><br /><br />
 		<label>会员地址:</label><input type="text" id="userAddress" name="userAddress" required="required" value="湖南衡阳"/><br /><br />
 		<label>email:</label><input type="text" id="userEmail" name="email" required="required" value="12345@qq.com"/><br /><br />
@@ -195,6 +195,7 @@
 		var email=$.trim($("#userEmail").val());
 		var phone=$.trim($("#phone").val());
 		var address=$.trim($("#userAddress").val());
+		
 		/* $.ajaxFileUpload({
 			url:"userInfoBack/addUserInfoBack",
 			secureuri:false,
@@ -225,9 +226,10 @@
 			if(data==1){
 				$.messager.show({title:'成功提示',msg:"会员信息添加成功...",timeout:2000,showType:'slide'});
 				$("#userName").val("");
+				$("#userSex").val("");
 				$("#userPassword").val("");
 				$("#userEmail").val("");
-				$("#pic_show").html("");
+				$("#phone").val("");
 				
 				$('#add_users').dialog('close');
 				$('#users_data').datagrid("reload");

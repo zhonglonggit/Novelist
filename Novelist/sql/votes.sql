@@ -17,13 +17,14 @@ delete from admin where aname='zhangsan';
 
 drop table userinfo;
 select * from userinfo;
+delete from userinfo 
 --用户信息表，申请账号时，只存入账号、密码、和邮箱，其他值默认，有个人主页可修改
 create table userinfo(
        userId int primary key,				--用户Id
        userName varchar2(20) not null,		--用户名
        userPassword varchar2(20) not null,	--密码
+       userSex varchar2(20) default '男',	--性别
        userEmail  varchar2(50), 			--邮箱
-       userSex varchar2(5) check (userSex in ('男','女')),	--性别
        userTelphone varchar2(40),			--电话
        userAddress varchar2(50),			--地址
        photo varchar2(1000)					--头像
@@ -84,9 +85,9 @@ drop sequence seq_bookinfo;
 create sequence seq_bookinfo  start with 666600001;
 insert into bookinfo values(seq_bookinfo.nextval,'动物世界',null,'张三',to_date('2016-9-9','yyyy-MM-dd'),100,'兰州大学出版社','这是一本书',999,29,0,0,901001);
 insert into bookinfo values(seq_bookinfo.nextval,'我的世界',null,'张四',to_date('2016-8-8','yyyy-MM-dd'),100,'兰州大学出版社','这是一本书',999,29,0,0,901002);
-insert into bookinfo values(seq_bookinfo.nextval,'海底两万里',null,'张五','2016-9-9',100,'兰州大学出版社','这是一本书',999,29,0,0,901003);
-insert into bookinfo values(seq_bookinfo.nextval,'哈姆雷特',null,'张六','2016-9-9',100,'兰州大学出版社','这是一本书',999,29,0,0,901004);
-insert into bookinfo values(seq_bookinfo.nextval,'指环王',null,'张七','2016-9-9',100,'兰州大学出版社','这是一本书',999,29,0,0,901006);
+insert into bookinfo values(seq_bookinfo.nextval,'海底两万里',null,'张五',to_date('2016-5-4','yyyy-MM-dd'),100,'兰州大学出版社','这是一本书',999,29,0,0,901003);
+insert into bookinfo values(seq_bookinfo.nextval,'哈姆雷特',null,'张六',to_date('2016-6-7','yyyy-MM-dd'),100,'兰州大学出版社','这是一本书',999,29,0,0,901004);
+insert into bookinfo values(seq_bookinfo.nextval,'指环王',null,'张七',to_date('2016-1-9','yyyy-MM-dd'),100,'兰州大学出版社','这是一本书',999,29,0,0,901006);
 
 drop table ofgoods;
 select * from  ofgoods;
@@ -106,9 +107,9 @@ create table ofgoods(
 drop sequence seq_ofgoods;
 create sequence seq_ofgoods  start with 201600001;
 insert into ofgoods values(seq_ofgoods.nextval,11003,'工学院',sysdate,'当当快递','39.9',12312345678,'请使用当当快递！',1);
-insert into ofgoods values(seq_ofgoods.nextval,11002,'学院',sysdate,'当当快递','39.9',12312345678,'请使用当当快递！',2);
+insert into ofgoods values(seq_ofgoods.nextval,11027,'学院',sysdate,'当当快递','39.9',12312345678,'请使用当当快递！',2);
 insert into ofgoods values(seq_ofgoods.nextval,11001,'工学院',sysdate,'当当快递','39.9',12312345678,'请使用当当快递！',3);
-insert into ofgoods values(seq_ofgoods.nextval,11001,'师院',sysdate,'当当快递','39.9',12312345678,'请使用当当快递！',4);
+insert into ofgoods values(seq_ofgoods.nextval,11028,'师院',sysdate,'当当快递','39.9',12312345678,'请使用当当快递！',4);
 
 drop table sTate;
 select * from  sTate;
@@ -126,7 +127,7 @@ insert into sTate values( 4,'已收货');
 
 
 select *from bookinfo
-drop table ofgoods;
+drop table comments;
 select * from  comments;
 --评价表
 drop table 
@@ -141,8 +142,8 @@ create table comments(
 );
 drop sequence seq_comments
 create sequence seq_comments  start with 1010100001;
-insert into comments values(seq_comments.nextval,11001,666600002,'好书！好书！好书!',sysdate,1);
-insert into comments values(seq_comments.nextval,11003,666600003,'好书！好书！好书!',sysdate,2);
+insert into comments values(seq_comments.nextval,11027,666600002,'好书！好书！好书!',sysdate,1);
+insert into comments values(seq_comments.nextval,11028,666600003,'好书！好书！好书!',sysdate,2);
 insert into comments values(seq_comments.nextval,11001,666600001,'好书！好书！好书!',sysdate,3);
 insert into comments values(seq_comments.nextval,11002,666600002,'好书！好书！好书!',sysdate,4);
 insert into comments values(seq_comments.nextval,11002,666600001,'好书！好书！好书!',sysdate,5);
