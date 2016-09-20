@@ -1,0 +1,63 @@
+<table id="mine_data"></table>
+
+<div id="replays" class="easyui-dialog" title="评论回复" data-options="closed:true">
+	<fieldset>
+		<legend>评论回复框</legend>
+		<textarea style="width: 300px; height: 200px;"></textarea><br>
+		<button id="back" style="margin-left: 130px;">确认回复</button>
+	</fieldset>
+</div>
+
+<script>
+	var obj;
+	var editRow=undefined;//记录当前正在被编辑的行
+	var currentOp;
+	var flag;
+	obj=$('#mine_data').datagrid({    
+		    url:'comments/findAllComments',
+		    /* queryParams: {op:'findAllByAid'	}, */
+		    fitColumns:true,
+		    striped:true,
+		    loadMsg:"数据加载中...",
+		    pagination:true,
+		    fit:true,
+		    pageNumber:1,
+		    pageSize:5,
+		    pageList:[5,10,15,20,30,3],
+		    sortName:'eid',
+		    remoteSort:false,
+		    columns:[[    
+				{field:'eids',title:'',width:100,align:'center',checkbox:true},
+		        {field:'eid',title:'评论编号',width:100,align:'center',sortable:true},   
+		        {field:'usid',title:'用户ID',width:100,align:'center',sortable:true},
+		        {field:'gid',title:'商品ID',width:100,align:'center',sortable:true},
+		        {field:'econtent',title:'评价内容',width:200,align:'center',editor:{type:"text",options:{requires:true}}},
+		        {field:'edate',title:'评价时间',width:100,align:'center',editor:{type:"text",options:{requires:true}}},
+		        {field:'state',title:'评价分数',width:100,align:'center',sortable:true},
+		        {field:'_operate',title:'操作',width:100,align:"center",
+		        	formatter:function(value,rowData,index){
+		        		return "<a href='javascript:#("+rowData.eid+")' onclick='openReply()''>回复</>";
+		        	}}
+		    ]],
+		    /*  toolbar:[{
+		    	text:"回复",
+		    	iconCls:"icon-edit",
+		    	handler:function(){var rows=obj.datagrid("getChecked");
+	    		if(rows.length>1 || rows.length<=0){
+	    			$.messager.show({title:'温馨提示',
+    					msg:'请选中一条评论进行回复...',
+    					timeout:2000,
+    					showType:'slide'});
+	    		}else{
+		    		$('#replays').dialog('open');
+		    		}
+		    	}
+		    }]  */
+
+	});
+ 	
+	function openReply(){
+		$('#replays').dialog('open');
+		
+	}
+</script>

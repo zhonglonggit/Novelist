@@ -2,6 +2,7 @@ package com.yc.novelist.service.impl;
 
 import static org.junit.Assert.fail;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
@@ -26,6 +27,14 @@ public class UserInfoBackServiceImplTest {
 	@Test
 	public void testAddUsers() {
 		int result = userInfoBackService.addUsers(new UserInfoBack("zz","a","女","12345@qq.com","18463847635","湖南",null));
+		System.out.println(result);
+	}
+	
+	@Test
+	public void testdelUsers() {
+		List<Integer> list = new ArrayList<>();
+		list.add(6,7);
+		int result = userInfoBackService.delBackUser(list);
 		System.out.println(result);
 	}
 

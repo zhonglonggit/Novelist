@@ -47,13 +47,13 @@ $(function(){
 						closable:true
 					});
 				}
-			}else if(text=="会员信息"){
-				if(tabs.tabs('exists',"会员信息")){
-					tabs.tabs('select',"会员信息");
+			}else if(text=="评论管理"){
+				if(tabs.tabs('exists',"评论管理")){
+					tabs.tabs('select',"评论管理");
 				}else{
 					tabs.tabs('add',{
-						title:"会员信息",
-						href:"back/manager/mine.html",
+						title:"评论管理",
+						href:"back/manager/message.html",
 						closable:true
 					});
 				}

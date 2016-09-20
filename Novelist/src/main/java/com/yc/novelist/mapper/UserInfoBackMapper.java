@@ -10,4 +10,8 @@ public interface UserInfoBackMapper {
 
 	int addUsers(UserInfoBack userInfoBack);
 
+	int delBackUser(List<Integer> userId);
+
+	int updateBackUsers(UserInfoBack userInfoBack);
+
 }

@@ -1,4 +1,12 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=branch 'master' of ssh\://git@github.com/zhonglonggit/Novelist.git
 eclipse.preferences.version=1
+<<<<<<< HEAD
+=======
+encoding//sql/booksale.sql=UTF-8
+encoding//sql/votes.sql=UTF-8
+>>>>>>> branch 'master' of git@github.com:zhonglonggit/Novelist.git
 encoding//src/main/java=utf-8
 encoding//src/main/resources=utf-8
 encoding//src/test/java=utf-8

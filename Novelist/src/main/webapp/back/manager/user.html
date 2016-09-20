@@ -5,7 +5,7 @@
 <form action="" style="float:left;padding-left:20px">
 		<label>会员名字:</label><input type="text" id="userName" name="uname" required="required" /><br /><br />
 		<label>会员性别:</label><input type="text" id="userSex" name="sex" required="required" /><br /><br />
-		<label>会员电话:</label><input type="text" id="phone" name="phone" required="required" /><br /><br />
+		<label>会员电话:</label><input type="text" id="phone" name="phone" required="required" value=" "/><br /><br />
 		<label>密&nbsp;&nbsp;码:</label><input type="password" id="userPassword" name="pwd" required="required" /><br /><br />
 		<label>会员地址:</label><input type="text" id="userAddress" name="userAddress" required="required" value="湖南衡阳"/><br /><br />
 		<label>email:</label><input type="text" id="userEmail" name="email" required="required" value="12345@qq.com"/><br /><br />
@@ -54,7 +54,7 @@
 		        			var str="";
 		        			var pics=value.split(",");
 		        			for(var i=0;i<pics.length;i++){
-		        				str+="<img src='../../"+pics[i]+"' width='60px' height='60px'/>&nbsp;";
+		        				str+="<img src='"+pics[i]+"' width='60px' height='60px'/>&nbsp;";
 		        			}
 		        			return str;
 		        		}else{
@@ -74,7 +74,7 @@
 		    	text:"修改",
 		    	iconCls:"icon-edit",
 		    	handler:function(){
-		    		currentOp="updateusers";
+		    		currentOp="updateBackUsers";
 		    		flag="修改";
 		    		var rows=obj.datagrid("getChecked")[0];
 		    		if(rows!=undefined){
@@ -107,16 +107,16 @@
 		    		if(rows!=undefined){
 		    			$.messager.confirm('信息确认','你确定要删除选中的数据吗',function(rs){
 		    				if(rs){
-		    					var usids="";
+		    					var userIds="";
 		    					for(var i=0;i<rows.length-1;i++){
-		    						usids+=rows[i].usid+",";
+		    						userIds+=rows[i].userId+",";
 		    					}
-		    					usids+=rows[i].usid;
+		    					userIds+=rows[i].userId;
 		    					//发送请求到数据库请求删除
-		    					$.post("../../userServlet",{op:"delUsers",usid:usids},function(data){
+		    					$.post("userInfoBack/delBackUser",{"userIds":userIds},function(data){
 		    						if(data>0){
 		    							$.messager.show({title:'成功提示',
-		    								msg:'新闻类型删除成功...',
+		    								msg:'会员信息删除成功...',
 		    								timeout:2000,
 		    								showType:'slide'
 		    								});
@@ -124,7 +124,7 @@
 		    							obj.datagrid("reload");//刷新表格
 		    							
 		    						}else{
-		    							$.messager.alert('失败提示','新闻类型删除失败...','error');
+		    							$.messager.alert('失败提示','会员信息删除失败...','error');
 		    						}
 		    					});
 		    				}else{
@@ -156,7 +156,7 @@
 		    			//保存到数据库
 		    			rows["op"]="addusers";
 		    			
-		    			$.post("userInfoBack/",rows,function(data){
+		    			$.post("userInfoBack/"+currentOp,rows,function(data){
 		    				if(data>0){
 		    					$.messager.show({
 		    						title:'成功提示',
@@ -195,6 +195,7 @@
 		var email=$.trim($("#userEmail").val());
 		var phone=$.trim($("#phone").val());
 		var address=$.trim($("#userAddress").val());
+		
 		/* $.ajaxFileUpload({
 			url:"userInfoBack/addUserInfoBack",
 			secureuri:false,
@@ -222,12 +223,13 @@
 		}); */
 		
 		$.post("userInfoBack/addUserInfoBack",{uname:uname,userSex:sex,userPassword:pwd,userEmail:email,userAddress:address,userTelphone:phone},function(data){
-			if(data>0){
+			if(data==1){
 				$.messager.show({title:'成功提示',msg:"会员信息添加成功...",timeout:2000,showType:'slide'});
 				$("#userName").val("");
+				$("#userSex").val("");
 				$("#userPassword").val("");
 				$("#userEmail").val("");
-				$("#pic_show").html("");
+				$("#phone").val("");
 				
 				$('#add_users').dialog('close');
 				$('#users_data').datagrid("reload");

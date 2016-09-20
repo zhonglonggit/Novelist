@@ -21,8 +21,17 @@ public class UserInfoBackServiceImpl implements UserInfoBackService{
 
 	@Override
 	public int addUsers(UserInfoBack userInfoBack) {
-		System.out.println("==?>输出所添加的信息"+userInfoBack);
 		return userInfoBackMapper.addUsers(userInfoBack);
+	}
+
+	@Override
+	public int delBackUser(List<Integer> userId) {
+		return userInfoBackMapper.delBackUser(userId);
+	}
+
+	@Override
+	public int updateBackUsers(UserInfoBack userInfoBack) {
+		return userInfoBackMapper.updateBackUsers(userInfoBack);
 	}
 
 }
